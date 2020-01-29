@@ -422,3 +422,25 @@ Example:
 </details>
 
 ## Tibero
+
+Tibero patches will come in the form of full directories. Special care is required with Tibero patches. Below are the steps involved:
+
+1. Shutdown Tibero 
+
+```tbdown```
+
+2. Rename old version directory 
+
+3. Extract the patch to a new directory
+
+4. Copy the config files from old version to the new binary directory.
+
+  ("tbdsn.tbr", "<TB_SID>.tip", "rsc files", "license.xml", and "gateway" directory if used).
+
+5. Copy database directory to new binary directory.
+
+  **Note:** Best practice is separate DB_CREATE_FILE_DEST to a different disk minimizing confurrent I/O. If it is separated, it doesn't need to be copied, you need to copy only the config files.
+
+6. Boot Database
+
+```tbboot```
