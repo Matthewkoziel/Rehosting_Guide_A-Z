@@ -443,6 +443,8 @@ Example:
 
 Tibero patches will come in the form of full directories. Special care is required with Tibero patches. Below are the steps involved:
 
+<details><summary>Steps</summary>
+
 1. Shutdown Tibero 
 
 ```tbdown```
@@ -462,3 +464,5 @@ Tibero patches will come in the form of full directories. Special care is requir
 6. Boot Database
 
 ```tbboot```
+
+</details>
