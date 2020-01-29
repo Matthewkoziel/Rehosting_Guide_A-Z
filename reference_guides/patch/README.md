@@ -38,6 +38,8 @@ ${patch_dir}/
       ofasm/
 ```
 
+***
+
 ## OpenFrame
 
 *General Notes:* 
@@ -67,6 +69,8 @@ After:
 4. It's recommended that you keep track of the patches thoroughly. You can accomplish this by doing 2 things:
   - Add the IMS ticket number which the patch was supplied through in the name of the file. For most of the examples below, we will use 000001 as the IMS ticket number.
   - Add the date to the patch file name so you can tell when the patch was applied.
+
+***
 
 ### OFCOBOL
 
@@ -115,6 +119,8 @@ After applying the patch, the original issue reported in the IMS ticket should b
 **Step 8.** Receive confirmation from the Customer that the patch was successful.
 
 </details>
+
+***
 
 ### PROSORT
 
@@ -195,6 +201,8 @@ After applying the patch, the original issue reported in th e IMS ticket should 
 
 </details>
 
+***
+
 ### OFASM
 
 <details><summary>Steps</summary>
@@ -261,6 +269,8 @@ After applying the patch, the original issue reported in th e IMS ticket should 
 **Step 8.** Receive confirmation from the customer.
 
 </details>
+
+***
 
 ### OFPLI
 
@@ -329,6 +339,8 @@ After applying the patch, the original issue reported in th e IMS ticket should 
 
 </details>
 
+***
+
 ### OpenFrame Base / OpenFrame Batch / Core(TMAX) / OpenFrame OSI / OpenFrame HiDB / OpenFrame TACF
 
 <details><summary>Steps</summary>
@@ -357,7 +369,11 @@ Example:
 
 </details>
 
+***
+
 ### JEUS
+
+***
 
 ### OFMiner
 
@@ -420,6 +436,8 @@ Example:
 8. Logon and re-analyze.
 
 </details>
+
+***
 
 ## Tibero
 
