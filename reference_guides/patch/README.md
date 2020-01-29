@@ -441,9 +441,9 @@ Example:
 
 ## Tibero
 
-Tibero patches will come in the form of full directories. Special care is required with Tibero patches. Below are the steps involved:
-
 <details><summary>Steps</summary>
+
+Tibero patches will come in the form of full directories. Special care is required with Tibero patches. Below are the steps involved:
 
 1. Shutdown Tibero 
 
