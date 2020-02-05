@@ -1,0 +1,108 @@
+#!/bin/bash
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+USERID=$(whoami)
+HOSTNAME=$(hostname)
+PWD=$(pwd)
+HOME=/home/ofjeus8
+export PS1='${USERID}@${HOSTNAME}:${PWD} /> '
+export PATH
+
+# Choose the root folder for all OpenFrame products installation
+# {/opt, /home, /u01_t0, ...}
+export HOME_DIRECTORY=/opt
+
+#############################################################################
+#                   OPENFRAME                                               #
+#############################################################################
+export OPENFRAME_HOME=$HOME_DIRECTORY/tmaxapp/OpenFrame
+
+#############################################################################
+#                   TSAM/TIBERO (or TIBERO VSAM)                            #
+#############################################################################
+export TB_HOME=$HOME_DIRECTORY/tmaxdb/tibero6
+export TB_SID=TVSAM
+export SEM_KEY=148050
+export TB_PROF_DIR=$TB_HOME/bin/prof
+export PATH=$PATH:$TB_HOME/scripts:$TB_HOME/bin:$TB_HOME/client/bin
+export LD_LIBRARY_PATH=$TB_HOME/lib:$TB_HOME/client/lib:/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH_64=$TB_HOME/lib:$TB_HOME/client/lib:$LD_LIBRARY_PATH_64
+export TB_NLS_DATE_FORMAT="YYYY/MM/DD HH24:MI:SS"
+export TBMON_HOME=$TB_HOME/tbmon
+
+export AIXTHREAD_SCOPE=S
+
+export TB_CONN_TIMEOUT=10
+export TB_READ_TIMEOUT=180
+
+#Tibero_License=/opt/tmaxdb/tibero6/license/license.xml
+
+##############################################################################
+#                   JAVA                                                     #
+##############################################################################
+export JAVA_HOME=/usr/java/jdk1.7.0_79
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=$CLASSPATH:$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/tools.jar
+
+##############################################################################
+#                   JEUS 8                                                   #
+##############################################################################
+export JEUS_HOME=$HOME_DIRECTORY/tmaxui/jeus8
+export JEUS_LOG_HOME=$JEUS_HOME/logs
+export PATH=$PATH:$JEUS_HOME/bin:$JEUS_HOME/lib/system:$JEUS_HOME/lib/etc/ant/bin:$PATH
+export DOMAIN_NAME=jeus8_domain
+export DAS_HOSTNAME=ofdemo
+export DAS_PORT=19736
+export DAS_URL=$DAS_HOSTNAME:$DAS_PORT
+export NODE_MANAGER_PORT=17730
+
+##############################################################################
+#                   ANYLINK GATEWAY                                          #
+##############################################################################
+export GATEWAY_HOME=$JEUS_HOME/../anylinkGW
+export SESSION_MEM=Xmx512m
+export PATH=$PATH:$GATEWAY_HOME/bin
+
+##############################################################################
+#                   PROOBJECT 7                                              #
+##############################################################################
+export PROOBJECT_HOME=$JEUS_HOME/../proobject7
+
+##############################################################################
+#                   ISPF                                                     #
+##############################################################################
+export ISPF_HOME=$JEUS_HOME/../ispf_migration
+export PATH=$PATH:$ISPF_HOME/parser/bin
+export LIBDIR=$ISPF_HOME/parser/lib
+export LD_LIBRARY_PATH=$ISPF_HOME/parser/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH_64=$ISPF_HOME/parser/lib:$LD_LIBRARY_PATH_64
+export ISPF_ENV=$ISPF_HOME/parser/bin/parser.properties
+
+##############################################################################
+#                   Aliases                                                  #
+##############################################################################
+alias bashp='source ~/.bash_profile'
+
+alias cdof='cd ${OPENFRAME_HOME}'
+alias ofhome='cd ${OPENFRAME_HOME}'
+alias jhome='cd ${JEUS_HOME}'
+alias j8home='cd ${JEUS_HOME}'
+alias gwhome='cd ${GATEWAY_HOME}'
+alias pohome='cd ${PROOBJECT_HOME}'
+alias ispfhome='cd ${ISPF_HOME}'
+
+alias j8cfg='cd ${JEUS_HOME}/domains/${DOMAIN_NAME}/config'
+alias j8bin='cd ${JEUS_HOME}/bin'
+alias j8log='cd ${JEUS_HOME}/logs'
+alias j8scripts='cd ${JEUS_HOME}/scripts'
+
+alias tmaxapp='cd ${HOME_DIRECTORY}/tmaxapp'
+alias tmaxdb='cd ${HOME_DIRECTORY}/tmaxdb'
+alias tmaxsw='cd ${HOME_DIRECTORY}/tmaxsw'
+alias tmaxui='cd ${HOME_DIRECTORY}/tmaxui'
+alias licenses='cd ${HOME_DIRECTORY}/tmaxsw/licenses'
+alias patch='cd ${HOME_DIRECTORY}/tmaxsw/patch'
