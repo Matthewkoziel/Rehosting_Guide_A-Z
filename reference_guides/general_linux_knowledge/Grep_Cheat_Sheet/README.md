@@ -1,0 +1,54 @@
+# Grep Cheat Sheet
+
+## Purpose
+
+
+
+## Basic usage
+
+| Command              | Description                                                                                                                 |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `egrep` or `grep -E` | Run grep with extended regular expressions                                                                                  |
+| `-i`                 | Ignore case (ie uppercase, lowercase letters)                                                                               |
+| `-v`                 | Return all lines which don't match the pattern                                                                              |
+| `-w`                 | Select only matches that form whole words                                                                                   |
+| `-c`                 | Print a count of matching lines. Can be combined with the `-v` option to print a count of non matching lines                  |
+| `-l`                 | Print the name of each file which contains a match. Normally used when grep is invoked with wildcards for the file argument |
+| `-n`                 | Print the line number before each line that matches                                                                         |
+| `-r`                 | Recursive, read all files in given directory and subdirectories                                                             |
+
+## Regular Expressions
+
+| Command  | Description                                                                                                                     |
+|----------|---------------------------------------------------------------------------------------------------------------------------------|
+| `.`      | A single character                                                                                                              |
+| `[abc]`  | Range. ie any one of these characters                                                                                           |
+| `[^abc]` | Not range. A character that is not one of those enclosed                                                                        |
+| `(abc)`  | Group these characters and remember for later                                                                                   |
+| `\n`     | Replace n with a number. Recall the characters matched in that set of brackets. May also be used to rename files or directories |
+| `|`      | The logical 'or' operation                                                                                                      |
+| `\`      | In front of a character, removes it's special meaning                                                                           |
+
+## Regular Expressions Multipliers
+
+| Command | Description                                                     |
+|---------|-----------------------------------------------------------------|
+| `?`     | The preceding item is optional, it is matched zero or one times |
+| `*`     | The preceding item will be matched zero or more times           |
+| `+`     | The preceding item will be matched one or more times            |
+| `{n}`   | The preceding item will be matched exactly n times              |
+| `{n,}`  | The preceding item will be matched n or more times              |
+| `{n,m}` | The preceding item will be matched between n and m times        |
+
+## Regular Expressions Anchors
+
+| Command | Description                                 |
+|---------|---------------------------------------------|
+| `^`     | From the beginning of the line              |
+| `$`     | To the end of the line                      |
+| `\<`    | At the beginning of a word                  |
+| `\>`    | At the end of a word                        |
+| `\b`    | Match either the beginning or end of a word |
+
+***
+## Examples
