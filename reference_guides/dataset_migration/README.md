@@ -87,11 +87,11 @@ dsmigin <src_file> <dest_file> -f <recfm> -o <dsorg> -l <lrecl> -s <schema_file>
 
 ### 2.1.2 Example Fixed Block Physical Sequential File Migration
 
-src_file = MAINFRAM.TEST.DATASET1
-dest_file = OFRAME.TEST.DATASET1
-recfm = FB
-dsorg = PS
-lrecl = 120
+src_file = MAINFRAM.TEST.DATASET1<br>
+dest_file = OFRAME.TEST.DATASET1<br>
+recfm = FB<br>
+dsorg = PS<br>
+lrecl = 120<br>
 schema_file = OFTEST1.conv
 
 ```bash
@@ -100,11 +100,11 @@ dsmigin MAINFRAM.TEST.DATASET1 OFRAME.TEST.DATASET1 -f FB -o PS -l 120 -s OFTEST
 
 ### 2.1.3 Example Variable Block Physical Sequential File Migration
 
-src_file = MAINFRAM.TEST.DATASET2
-dest_file = OFRAME.TEST.DATASET2
-recfm = VB
-dsorg = PS
-lrecl = 21568
+src_file = MAINFRAM.TEST.DATASET2<br>
+dest_file = OFRAME.TEST.DATASET2<br>
+recfm = VB<br>
+dsorg = PS<br>
+lrecl = 21568<br>
 schema_file = OFTEST2.conv
 
 ```bash
@@ -115,11 +115,11 @@ dsmigin MAINFRAM.TEST.DATASET2 OFRAME.TEST.DATASET2 -f VB -o PS -l 21568 -s OFTE
 
 **This NO CATALOG option is useful when preparing files to be loaded into HiDB**
 
-src_file = MAINFRAM.TEST.DATASET3
-dest_file = OFRAME.TEST.DATASET3
-recfm = VB
-dsorg = PS
-lrecl = 21568
+src_file = MAINFRAM.TEST.DATASET3<br>
+dest_file = OFRAME.TEST.DATASET3<br>
+recfm = VB<br>
+dsorg = PS<br>
+lrecl = 21568<br>
 schema_file = OFTEST3.conv
 
 ```bash
@@ -136,11 +136,11 @@ You can think of a PDS as a directory or a folder. In Linux, they can be accesse
 
 ### 2.2.1 Example Fixed Block Partitioned Organization
 
-src_file = MAINFRAM.TEST.DATASET4(MEMBER1)
-dest_file = OFRAME.TEST.DATASET4(MEMBER1)
-recfm = FB
-dsorg = PO
-lrecl = 120
+src_file = MAINFRAM.TEST.DATASET4(MEMBER1)<br>
+dest_file = OFRAME.TEST.DATASET4(MEMBER1)<br>
+recfm = FB<br>
+dsorg = PO<br>
+lrecl = 120<br>
 schema_file = OFTEST4.conv
 
 ```bash
@@ -149,11 +149,11 @@ dsmigin MAINFRAM.TEST.DATASET4 OFRAME.TEST.DATASET4 -m MEMBER1 -f FB -o PO -l 12
 
 ### 2.2.2 Example Variable Block Partiitoned Organization
 
-src_file = MAINFRAM.TEST.DATASET5(MEMBER1)
-dest_file = OFRAME.TEST.DATASET5(MEMBER1)
-recfm = VB
-dsorg = PO
-lrecl = 120
+src_file = MAINFRAM.TEST.DATASET5(MEMBER1)<br>
+dest_file = OFRAME.TEST.DATASET5(MEMBER1)<br>
+recfm = VB<br>
+dsorg = PO<br>
+lrecl = 120<br>
 schema_file = OFTEST5.conv
 
 ```bash
@@ -168,11 +168,11 @@ Once the GDG is created, you can migrate members using specific generation numbe
 
 ### 2.3.1 Example Generation Dataset with Defined Generation Number
 
-src_file = MAINFRAM.TEST.GDG1.G0001V00
-dest_file = OFRAME.TEST.GDG1.G0001V00
-recfm = VB
-dsorg = PS
-lrecl = 300
+src_file = MAINFRAM.TEST.GDG1.G0001V00<br>
+dest_file = OFRAME.TEST.GDG1.G0001V00<br>
+recfm = VB<br>
+dsorg = PS<br>
+lrecl = 300<br>
 schema_file = OFTEST6.conv
 
 ```bash
@@ -181,11 +181,11 @@ dsmigin MAINFRAM.TEST.GDG1.G0001V00 OFRAME.TEST.GDG1.G0001V00 -f VB -o PS -l 300
 
 ### 2.3.2 Example Generation Dataset with Relative Generation Number
 
-src_file = MAINFRAM.TEST.GDG1.G0002V00
-dest_file = OFRAME.TEST.GDG1.G0002V00
-recfm = VB
-dsorg = PS
-lrecl = 300
+src_file = MAINFRAM.TEST.GDG1.G0002V00<br>
+dest_file = OFRAME.TEST.GDG1.G0002V00<br>
+recfm = VB<br>
+dsorg = PS<br>
+lrecl = 300<br>
 schema_file = OFTEST6.conv
 
 ```bash
