@@ -1,11 +1,24 @@
-# Dataset Migration
+# Dataset Migration Guide
 
 The purpose of this guide is to give the user detailed step by step process for migrating datasets. Datasets can come in many different types, such as PDS, GDG, and VSAM, and the options needed for DSMIGIN will vary from dataset to dataset. By using this guide, you will know which options are needed for each dataset. 
 
 # Table of Contents
 
-- [The dsmigin Command](#1-the-dsmigin-command)
-	- [General Usage](#11-general-usage)
+- [1. The dsmigin Command](#1-the-dsmigin-command)
+	- [1.1 General Usage](#11-general-usage)
+	- [1.2 Options](#12-options)
+- [2. Examples](#2-examples)
+	- [2.1 Physical Sequential Files (PS)](#21-physical-sequential-files-ps)
+		- [2.1.1 General Physical Sequential File Migration](#211-general-physical-sequential-file-migration)
+		- [2.1.2 Example Fixed Block Physical Sequential File Migration](#212-example-fixed-block-physical-sequential-file-migration)
+		- [2.1.3 Example Variable Block Physical Sequential File Migration](#213-example-variable-block-physical-sequential-file-migration)
+		- [2.1.4 Example Variable Block Physical Sequential File Migration (NO CATALOG)](#214-example-variable-block-phsyical-sequential-file-migration-no-catalog)
+	- [2.2 Partitioned Organization Files (PO)](#22-partitioned-organization-files-po)
+		- [2.2.1 Example Fixed Block Partitioned Organization](#221-example-fixed-block-partitioned-organization)
+		- [2.2.2 Example Variable Block Partitioned Organization](#222-example-variable-block-partitioned-organization)
+	- [2.3 Generation Data Group (GDG)](#23-generation-data-group-gdg)
+		- [2.3.1 Example Generation Dataset with Defined Generation Number](#231-example-generation-dataset-with-defined-generation-number)
+		- [2.3.2 Example Generation Dataset with Relative Generation Number](#232-example-generation-dataset-with-relative-generation-number)
 
 # 1. The dsmigin Command
 
@@ -16,6 +29,9 @@ The dsmigin command is mainly used for converting EBCDIC mainframe datasets to A
 ```bash
 dsmigin <src_file> <dest_file> [options]
 ```
+
+## 1.2 Options
+
 
 | OPTIONS              | DESCRIPTION                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,6 +69,127 @@ dsmigin <src_file> <dest_file> [options]
 | -D                   | Displays detailed information about the EBCDIC to ASCII conversion and abnormal data that is found during the PACKED DECIMAL or ZONED DECIMAL field value conversion. Also shows debugging information useful to analyze migration issues.  A value between 1 and 3 can be specified:<br> <br> - 1: Displays some important information while performing migration<br> <br> - 2: In addition to 1, displays error information that occurs when converting codes.<br> <br> - 3: In addition to 2, displays data before and after record conversion                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | -V                   | Displays version information about dsmigin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
-# Flat Files (PS)
+Some of the options can be determined at the beginning of the project, such as SOSI characters. For example, if the customer has no SOSI character usage, then you can always pass the [-sosi 6] option.
 
-#TODO 
+# 2. Examples
+
+I think the best way to learn how to migrate some files will be to show some of the most basic examples. From there, you can add or subtract some options depending on your individual needs.
+
+## 2.1 Physical Sequential Files (PS)
+
+Migrating an EBCDIC source file to an ASCII destination file. This file will be cataloged in the DEFAULT catalog and DEFAULT volume serial since we did not explicitly define otherwise.
+
+### 2.1.1 General Physical Sequential File Migration
+
+```bash
+dsmigin <src_file> <dest_file> -f <recfm> -o <dsorg> -l <lrecl> -s <schema_file>
+```
+
+### 2.1.2 Example Fixed Block Physical Sequential File Migration
+
+src_file = MAINFRAM.TEST.DATASET1
+dest_file = OFRAME.TEST.DATASET1
+recfm = FB
+dsorg = PS
+lrecl = 120
+schema_file = OFTEST1.conv
+
+```bash
+dsmigin MAINFRAM.TEST.DATASET1 OFRAME.TEST.DATASET1 -f FB -o PS -l 120 -s OFTEST1.conv
+```
+
+### 2.1.3 Example Variable Block Physical Sequential File Migration
+
+src_file = MAINFRAM.TEST.DATASET2
+dest_file = OFRAME.TEST.DATASET2
+recfm = VB
+dsorg = PS
+lrecl = 21568
+schema_file = OFTEST2.conv
+
+```bash
+dsmigin MAINFRAM.TEST.DATASET2 OFRAME.TEST.DATASET2 -f VB -o PS -l 21568 -s OFTEST2.conv
+```
+
+### 2.1.4 Example Variable Block Physical Sequential File Migration (NO CATALOG)
+
+**This NO CATALOG option is useful when preparing files to be loaded into HiDB**
+
+src_file = MAINFRAM.TEST.DATASET3
+dest_file = OFRAME.TEST.DATASET3
+recfm = VB
+dsorg = PS
+lrecl = 21568
+schema_file = OFTEST3.conv
+
+```bash
+dsmigin MAINFRAM.TEST.DATASET3 OFRAME.TEST.DATASET3 -f VB -o PS -l 21568 -s OFTEST3.conv -N
+```
+
+## 2.2 Partitioned Organizations (PO)
+
+Migrating a PDS consists of two steps. First, you must create the pds, which can be accomplished with the ```pdscreate``` command. Please reference this guide: (#TODO)
+
+Once the PDS is created, you can migrate members the same way as you would a Physical Sequential (PS) file, except now we need to add the [-m member] option to specify the member names'.
+
+You can think of a PDS as a directory or a folder. In Linux, they can be accessed and opened like any other directory, the only difference is that these directories will be cataloged and that information is stored in the Tibero database.
+
+### 2.2.1 Example Fixed Block Partitioned Organization
+
+src_file = MAINFRAM.TEST.DATASET4(MEMBER1)
+dest_file = OFRAME.TEST.DATASET4(MEMBER1)
+recfm = FB
+dsorg = PO
+lrecl = 120
+schema_file = OFTEST4.conv
+
+```bash
+dsmigin MAINFRAM.TEST.DATASET4 OFRAME.TEST.DATASET4 -m MEMBER1 -f FB -o PO -l 120 -s OFTEST4.conv
+```
+
+### 2.2.2 Example Variable Block Partiitoned Organization
+
+src_file = MAINFRAM.TEST.DATASET5(MEMBER1)
+dest_file = OFRAME.TEST.DATASET5(MEMBER1)
+recfm = VB
+dsorg = PO
+lrecl = 120
+schema_file = OFTEST5.conv
+
+```bash
+dsmigin MAINFRAM.TEST.DATASET5 OFRAME.TEST.DATASET5 -m MEMBER1 -f VB -o PO -l 120 -s OFTEST5.conv
+```
+
+## 2.3 Generation Data Group (GDG)
+
+For a Generation Data Group, first we must define the Generation Data Group, which can be accomplished with the ```gdgcreate``` command. Please reference this guide: (#TODO)
+
+Once the GDG is created, you can migrate members using specific generation numbers, or relative numbers. 
+
+### 2.3.1 Example Generation Dataset with Defined Generation Number
+
+src_file = MAINFRAM.TEST.GDG1.G0001V00
+dest_file = OFRAME.TEST.GDG1.G0001V00
+recfm = VB
+dsorg = PS
+lrecl = 300
+schema_file = OFTEST6.conv
+
+```bash
+dsmigin MAINFRAM.TEST.GDG1.G0001V00 OFRAME.TEST.GDG1.G0001V00 -f VB -o PS -l 300 -s OFTEST6.conv
+```
+
+### 2.3.2 Example Generation Dataset with Relative Generation Number
+
+src_file = MAINFRAM.TEST.GDG1.G0002V00
+dest_file = OFRAME.TEST.GDG1.G0002V00
+recfm = VB
+dsorg = PS
+lrecl = 300
+schema_file = OFTEST6.conv
+
+```bash
+dsmigin MAINFRAM.TEST.GDG1.G0002V00 OFRAME.TEST.GDG1 -m +1 -f VB -o PS -l 300 -s OFTEST6.conv
+```
+
+**Note: Assuming you performed the example in 2.3.1, the output dataset will be OFRAME.TEST.GDG1.G0002V00 because it is the next generation after G0001V00.**
