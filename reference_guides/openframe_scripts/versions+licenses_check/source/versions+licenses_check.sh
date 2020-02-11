@@ -26,11 +26,11 @@ check_return_code(){
   rc=$1
   string_=$2
 
-  if [ "$rc" == 0 ];
+  if [[ $rc == 0 ]];
   then
-    echo "$string_ : SUCCESSFUL" >> ${log_dir}/${basename_var}.${date_var}.out
+    echo "$string_ : SUCCESSFUL" >> ${log_dir}/${basename_var}.${date}.out
   else
-    echo "$string_ : FAILED" >> ${log_dir}/${basename_var}.${date_var}.err
+    echo "$string_ : FAILED" >> ${log_dir}/${basename_var}.${date}.err
     exit 100
   fi
 }
@@ -60,7 +60,9 @@ offile_on_unique(){
   do offile $item >> $output_file
   check_return_code $? "offile $item >> $output_file"
   done
-  echo "" >> $output_file
+  echo "
+  
+  " >> $output_file
 }
 
 ####################################################################################
@@ -71,19 +73,25 @@ offile_on_unique(){
 version_check(){
   work_dir=$(pwd)
 
-  log_dir="${OPENFRAME_HOME}/log/scriptslog"
+  log_dir="${OPENFRAME_HOME}/log/scripts/"
   basename_var=$(basename $0)
-  date_var=$(date +%Y%m%d)
+  date=$(date +%Y%m%d)
   bin_dir="${OPENFRAME_HOME}/bin"
+  core_appbin_dir="${OPENFRAME_HOME}/core/appbin"
   lib_dir="${OPENFRAME_HOME}/lib"
   util_dir="${OPENFRAME_HOME}/util"
-  output_file="${work_dir}/version_check.txt"
-  if [ -f $output_file ]
-    then rm $output_file
+  output_file="${work_dir}/versions_check.txt"
+  if [[ -f $output_file ]]
+  then 
+    rm $output_file
     check_return_code $? "rm $output_file"
     touch $output_file
     check_return_code $? "touch $output_file"
   fi
+
+  # ProObject and ISPF home folders
+  po7_home=/opt/tmaxui/proobject7
+  ispf_home=/opt/tmaxui/ispf_migration
 
   echo "
     ===============================================
@@ -92,7 +100,7 @@ version_check(){
   " | tee $output_file
 
   # Tibero
-  if [ -d $TB_HOME ]
+  if [[ -d $TB_HOME ]]
   then
     echo "Tibero"
     echo "
@@ -110,7 +118,7 @@ version_check(){
   # OpenFrame
   echo "OpenFrame components: Base, Batch, TACF, OSC, HiDB, OSI (if installed)"
   
-  if [ -d $OPENFRAME_HOME ]
+  if [[ -d $OPENFRAME_HOME ]]
   then
     echo "
     -----------------------------------------------
@@ -124,7 +132,7 @@ version_check(){
     echo "More details about TMAX" >> $output_file
     tmboot -V >> $output_file
     # OSC
-    if [ -d $OPENFRAME_HOME/osc ]
+    if [[ -d $OPENFRAME_HOME/osc ]]
     then
       echo "More details about OSC" >> $output_file
       oscboot -version >> $output_file
@@ -132,7 +140,7 @@ version_check(){
   fi
 
   # Prosort
-  if [ -d $PROSORT_HOME ]
+  if [[ -d $PROSORT_HOME ]]
   then
     echo "Prosort"
     echo "
@@ -144,7 +152,7 @@ version_check(){
   fi
 
   # Protrieve
-  if [ -d $PROTRIEVE_HOME ]
+  if [[ -d $PROTRIEVE_HOME ]]
   then
     echo "Protrieve"
     echo "
@@ -158,7 +166,7 @@ version_check(){
   fi
 
   # Compiler ofcobol
-  if [ -d $OFCOB_HOME ]
+  if [[ -d $OFCOB_HOME ]]
   then
     echo "Compiler: OFCOBOL"
     echo "
@@ -170,7 +178,7 @@ version_check(){
   fi
 
   # Compiler ofpli
-  if [ -d $OFPLI_HOME ]
+  if [[ -d $OFPLI_HOME ]]
   then
     echo "Compiler: OFPLI"
     echo "
@@ -181,7 +189,7 @@ version_check(){
     ofpli --version >> $output_file
   fi
 
-  if [ -d $OFASM_HOME ]
+  if [[ -d $OFASM_HOME ]]
   then
     echo "Compiler: OFASM"
     echo "
@@ -193,7 +201,7 @@ version_check(){
   fi
 
   # JEUS 7 Products
-  if [ -d $JEUS_HOME ]
+  if [[ -d $JEUS_HOME ]]
   then
     echo "JEUS 7, OFGateway, OFManager OFMiner"
     echo "
@@ -204,7 +212,7 @@ version_check(){
     jeusadmin --fullversion >> $output_file
 
     # OFGateway
-    if [ -d $OFGW_HOME ]
+    if [[ -d $OFGW_HOME ]]
     then
       echo "
       OFGateway" >> $output_file
@@ -212,7 +220,7 @@ version_check(){
     fi
 
     # OFManager
-    if [ -d $OFMANAGER_HOME ]
+    if [[ -d $OFMANAGER_HOME ]]
     then
       echo "
       OFManager" >> $output_file
@@ -223,7 +231,7 @@ version_check(){
     fi
 
     # OFMiner
-    if [ -d $OFMINER_HOME ]
+    if [[ -d $OFMINER_HOME ]]
     then
       echo "
       OFMiner" >> $output_file
@@ -232,7 +240,7 @@ version_check(){
   fi
 
   # OF Studio
-  if [ -d $OFGDB_HOME ]
+  if [[ -d $OFGDB_HOME ]]
   then
     echo "OF Studio"
     echo "
@@ -244,7 +252,7 @@ version_check(){
   fi
 
   # JEUS 8, ProObject and ISPF
-  if [ -d $JEUS_HOME/../jeus8 ]
+  if [[ -d $JEUS_HOME/../jeus8 ]]
   then
     echo "JEUS 8, ProObject 7, ISPF"
     echo "
@@ -252,27 +260,35 @@ version_check(){
               JEUS 8
     -----------------------------------------------
     " >> $output_file
-    sudo su - ofjeus8 -c "jeusadmin --fullversion >> $output_file"
+    tmp=`su - ofjeus8 -c "jeusadmin --fullversion"`
+    echo $tmp >> $output_file
 
     # ProObject7
-    if [ -d $PROOBJECT_HOME ]
+    if [[ -d $po7_home ]]
     then
       echo "
       Pro Object 7" >> $output_file
-      ls $PROOBJECT_HOME/_for_jeus | grep proobject-runtime >> $output_file
+      ls $po7_home/_for_jeus | grep proobject-runtime >> $output_file
+      ls -l $po7_home/application/of8/servicegroup/ispf/ispf* >> $output_file
+      ls -l $po7_home/application/of8/common/dto/ispf-common* >> $output_file
+      ls -l $po7_home/application/of8/common/lib/ispf-common* >> $output_file
+      ls -l $po7_home/application/of8/event/ispf-websocket* >> $output_file
     fi
 
     # ISPF
-    if [ -d $ISPF_HOME ]
+    if [[ -d $ispf_home ]]
     then
       echo "
       ISPF" >> $output_file
-      ls $PROOBJECT_HOME/application/of8/servicegroup/ispf | grep ispf-engine >> $output_file
+      ls -l $ispf_home/parser/lib/*messageParser.jar >> $output_file
+      ls -l $ispf_home/parser/lib/*panelParser.jar >> $output_file
+      ls -l $ispf_home/parser/lib/*skelparser.jar >> $output_file
+      ls -l $ispf_home/parser/bin/*clist_parser >> $output_file
     fi
   fi
 
   # Other products
-  if [ -d $OPENFRAME_HOME ]
+  if [[ -d $OPENFRAME_HOME ]]
   then
     echo "offile"
     echo "
@@ -282,6 +298,9 @@ version_check(){
     " >> $output_file
     get_unique_files $bin_dir   
     offile_on_unique $bin_dir 
+
+    get_unique_files $core_appbin_dir   
+    offile_on_unique $core_appbin_dir 
     
     get_unique_files $lib_dir
     offile_on_unique $lib_dir
@@ -304,7 +323,7 @@ version_check(){
 ####################################################################################
 license_check(){
 
-  output_file="license_check.txt"
+  output_file="licenses_check.txt"
 
   echo "
   ===============================================
@@ -313,7 +332,7 @@ license_check(){
   " | tee $output_file
 
   # Tibero
-  if [ -d $TB_HOME ]
+  if [[ -d $TB_HOME ]]
   then
     echo "Tibero"
     # If you have oframe user only, use the following line
@@ -326,7 +345,7 @@ license_check(){
     echo "Tibero is installed on a different server, skipping Tibero license retrieval"
   fi
 
-  if [ -d $OPENFRAME_HOME ]
+  if [[ -d $OPENFRAME_HOME ]]
   then
     # TMAX
     echo "TMAX"
@@ -355,7 +374,7 @@ license_check(){
     echo "TACF     Expiration date:     ${TACF_EX_DATE}" >> $output_file
 
     # OSC
-    if [ -d $OPENFRAME_HOME/osc ]
+    if [[ -d $OPENFRAME_HOME/osc ]]
     then
       echo "OSC"
       tmp=`tjesmgr LICENSE OSC | grep Expiration | awk '{print $3}'`
@@ -366,7 +385,7 @@ license_check(){
     fi
 
     # HiDB
-    if [ -d $OPENFRAME_HOME/hidb ]
+    if [[ -d $OPENFRAME_HOME/hidb ]]
     then
       echo "HiDB"
       tmp=`tjesmgr LICENSE HIDB | grep Expiration | awk '{print $3}'`
@@ -377,7 +396,7 @@ license_check(){
     fi
 
     # OSI
-    if [ -d $OPENFRAME_HOME/osi ]
+    if [[ -d $OPENFRAME_HOME/osi ]]
     then
       echo "OSI"
       tmp=`tjesmgr LICENSE OSI | grep Expiration | awk '{print $3}'`
@@ -389,7 +408,7 @@ license_check(){
   fi
 
   # Prosort
-  if [ -d $PROSORT_HOME ]
+  if [[ -d $PROSORT_HOME ]]
   then
     echo "Prosort"
     echo "-------------------------------------------------------------" >> $output_file
@@ -402,15 +421,15 @@ license_check(){
   fi
 
   # Protrieve
-  if [ -d $PROTRIEVE_HOME ]
-  then
-    echo "Protrieve"
-    echo "-------------------------------------------------------------" >> $output_file
+  #if [[ -d $PROTRIEVE_HOME ]]
+  #then
+    #echo "Protrieve"
+    #echo "-------------------------------------------------------------" >> $output_file
     # TODO No command for Protrieve so far
-  fi
+  #fi
 
   # OFCOBOL
-  if [ -d $OFCOB_HOME ]
+  if [[ -d $OFCOB_HOME ]]
   then
     echo "OFCOBOL"
     echo "-------------------------------------------------------------" >> $output_file
@@ -420,7 +439,7 @@ license_check(){
   fi
 
   # OFPLI
-  if [ -d $OFPLI_HOME ]
+  if [[ -d $OFPLI_HOME ]]
   then
     echo "OFPLI"
     tmp=`ofpli --license | grep Expiration | awk '{print $3}'`
@@ -428,8 +447,8 @@ license_check(){
     echo "OFPLI    Expiration date:     ${OFPLI_EX_DATE}" >> $output_file
   fi
 
-  # JEUS
-  if [ -d $JEUS_HOME ]
+  # JEUS 7
+  if [[ -d $JEUS_HOME ]]
   then
     echo "JEUS"
     echo "-------------------------------------------------------------" >> $output_file
@@ -438,7 +457,7 @@ license_check(){
     echo "JEUS     Expiration date:     ${JEUS_EX_DATE}" >> $output_file
 
     # OFGateway
-    if [ -d $OFGW_HOME ]
+    if [[ -d $OFGW_HOME ]]
     then
       echo "OF Gateway"
       OFGW_EXP_DATE=`grep expireDate $OFGW_HOME/../../logs/JeusL* |sort -r | head -n 1 | awk -F"[:]" '{print $6 $8}' | awk '{print $6,$2,$3}'`
@@ -448,7 +467,7 @@ license_check(){
     fi
 
     # OFManager
-    if [ -d $OFMANAGER_HOME ]
+    if [[ -d $OFMANAGER_HOME ]]
     then
       echo "OF Manager"
       OFMGR_EXP_DATE=`grep expireDate $OFMANAGER_HOME/logs/ofmanager* |sort -r | head -n 1 | awk -F"[:]" '{print $6 $8}' | awk '{print $6,$2,$3}'`
@@ -458,26 +477,29 @@ license_check(){
     fi
 
     # OFMiner
-    if [ -d $OFMINER_HOME ]
+    if [[ -d $OFMINER_HOME ]]
     then
       echo "OF Miner"
       # This is working on customer environment
-      #OFMINER_EXP_DATE=`grep expireDate $JEUS_HOME/domains/jeus_domain/servers/ofminer_svr/logs/* | tail -n 1 | awk '{print $7}'`
+      OFMINER_EXP_DATE=`grep expireDate $JEUS_HOME/domains/jeus_domain/servers/ofminer_svr/logs/JeusServer* | tail -n 1 | awk '{print $7}'`
+      # This is working on my own VM
       # TODO No command on my own VM so far
-      #echo "OFMiner  Expiration date:     ${OFMGR_EXP_DATE}" >> $output_file
+      echo "OFMiner  Expiration date:     ${OFMINER_EXP_DATE}" >> $output_file
     fi
   fi
 
   # OF Studio
-  if [ -d $OFGDB_HOME ]
-  then
-    echo "OF Studio"
-    echo "-------------------------------------------------------------" >> $output_file
+  #if [[ -d $OFGDB_HOME ]]
+  #then
+    #echo "OF Studio"
+    #echo "-------------------------------------------------------------" >> $output_file
     # TODO No command for OFStudio so far
-  fi
+  #fi
 
   # Earliest date for license renewal
-  sed 's/=//g; s/-//g; /^$/d' license_check.txt | grep Expiration > tmp.txt
+  sed 's/=//g; s/-//g; /^$/d' licenses_check.txt | grep Expiration > tmp.txt
+  echo >> $output_file
+  echo "===============================================">> $output_file
   echo "The order for licenses expiration is:
   " >> $output_file
   sort -k3 tmp.txt >> $output_file
@@ -496,13 +518,17 @@ license_check(){
 #FUNCTION: main
 ####################################################################################
 main(){
-  echo "Tibero, OpenFrame and JEUS are up and running? (y:n)"; read user_answer_1
+  echo "Tibero, OpenFrame and JEUS 7 are up and running? (y:n)"; read user_answer_1
 
   case ${user_answer_1} in
     "y" | "Y")
     echo "
     Good!
     "
+    if [[ ! -d ${OPENFRAME_HOME}/log/scripts ]]
+    then
+      mkdir ${OPENFRAME_HOME}/log/scripts
+    fi
     version_check
     license_check
     echo "
@@ -510,7 +536,7 @@ main(){
     "
     ;;
     "n" | "N")
-    echo "Please start Tibero and OpenFrame first"
+    echo "Please start Tibero, OpenFrame and JEUS 7 first"
     exit -1
     ;;
     *)
