@@ -11,6 +11,9 @@
 # It is not mandatory but for future replacement of expired licenses, it is easier 
 # to replace only one folder than each license file one by one.
 ####################################################################################
+
+licenses_folder=$HOME_DIRECTORY/tmaxsw/licenses
+
 echo "
 Starting removing license files and creating symbolic links instead...
 
@@ -19,62 +22,62 @@ Please verify below if everything looks correct:
 #====================
 # OpenFrame products
 #====================
-if [ -d $OPENFRAME_HOME ]
+if [[ -d $OPENFRAME_HOME ]]
 then
   #==========
   # TMAX
   #==========
-  if [ -f $OPENFRAME_HOME/core/license/license.dat ] || [ -L $OPENFRAME_HOME/core/license/license.dat ]
+  if [[ -f $OPENFRAME_HOME/core/license/license.dat ]] || [[ -L $OPENFRAME_HOME/core/license/license.dat ]]
   then
       rm $OPENFRAME_HOME/core/license/license.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/tmax/license.dat $OPENFRAME_HOME/core/license/license.dat
+      ln -s $licenses_folder/tmax/license.dat $OPENFRAME_HOME/core/license/license.dat
       echo "TMAX"
       ls -lh --color $OPENFRAME_HOME/core/license
   fi
 
   # Base
-  if [ -f $OPENFRAME_HOME/license/licbase.dat ] || [ -L $OPENFRAME_HOME/license/licbase.dat ]
+  if [[ -f $OPENFRAME_HOME/license/licbase.dat ]] || [[ -L $OPENFRAME_HOME/license/licbase.dat ]]
   then
       rm $OPENFRAME_HOME/license/licbase.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/licbase.dat $OPENFRAME_HOME/license/licbase.dat
+      ln -s $licenses_folder/openframe/licbase.dat $OPENFRAME_HOME/license/licbase.dat
   fi
   # Batch
-  if [ -f $OPENFRAME_HOME/license/lictjes.dat ] || [ -L $OPENFRAME_HOME/license/lictjes.dat ]
+  if [[ -f $OPENFRAME_HOME/license/lictjes.dat ]] || [[ -L $OPENFRAME_HOME/license/lictjes.dat ]]
   then
       rm $OPENFRAME_HOME/license/lictjes.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/lictjes.dat $OPENFRAME_HOME/license/lictjes.dat
+      ln -s $licenses_folder/openframe/lictjes.dat $OPENFRAME_HOME/license/lictjes.dat
   fi
   # TACF
-  if [ -f $OPENFRAME_HOME/license/lictacf.dat ] || [ -L $OPENFRAME_HOME/license/lictacf.dat ]
+  if [[ -f $OPENFRAME_HOME/license/lictacf.dat ]] || [[ -L $OPENFRAME_HOME/license/lictacf.dat ]]
   then
       rm $OPENFRAME_HOME/license/lictacf.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/lictacf.dat $OPENFRAME_HOME/license/lictacf.dat
+      ln -s $licenses_folder/openframe/lictacf.dat $OPENFRAME_HOME/license/lictacf.dat
   fi
   # OSC 
-  if [ -d $OPENFRAME_HOME/osc ]
+  if [[ -d $OPENFRAME_HOME/osc ]]
   then
-    if [ -f $OPENFRAME_HOME/license/licosc.dat ] || [ -L $OPENFRAME_HOME/license/licosc.dat ]
+    if [[ -f $OPENFRAME_HOME/license/licosc.dat ]] || [[ -L $OPENFRAME_HOME/license/licosc.dat ]]
     then
         rm $OPENFRAME_HOME/license/licosc.dat
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/licosc.dat $OPENFRAME_HOME/license/licosc.dat
+        ln -s $licenses_folder/openframe/licosc.dat $OPENFRAME_HOME/license/licosc.dat
     fi
   fi
   # HiDB
-  if [ -d $OPENFRAME_HOME/hidb ]
+  if [[ -d $OPENFRAME_HOME/hidb ]]
   then
-    if [ -f $OPENFRAME_HOME/license/lichidb.dat ] || [ -L $OPENFRAME_HOME/license/lichidb.dat ]
+    if [[ -f $OPENFRAME_HOME/license/lichidb.dat ]] || [[ -L $OPENFRAME_HOME/license/lichidb.dat ]]
     then
         rm $OPENFRAME_HOME/license/lichidb.dat
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/lichidb.dat $OPENFRAME_HOME/license/lichidb.dat
+        ln -s $licenses_folder/openframe/lichidb.dat $OPENFRAME_HOME/license/lichidb.dat
     fi
   fi
   # OSI
-  if [ -d $OPENFRAME_HOME/osi ]
+  if [[ -d $OPENFRAME_HOME/osi ]]
   then
-    if [ -f $OPENFRAME_HOME/license/licosi.dat ] || [ -L $OPENFRAME_HOME/license/licosi.dat ]
+    if [[ -f $OPENFRAME_HOME/license/licosi.dat ]] || [[ -L $OPENFRAME_HOME/license/licosi.dat ]]
     then
         rm $OPENFRAME_HOME/license/licosi.dat
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/openframe/licosi.dat $OPENFRAME_HOME/license/licosi.dat
+        ln -s $licenses_folder/openframe/licosi.dat $OPENFRAME_HOME/license/licosi.dat
     fi
   fi
   echo; echo "OpenFrame products"
@@ -84,12 +87,12 @@ fi
 #==========
 # Prosort
 #==========
-if [ -d $PROSORT_HOME ]
+if [[ -d $PROSORT_HOME ]]
 then
-  if [ -f $PROSORT_HOME/license/license.xml ] || [ -L $PROSORT_HOME/license/license.xml ]
+  if [[ -f $PROSORT_HOME/license/license.xml ]] || [[ -L $PROSORT_HOME/license/license.xml ]]
   then
       rm $PROSORT_HOME/license/license.xml
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/prosort/license.xml $PROSORT_HOME/license/license.xml
+      ln -s $licenses_folder/prosort/license.xml $PROSORT_HOME/license/license.xml
       echo; echo "prosort"
       ls -lh --color $PROSORT_HOME/license
   fi
@@ -97,12 +100,12 @@ fi
 #==========
 # Protrieve
 #==========
-if [ -d $PROTRIEVE_HOME ]
+if [[ -d $PROTRIEVE_HOME ]]
 then
-  if [ -f $PROTRIEVE_HOME/license/licprot.dat ] || [ -L $PROTRIEVE_HOME/license/licprot.dat ]
+  if [[ -f $PROTRIEVE_HOME/license/licprot.dat ]] || [[ -L $PROTRIEVE_HOME/license/licprot.dat ]]
   then
       rm $PROTRIEVE_HOME/license/licprot.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/licprot.dat $PROTRIEVE_HOME/license/licprot.dat
+      ln -s $licenses_folder/licprot.dat $PROTRIEVE_HOME/license/licprot.dat
       echo; echo "protrieve"
       ls -lh --color $PROTRIEVE_HOME/license
   fi
@@ -112,23 +115,23 @@ fi
 # Compilers
 #==========
 # OFCOBOL
-if [ -d $OFCOB_HOME ]
+if [[ -d $OFCOB_HOME ]]
 then
-  if [ -f $OFCOB_HOME/license/licofcob.dat ] || [ -L $OFCOB_HOME/license/licofcob.dat ]
+  if [[ -f $OFCOB_HOME/license/licofcob.dat ]] || [[ -L $OFCOB_HOME/license/licofcob.dat ]]
   then
       rm $OFCOB_HOME/license/licofcob.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/licofcob.dat $OFCOB_HOME/license/licofcob.dat
+      ln -s $licenses_folder/licofcob.dat $OFCOB_HOME/license/licofcob.dat
       echo; echo "ofcobol"
       ls -lh --color $OFCOB_HOME/license
   fi
 fi
 # OFPLI
-if [ -d $OFPLI_HOME ]
+if [[ -d $OFPLI_HOME ]]
 then
-  if [ -f $OFPLI_HOME/license/licofpli.dat ] || [ -L $OFPLI_HOME/license/licofpli.dat ]
+  if [[ -f $OFPLI_HOME/license/licofpli.dat ]] || [[ -L $OFPLI_HOME/license/licofpli.dat ]]
   then
       rm $OFPLI_HOME/license/licofpli.dat
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/licofpli.dat $OFPLI_HOME/license/licofpli.dat
+      ln -s $licenses_folder/licofpli.dat $OFPLI_HOME/license/licofpli.dat
       echo; echo "ofpli"
       ls -lh --color $OFPLI_HOME/license
   fi
@@ -137,45 +140,45 @@ fi
 #==========
 # JEUS 7
 #==========
-if [ -d $JEUS_HOME ]
+if [[ -d $JEUS_HOME ]]
 then
   # JEUS itself
-  if [ -f $JEUS_HOME/license/license ] || [ -L $JEUS_HOME/license/license ]
+  if [[ -f $JEUS_HOME/license/license ]] || [[ -L $JEUS_HOME/license/license ]]
   then
       rm $JEUS_HOME/license/license
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/license $JEUS_HOME/license/license
+      ln -s $licenses_folder/license $JEUS_HOME/license/license
       echo; echo "jeus 7"
       ls -lh --color $JEUS_HOME/license
   fi
   #OF Gateway
-  if [ -d $OFGW_HOME ]
+  if [[ -d $OFGW_HOME ]]
   then
-    if [ -f $OFGW_HOME/ofgwconf/license/OFGWLicense ] || [ -L $OFGW_HOME/ofgwconf/license/OFGWLicense ]
+    if [[ -f $OFGW_HOME/ofgwconf/license/OFGWLicense ]] || [[ -L $OFGW_HOME/ofgwconf/license/OFGWLicense ]]
     then
         rm $OFGW_HOME/ofgwconf/license/OFGWLicense
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/OFGWLicense $OFGW_HOME/ofgwconf/license/OFGWLicense
+        ln -s $licenses_folder/OFGWLicense $OFGW_HOME/ofgwconf/license/OFGWLicense
         echo; echo "ofgw"
         ls -lh --color $OFGW_HOME/ofgwconf/license
     fi
   fi
   # OF Manager
-  if [ -d $OFMANAGER_HOME ]
+  if [[ -d $OFMANAGER_HOME ]]
   then
-    if [ -f $OFMANAGER_HOME/license/OFManagerLicense ] || [ -L $OFMANAGER_HOME/license/OFManagerLicense ]
+    if [[ -f $OFMANAGER_HOME/license/OFManagerLicense ]] || [[ -L $OFMANAGER_HOME/license/OFManagerLicense ]]
     then
         rm $OFMANAGER_HOME/license/OFManagerLicense
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/OFManagerLicense $OFMANAGER_HOME/license/OFManagerLicense
+        ln -s $licenses_folder/OFManagerLicense $OFMANAGER_HOME/license/OFManagerLicense
         echo; echo "ofmanager"
         ls -lh --color $OFMANAGER_HOME/license
     fi
   fi
   # OF Miner
-  if [ -d $OFMINER_HOME ]
+  if [[ -d $OFMINER_HOME ]]
   then
-    if [ -f $OFMINER_HOME/license/OFMinerLicense ] || [ -L $OFMINER_HOME/license/OFMinerLicense ]
+    if [[ -f $OFMINER_HOME/license/OFMinerLicense ]] || [[ -L $OFMINER_HOME/license/OFMinerLicense ]]
     then
         rm $OFMINER_HOME/license/OFMinerLicense
-        ln -s $HOME_DIRECTORY/tmaxsw/licenses/OFMinerLicense $OFMINER_HOME/license/OFMinerLicense
+        ln -s $licenses_folder/OFMinerLicense $OFMINER_HOME/license/OFMinerLicense
         echo; echo "ofminer"
         ls -lh --color $OFMINER_HOME/license
     fi
@@ -185,13 +188,13 @@ fi
 #==========
 # JEUS 8
 #==========
-if [ -d $JEUS_HOME/../jeus8 ]
+if [[ -d $JEUS_HOME/../jeus8 ]]
 then
     # JEUS itself
-  if [ -f $JEUS_HOME/../jeus8/license/license ] || [ -L $JEUS_HOME/../jeus8/license/license ]
+  if [[ -f $JEUS_HOME/../jeus8/license/license ]] || [[ -L $JEUS_HOME/../jeus8/license/license ]]
   then
       rm $JEUS_HOME/../jeus8/license/license
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/license $JEUS_HOME/../jeus8/license/license
+      ln -s $licenses_folder/license $JEUS_HOME/../jeus8/license/license
       echo; echo "jeus 8"
       ls -lh --color $JEUS_HOME/../jeus8/license
   fi
@@ -200,12 +203,12 @@ fi
 #==========
 # OFStudio
 #==========
-if [ -d $OFGDB_HOME ]
+if [[ -d $OFGDB_HOME ]]
 then
-  if [ -f $OFGDB_HOME/license/OpenStudioLicense ] || [ -L $OFGDB_HOME/license/OpenStudioLicense ]
+  if [[ -f $OFGDB_HOME/license/OpenStudioLicense ]] || [[ -L $OFGDB_HOME/license/OpenStudioLicense ]]
   then
       rm $OFGDB_HOME/license/OpenStudioLicense
-      ln -s $HOME_DIRECTORY/tmaxsw/licenses/OpenStudioLicense $OFGDB_HOME/license/OpenStudioLicense
+      ln -s $licenses_folder/OpenStudioLicense $OFGDB_HOME/license/OpenStudioLicense
       echo; echo "ofstudio"
       ls -lh --color $OFGDB_HOME/license
   fi
