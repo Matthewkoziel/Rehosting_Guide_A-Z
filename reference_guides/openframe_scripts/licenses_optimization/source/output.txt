@@ -1,0 +1,69 @@
+
+Starting removing license files and creating symbolic links instead...
+
+Please verify below if everything looks correct:
+
+TMAX
+total 0
+lrwxrwxrwx. 1 oframe mqm 37 Feb 11 09:47 license.dat -> /opt/tmaxsw/licenses/tmax/license.dat
+
+OpenFrame products
+total 0
+lrwxrwxrwx. 1 oframe mqm 42 Feb 11 09:47 licbase.dat -> /opt/tmaxsw/licenses/openframe/licbase.dat
+lrwxrwxrwx. 1 oframe mqm 42 Feb 11 09:47 lichidb.dat -> /opt/tmaxsw/licenses/openframe/lichidb.dat
+lrwxrwxrwx. 1 oframe mqm 41 Feb 11 09:47 licosc.dat -> /opt/tmaxsw/licenses/openframe/licosc.dat
+lrwxrwxrwx. 1 oframe mqm 41 Feb 11 09:47 licosi.dat -> /opt/tmaxsw/licenses/openframe/licosi.dat
+lrwxrwxrwx. 1 oframe mqm 42 Feb 11 09:47 lictacf.dat -> /opt/tmaxsw/licenses/openframe/lictacf.dat
+lrwxrwxrwx. 1 oframe mqm 42 Feb 11 09:47 lictjes.dat -> /opt/tmaxsw/licenses/openframe/lictjes.dat
+
+prosort
+total 0
+lrwxrwxrwx. 1 oframe mqm 40 Feb 11 09:47 license.xml -> /opt/tmaxsw/licenses/prosort/license.xml
+
+protrieve
+total 0
+lrwxrwxrwx. 1 oframe mqm 32 Feb 11 09:47 licprot.dat -> /opt/tmaxsw/licenses/licprot.dat
+
+ofcobol
+total 0
+drwxrwxr-x. 2 oframe mqm 21 Jan 20 18:11 decnumber
+drwxrwxr-x. 2 oframe mqm 21 Jan 20 18:11 jsoncpp
+lrwxrwxrwx. 1 oframe mqm 33 Feb 11 09:47 licofcob.dat -> /opt/tmaxsw/licenses/licofcob.dat
+drwxrwxr-x. 2 oframe mqm 25 Jan 20 18:11 llvm
+
+ofpli
+total 4.0K
+-rwxrwxr-x. 1 oframe mqm 3.3K Jan 20 18:15 LICENSE.TXT
+lrwxrwxrwx. 1 oframe mqm   33 Feb 11 09:47 licofpli.dat -> /opt/tmaxsw/licenses/licofpli.dat
+
+jeus 7
+total 0
+lrwxrwxrwx. 1 oframe mqm 28 Feb 11 09:47 license -> /opt/tmaxsw/licenses/license
+
+ofgw
+total 0
+lrwxrwxrwx. 1 oframe mqm 32 Feb 11 09:47 OFGWLicense -> /opt/tmaxsw/licenses/OFGWLicense
+
+ofmanager
+total 0
+lrwxrwxrwx. 1 oframe mqm  37 Feb 11 09:47 OFManagerLicense -> /opt/tmaxsw/licenses/OFManagerLicense
+drwxrwx--x. 2 oframe mqm 154 Jan 20 18:50 oss_license
+
+ofminer
+total 0
+lrwxrwxrwx. 1 oframe mqm 35 Feb 11 09:47 OFMinerLicense -> /opt/tmaxsw/licenses/OFMinerLicense
+
+jeus 8
+total 0
+lrwxrwxrwx. 1 oframe mqm 28 Feb 11 09:47 license -> /opt/tmaxsw/licenses/license
+
+ofstudio
+total 92K
+-rwxrwxr-x. 1 oframe mqm  18K Jan 21 14:26 COPYING
+-rwxrwxr-x. 1 oframe mqm  35K Jan 21 14:26 COPYING3
+-rwxrwxr-x. 1 oframe mqm 7.5K Jan 21 14:26 COPYING3.LIB
+-rwxrwxr-x. 1 oframe mqm  25K Jan 21 14:26 COPYING.LIB
+lrwxrwxrwx. 1 oframe mqm   38 Feb 11 09:47 OpenStudioLicense -> /opt/tmaxsw/licenses/OpenStudioLicense
+
+Done! All licenses updated.
+

@@ -29,27 +29,39 @@ folder_generation(){
 #                   SCRIPTS FOLDERS                                          #
 ##############################################################################" >> $output_file
   # OpenFrame
-  if [ ! -d $OPENFRAME_HOME/scripts/custom ]
+  if [[ ! -d $OPENFRAME_HOME/scripts/custom ]]
   then
     mkdir $OPENFRAME_HOME/scripts/custom
     echo 'export PATH=$OPENFRAME_HOME/scripts/custom:$PATH' >> $output_file
     echo "scripts/custom folder in OPENFRAME_HOME generated!"
+    if [[ -d $HOME_DIRECTORY/tmaxsw/scripts/openframe ]]
+    then
+      echo "Copy of your custom scripts to $OPENFRAME_HOME/scripts/custom"
+      cp -rT $HOME_DIRECTORY/tmaxsw/scripts/openframe $OPENFRAME_HOME/scripts/custom
+    fi
   else
     echo "The folder already exist!"
   fi
 
   # JEUS 7
-  if [ ! -d $JEUS_HOME/scripts ]
+  if [[ ! -d $JEUS_HOME/scripts ]]
   then
     mkdir $JEUS_HOME/scripts
     echo 'export PATH=$JEUS_HOME/scripts:$PATH' >> $output_file
     echo "scripts folder in JEUS_HOME (jeus7) generated!"
+    if [[ -d $HOME_DIRECTORY/tmaxsw/scripts/jeus/jeus7 ]]
+    then
+      echo "Copy of your custom scripts to $JEUS_HOME/scripts"
+      cp -rT $HOME_DIRECTORY/tmaxsw/scripts/jeus/jeus7 $JEUS_HOME/scripts
+    fi
   else
     echo "The folder already exist!"
   fi
   
   . ~/.bash_profile
-  echo "Please run the command echo \$PATH. If it is not up to date, please execute the bash profile"
+  echo "
+  Please run the command echo \$PATH. If it is not up to date, please execute the bash profile
+  "
 }
 
 ####################################################################################
@@ -57,7 +69,5 @@ folder_generation(){
 ####################################################################################
 main(){
   folder_generation ~/.bash_profile
-  cp -rT $HOME_DIRECTORY/tmaxsw/scripts/jeus/jeus7 $JEUS_HOME/scripts
-  cp -rT $HOME_DIRECTORY/tmaxsw/scripts/openframe $OPENFRAME_HOME/scripts/custom
 }
 main

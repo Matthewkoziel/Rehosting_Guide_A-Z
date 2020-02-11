@@ -1,0 +1,50 @@
+
+		>> The server ofgw_svr is running, the status is 1
+		
+Shutdown Managed Server: ofgw_svr
+****************************************************************************
+  - Usage : stopServer -host host:port -u username -p password 
+****************************************************************************
+Attempting to connect to ofdemo:9746.
+The connection has been established to the managed server ofgw_svr in the domain jeus_domain.
+The server [ofgw_svr] has been shut down successfully.
+
+		>> The server ofmgr_svr is running, the status is 1
+		
+Shutdown Managed Server: ofmgr_svr
+****************************************************************************
+  - Usage : stopServer -host host:port -u username -p password 
+****************************************************************************
+Attempting to connect to ofdemo:9756.
+The connection has been established to the managed server ofmgr_svr in the domain jeus_domain.
+The server [ofmgr_svr] has been shut down successfully.
+
+		>> The server ofminer_svr is running, the status is 1
+		
+Shutdown Managed Server: ofminer_svr
+****************************************************************************
+  - Usage : stopServer -host host:port -u username -p password 
+****************************************************************************
+Attempting to connect to ofdemo:9766.
+The connection has been established to the managed server ofminer_svr in the domain jeus_domain.
+The server [ofminer_svr] has been shut down successfully.
+
+		>> The server nodemanager is running, the status is 1
+		
+Shutdown Node Manager: nodemanager
+****************************************************************************
+  - Usage : stopNodeManager -host host -port port 
+****************************************************************************
+Succeed to stop the node manager.
+
+		>> The server adminServer is running, the status is 1
+		
+Shutdown Domain Admin Server: adminServer
+Attempting to connect to 127.0.0.1:9736.
+The connection has been established to Domain Administration Server adminServer in the domain jeus_domain.
+The server [adminServer] has been shut down successfully.
+
+	jps command:
+	
+8980 Jps
+All servers shutdown successfully!

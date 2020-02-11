@@ -1,0 +1,46 @@
+
+  ===============================================
+  |              LICENSES CHECK                 |
+  ===============================================
+  
+TIBERO   Expiration date:     2020/06/17
+-------------------------------------------------------------
+TMAX     Expiration date:     2020/02/18
+-------------------------------------------------------------
+BASE     Expiration date:     2020/03/18
+BATCH    Expiration date:     2020/03/18
+TACF     Expiration date:     2020/03/18
+OSC      Expiration date:     2020/03/18
+HiDB     Expiration date:     2020/03/18
+OSI      Expiration date:     2020/03/18
+-------------------------------------------------------------
+PROSORT  Expiration date:     2020/03/17
+PROSORT  Duration:            90 days
+-------------------------------------------------------------
+OFCOBOL  Expiration date:     2020/03/18
+OFPLI    Expiration date:     2020/03/18
+-------------------------------------------------------------
+JEUS     Expiration date:     2020/02/18
+OFGW     Expiration date:     2020/03/18
+OFMGR    Expiration date:     2020/03/18
+
+===============================================
+The order for licenses expiration is:
+  
+JEUS     Expiration date:     2020/02/18
+TMAX     Expiration date:     2020/02/18
+PROSORT  Expiration date:     2020/03/17
+BASE     Expiration date:     2020/03/18
+BATCH    Expiration date:     2020/03/18
+HiDB     Expiration date:     2020/03/18
+OFCOBOL  Expiration date:     2020/03/18
+OFGW     Expiration date:     2020/03/18
+OFMGR    Expiration date:     2020/03/18
+OFPLI    Expiration date:     2020/03/18
+OSC      Expiration date:     2020/03/18
+OSI      Expiration date:     2020/03/18
+TACF     Expiration date:     2020/03/18
+TIBERO   Expiration date:     2020/06/17
+===============================================
+The earliest date for license expiration is 2020/02/18.
+Make sure to ask for license renewal 2 weeks prior this date.

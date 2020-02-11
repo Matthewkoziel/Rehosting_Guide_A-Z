@@ -1,0 +1,604 @@
+
+    ===============================================
+    |              VERSIONS CHECK                 |
+    ===============================================
+  
+
+    -----------------------------------------------
+            Tibero                                
+    -----------------------------------------------
+    
+Tibero 6   (DB 6.0 FS06_CS_1806)
+
+    -----------------------------------------------
+              OpenFrame components
+    -----------------------------------------------
+    
+ofversion version 7.0.3(2) obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+Print OpenFrame Version Information
+
+OpenFrame Solution is Composed of
+- OpenFrame/Base 7 Fix#3 64bit
+- OpenFrame/Batch MVS 7 Fix#3 64bit
+- OpenFrame/TACF 7 Fix#3 64bit
+- OpenFrame/OSC 7 Fix#3 64bit
+- OpenFrame/OSI 7.1 64bit
+- OpenFrame/HiDB 7.1 64bit Tibero
+
+More details about TMAX
+Boot Tool for TMAX Version 5.0 SP #2 Fix #4 r11183 fd(8192) 64bit binary for x86 Linux kernel 2.6, glibc 2.3 (patch) 
+More details about OSC
+oscboot version 7.0.3(16) obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+
+    -----------------------------------------------
+              Prosort
+    -----------------------------------------------
+    
+ProSort 2.0.0 SP3
+Build Date: Aug 24 2018
+Revision: 2167
+
+    -----------------------------------------------
+              Protrieve
+    -----------------------------------------------
+    
+ProTrieve 2.1
+Copyright (C) 2018 TMAXSOFT RESERVED
+ProTrieve 2.0.17.289
+commit ID: 35839e0
+Copyright (C) 2018 TMAXSOFT RESERVED
+
+    -----------------------------------------------
+              OFCOBOL
+    -----------------------------------------------
+    
+OpenFrame COBOL Compiler 4 
+Revision : 472
+CommitID : c20ee10
+
+    -----------------------------------------------
+              OFPLI
+    -----------------------------------------------
+    
+OpenFrame PL/I Compiler 3
+Revision: 427
+CommitID: 6ca0580
+
+    -----------------------------------------------
+              OFASM
+    -----------------------------------------------
+    
+OpenFrame Assembler 4
+Revision: 525
+CommitID: 87ee037
+
+    -----------------------------------------------
+              JEUS 7
+    -----------------------------------------------
+    
+7.0.0.4-b214
+
+      OFGateway
+var ofwt_version = "v7r8335";
+
+      OFManager
+"Version": "OFMANAGER-7-20180919-01",
+
+      OFMiner
+ofminer.version = OpenFrame Miner 7 Fix#1
+ofminer.buildID = 20180918-001
+
+    -----------------------------------------------
+              OF Studio
+    -----------------------------------------------
+    
+GNU gdbserver (GDB) 7.7
+Copyright (C) 2014 Free Software Foundation, Inc.
+gdbserver is free software, covered by the GNU General Public License.
+This gdbserver was configured as "x86_64-unknown-linux-gnu"
+
+    -----------------------------------------------
+              JEUS 8
+    -----------------------------------------------
+    
+8.0.0.1-b162106
+
+      Pro Object 7
+proobject-runtime-war-7.0.0.1.228.war
+-rwxr-xr-x. 1 ofjeus8 mqm 416735 Jun 28  2019 /opt/tmaxui/proobject7/application/of8/servicegroup/ispf/ispf-1.0.jar
+-rwxr-xr-x. 1 ofjeus8 mqm 5213 Jun 26  2019 /opt/tmaxui/proobject7/application/of8/common/lib/ispf-common-1.0.jar
+-rwxr-xr-x. 1 ofjeus8 mqm 3280 Jun 26  2019 /opt/tmaxui/proobject7/application/of8/event/ispf-websocket-1.0.jar
+
+      ISPF
+-rwxr-xr-x. 1 ofjeus8 mqm 4767728 Jun 28  2019 /opt/tmaxui/ispf_migration/parser/lib/messageParser.jar
+-rwxr-xr-x. 1 ofjeus8 mqm 5644319 Jun 28  2019 /opt/tmaxui/ispf_migration/parser/lib/panelParser.jar
+-rwxr-xr-x. 1 ofjeus8 mqm 82916 Jun 26  2019 /opt/tmaxui/ispf_migration/parser/lib/skelparser.jar
+-rwxr-xr-x. 1 ofjeus8 mqm 2452448 Jun 28  2019 /opt/tmaxui/ispf_migration/parser/bin/clist_parser
+
+    -----------------------------------------------
+              offile
+    -----------------------------------------------
+    
+/opt/tmaxapp/OpenFrame/bin
+acbgen version 7.1.0(6), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+acp2xml version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+adl2xml version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+baseinit version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+basever version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+batchinit version 7.0.3(7), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+cob85info version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+cobgensch version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+cobinfo version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+cobolprep version 7.0.3(6), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+conprt version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+cpmmgr version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+cpsmprep version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+dbdcpybkgen version 7.1.0(11), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+dbdgen version 7.1.0(27), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+dfsuocu0 version 7.1.0(14), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+dlclean version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+dlupdate version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+dscopy version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dscreate version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsdelete version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsedit version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dslist version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsload version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsmigin version 7.0.3(6), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsmigout version 7.0.3(7), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsmove version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dssave version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsshm version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dstouch version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+dsview version 7.0.3(4), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+enpasswd version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+excicblpp version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+gdgcreate version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+gdgdelete version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+hcob85c version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+hdgensch version 7.1.0(13), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hdload version 7.1.0(13), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hdpcdf01 version 7.1.0(6), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbcmd version 7.1.0(9), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbinit version 7.1.0(8), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbmgr version 7.1.0(23), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbptrmgr version 7.1.0(16), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbreconv version 7.1.0(1), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+hidbver version 7.1.0(1), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+icfdump version 7.0.3(4), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+icfload version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+idcams version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ikjana version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+imscmd version 7.1.0(23), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+imsdaloc version 7.1.0(1), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+jclview version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+listcat version 7.0.3(8), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+listvol version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+lockm version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+macroprep version 7.0.3(10), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+mscadjust version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+mscasmc version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+mscmapc version 7.0.3(9), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+mscmapupdate version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+mspana version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+mvsana version 7.0.3(18), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+mvsver version 7.0.3(3), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ofconfig version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+oferror version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+offile version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofversion version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+oscadmin version 7.0.3(10), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscappbuild version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscboot version 7.0.3(16), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscbuild version 7.0.3(8), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osccblpp version 7.0.3(14), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osccheck version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osccobprep version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osccprep version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscdct2rd version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscdown version 7.0.3(16), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscjct2rd version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscplipp version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscpltc version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscresp version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscrpt version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscrtsddump version 7.0.3(12), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscrtsdupdate version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscruntran version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscscview version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscsddump version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscsdgen version 7.0.3(8), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctdlinit version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctdlrm version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctdlupdate version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctsqcheck version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctxadm version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscver version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscxltc version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osiboot version 7.1.0(32), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osidown version 7.1.0(34), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osiluadm version 7.1.0(12), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osimfsgen version 7.1.0(65), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osirtmgr version 7.1.0(20), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osisddump version 7.1.0(13), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osisdgen version 7.1.0(18), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osisecgen version 7.1.0(15), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osivddump version 7.1.0(5), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osivdgen version 7.1.0(16), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osiver version 7.1.0(0), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+pdsgen version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+pligensch version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+prtrun version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+psbcpybkgen version 7.1.0(6), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+psbgen version 7.1.0(20), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+safp version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+schinfo version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+smfmgr version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+spfedit version 7.0.3(4), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+sqlgensch version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+tacfinit version 7.0.3(8), obuild@tplinux64:ofsrc7/tacf(#1) 2018-09-17 14:35:07
+tacflogin version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+tacfmgr version 7.0.3(16), obuild@tplinux64:ofsrc7/tacf(#1) 2018-09-17 14:35:07
+tacfver version 7.0.3(3), obuild@tplinux64:ofsrc7/tacf(#1) 2018-09-17 14:35:07
+tconmgr version 7.0.3(11), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+textrun version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+tjclrun version 7.0.3(64), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+tjesinit version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+tjesmgr version 7.0.3(35), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+tsomapgen version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+voladd version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+vos3ana version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+vtamadm version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+vtamcmd version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+vtamdump version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+vtamgen version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+xspana version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+
+  
+  
+/opt/tmaxapp/OpenFrame/core/appbin
+clihdrshm no version found
+clihdrshmd no version found
+clihdrshmg no version found
+clihdrshmgd no version found
+ISPF version 7.0.0(1), oframe@oframe:o7_src/ispf(#1) 2019-07-03 18:10:20
+ISPFTACF version 7.0.0(1), oframe@oframe:o7_src/ispf(#1) 2019-07-02 05:16:18
+obmjhist version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmjinit version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmjmsvr version 7.0.3(42), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmjschd version 7.0.3(5), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmjspbk version 7.0.3(12), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmjtimr version 7.0.3(3), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmnjgw version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmtscmd version 7.0.3(4), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+obmtsmgr version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ofrcmsvr version 7.0.3(15), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofrdmsvr version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofrdsedt version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofrlhsvr version 7.0.3(10), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofrpmsvr version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ofrsasvr version 7.0.3(6), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofrsmlog version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofruisvr version 7.0.3(34), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+ofstudio version 7.0.3(11207M), obuild@tplinux64:ofsrc7/ofstudio(#1) 2018-09-10 14:00:12
+osccptmr version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscdfsvr version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscjcsvr version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscmcsvr version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscmgr version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscmnsvr version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscncsvr version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+OSCOIVP1 no version found
+oscolsvr version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscossvr version 7.0.3(32), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+oscscsvr version 7.0.3(8), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osctlsvr version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+osi3270gw version 7.1.0(53), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osibmpsv version 7.1.0(52), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osicmdsv version 7.1.0(44), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+OSIMPPSVR version 7.1.0(5), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+osisschd version 7.1.0(155), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+rcal no version found
+rcald no version found
+rcalg no version found
+rcalgd no version found
+serialgw no version found
+serialgwd no version found
+serialgwg no version found
+serialgwgd no version found
+tcpgwlsn no version found
+tcpgwlsnd no version found
+tcpgwlsng no version found
+tcpgwlsngd no version found
+tmsvr version 7.0.3(17), obuild@tplinux64:ofsrc7/tacf(#1) 2018-09-17 14:35:07
+TPFMAGENT no version found
+TPFMAGENTg no version found
+vtammgr version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+
+  
+  
+/opt/tmaxapp/OpenFrame/lib
+DFHADMIN.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHCSPG.so version 7.0.3(7), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHDYP.so version 7.0.3(0), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHMIRS.so version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHP3270.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHSIPLT.so version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DFHWBXN.so version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+DSNTIAR.so version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+EZASOCK.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IGZCA2D.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IGZEDT4.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IKCONN.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ILBOABN0.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+KSCONV.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libacp.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libadjust.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libadl.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libams.so version 7.0.3(21), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libamsx.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libapi3270.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libaschk.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libbspprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libcicsappc.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsbms.so version 7.0.3(32), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsbts.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsch.so version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsci.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicscli.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicscmdprep.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicscmdpsr.so version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsconf.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicscon.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicscpt.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsctrl.so version 7.0.3(19), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsdb.so version 7.0.3(12), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsdcc.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsdlic.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsds.so version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsecpi.so version 7.0.3(10), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsedf.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsenv.so version 7.0.3(7), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsexci.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicseza.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsfc.so version 7.0.3(12), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsjc.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicslog.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsmc.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcics.mfcob version 7.0.3(60), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsmsc.so version 7.0.3(4), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsncs.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcics.nocob version 7.0.3(60), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcics.ofcob version 7.0.3(60), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsolog.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsprep.so version 7.0.3(15), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsracf.so version 7.0.3(9), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsremote.so version 7.0.3(6), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsres.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsrtsd.so version 7.0.3(10), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicssc.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicssd.so version 7.0.3(13), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsshm.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcics.so version 7.0.3(60), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsspi.so version 7.0.3(11), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicssp.so version 7.0.3(3), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicstc.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicstdq.so version 7.0.3(9), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicsterm.so version 7.0.3(17), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicstsq.so version 7.0.3(14), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libcicswebsvc.so version 7.0.3(1), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libclistpar.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libcob85p.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libcobpar.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libcobsw.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libconbatch.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libconcli.so version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libcpm.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libcpsmapi.so version 7.0.3(2), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libdbio.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libdfltprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libdrvpro.so version 7.0.3(9), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libdsalc.so version 7.0.3(23), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libdscom.so version 7.0.3(9), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libdsio.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libdsnpar.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libeventcli.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libeventpar.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libezextfh.so version 7.0.3(7), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libgem3.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libhcob85p.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libhcob85.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libhicom.so version 7.1.0(82), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbddl.so version 7.1.0(67), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbdli.so version 7.1.0(10), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbdml.so version 7.1.0(162), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbdmltbr.so version 7.1.0(162), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbloader.so version 7.1.0(5), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidb.so version 7.1.0(62), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libhidbtbr.so version 7.1.0(62), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libicf.so version 7.0.3(20), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libimsbase.so version 7.1.0(57), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libimsbasetbr.so version 7.1.0(57), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libimscdli.so version 7.1.0(7), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libimscics.so version 7.1.0(1), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libimscmd.so version 7.1.0(86), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libimsctrl.so version 7.1.0(4), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libimsdli.so version 7.1.0(1), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+libinfoprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libintrdr.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libirdrprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libisplink.so version 7.0.0(1), oframe@oframe:o7_src/ispf(#1) 2019-07-03 18:10:20
+libjclcom.so version 7.0.3(4), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libjclparser.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libjmcliout.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libjmcli.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libjobattr.so version 7.0.3(4), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+liblockm.so version 7.0.3(16), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+liblrsprt.so version 7.0.3(5), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libmemm.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libmqnio.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libmspjcl.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libmspmac.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libmvsjcl.so version 7.0.3(17), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libmvssys.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libnvsm.so version 7.0.3(6), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libobmezasock.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libodbc.so no version found
+libofbeparm.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofbfile.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libofbgpar.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libofbwc.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libofcee.so version 7.0.3(7), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofcom.so version 7.0.3(26), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofdebug.so version 7.0.3(11207M), obuild@tplinux64:ofsrc7/ofstudio(#1) 2018-09-10 14:00:12
+libofdlopen.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofezaci.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libofftp.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofgast.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofgpar2.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofgpar.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+liboflic.so version 7.0.3(3), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofonline.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofschema.so version 7.0.3(59), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libofstudio.so version 7.0.3(11207M), obuild@tplinux64:ofsrc7/ofstudio(#1) 2018-09-10 14:00:12
+liboscspi.so version 7.0.3(16), obuild@tplinux64:ofsrc7/osc(#1) 2018-09-19 21:03:58
+libosibase.so version 7.1.0(15), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosicbltdli.so version 7.1.0(47), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosici.so version 7.1.0(12), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosiclass.so version 7.1.0(24), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosiconf.so version 7.1.0(11), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosictrl.so version 7.1.0(42), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosida.so version 7.1.0(80), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosiddtab.so version 7.1.0(4), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosidl.so version 7.1.0(36), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosids.so version 7.1.0(22), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosilog.so version 7.1.0(15), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosimfd.so version 7.1.0(20), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosimfs.so version 7.1.0(138), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosimod.so version 7.1.0(10), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosimq.so version 7.1.0(32), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosiplitdli.so version 7.1.0(8), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosipsb.so version 7.1.0(30), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosires.so version 7.1.0(38), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosirtsd.so version 7.1.0(24), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosirtsec.so version 7.1.0(19), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosisd.so version 7.1.0(38), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosisec.so version 7.1.0(14), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosishm.so version 7.1.0(19), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosisvccall.so version 7.1.0(18), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosisvr.so version 7.1.0(61), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libositacf.so version 7.1.0(5), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosivtamds.so version 7.1.0(14), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libosivtam.so version 7.1.0(25), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libpgmdd.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libpmsprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libsafexit.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libsaf.so version 7.0.3(12), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libscs.so version 7.1.0(3), obuild@tplinux64:ofsrc7/osi(#1) 2018-09-17 18:05:04
+libsfzpolib.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libsmf.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libsms.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libsortcom.so version 7.0.3(11), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libsortpar.so version 7.0.3(21), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libspinlock.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libspio.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libspool.so version 7.0.3(25), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libssprt.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libsteprpt.so version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libsvrcom.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libswdummy.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libswmfcob.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libswntcob.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libswofcob.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtacf.so version 7.0.3(41), obuild@tplinux64:ofsrc7/tacf(#1) 2018-09-17 14:35:07
+libtcfh.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtcobfh.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtcobsm.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtdbconndummy.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtdbconnsw.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtdbconntbr6.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtdcb.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextfh2.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextfh3.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextfh.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextsm2.so version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextsm3.so version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtextsm.so version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtfcd2.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtfcd3.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtfcdhcob85.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtfcd.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtjesrpt.so version 7.0.3(3), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libtjesrsc.so version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libtjes.so version 7.0.3(38), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libtplifh.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtsam.so version 7.0.3(14), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtsomap.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libtsopar.so version 7.0.3(4), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtso.so version 7.0.3(55), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+libtstbr6.so version 7.0.3(14), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libtsys.so version 7.0.3(13), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libttree.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvolm.so version 7.0.3(11), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvos3jcl.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtamdb.so version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtamds.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtamdstr.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtamlog.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtammacro.so version 7.0.3(2), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtamosc.so version 7.0.3(1), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libvtam.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libwebde.so version 7.0.3(5), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libxspjcl.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+libxspmac.so version 7.0.3(0), obuild@tplinux64:ofsrc7/base(#1) 2018-09-17 12:26:40
+WAASABND.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+WAASDATE.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+WAASDSIF.so version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+
+  
+  
+/opt/tmaxapp/OpenFrame/util
+ADAPT version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ADRDSSU version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DFHJUP version 7.0.3(3), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DFSDDLT0 version 7.1.0(12), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+DFSMVRC0 version 7.1.0(2), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+DFSORT version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DFSRRC00 version 7.1.0(17), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+DFSURGL0 version 7.1.0(22), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+DFSURGU0 version 7.1.0(13), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+DSDIFF version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DSNTEP2 version 7.0.3(10), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DSNTEP4 version 7.0.3(10), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DSNTIAD version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DSNUTILB version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DVGXFIN version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+DVGXFOUT version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+EZTPA00 version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+FTP version 7.0.3(15), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ICEGENER version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ICETOOL version 7.0.3(5), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IDCAMS version 7.0.3(14), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBCOMPR version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBCOPY version 7.0.3(2), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBDG version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBEDIT version 7.0.3(4), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBGENER version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBPTPCH version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEBUPDTE version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEFBR14 version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEHLIST version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IEHPROGM version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IFASMFDP version 7.0.3(0), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IIUSTART version 7.1.0(8), obuild@tplinux64:ofsrc7/ims(#2) 2017-11-28 23:27:43
+IKJEFT01 version 7.0.3(3), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IKJEFT1A version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+IKJEFT1B version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+ISRSUPC version 7.0.3(4), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+MTPBATCH version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+PGMRTS00 version 7.0.3(9), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+SDSF version 7.0.3(1), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+SORT version 7.0.3(8), obuild@tplinux64:ofsrc7/batch(#1) 2018-09-17 14:35:03
+
+  
+  

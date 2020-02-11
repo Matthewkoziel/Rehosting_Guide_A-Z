@@ -27,7 +27,7 @@ stop_server(){
 
 	# If the server we're checking is nodemanager, we need to use a different command to check
 	# that the process is already running or not
-	if [ "${server_name}" = "nodemanager" ]
+	if [[ ${server_name} = "nodemanager" ]]
 	then
 		server_running=$(ps -ef | grep jeus7 | grep nodemanager | wc -l)
 	else
@@ -35,18 +35,18 @@ stop_server(){
 	fi
 
 	# Shutdown process
-	if [ "${server_running}" = "1" ]
+	if [[ ${server_running} = "1" ]]
 	then
 		echo "
 		>> The server ${server_name} is running, the status is ${server_running}
 		"
-		if [ "${server_name}" = "adminServer" ]
+		if [[ ${server_name} = "adminServer" ]]
 		then
 			# Domain Admin Server shutdown
 			echo "Shutdown Domain Admin Server: ${server_name}"
 			jeusadmin -u ${jeus_admin} -p ${jeus_admin_pass} local-shutdown
 			#stopServer -host ${host_dom_admin} -u ${jeus_admin} -p ${jeus_admin_pass}
-		elif [ "${server_name}" = "nodemanager" ]
+		elif [[ ${server_name} = "nodemanager" ]]
 		then
 			# Node Manager shutdown
 			echo "Shutdown Node Manager: ${server_name}"
@@ -66,14 +66,17 @@ stop_server(){
 #FUNCTION: main
 ####################################################################################
 main(){
-	source $JEUS_HOME/scripts/.j7_user_pass
+	source .j7_user_pass
 	stop_server ofgw_svr 9746
 	stop_server ofmgr_svr 9756
 	stop_server ofminer_svr 9766
 	# Depending on your configuration, you may comment the following line
 	stop_server nodemanager 7730
 	stop_server adminServer
-	sleep 3
+	sleep 6
+	echo "
+	jps command:
+	"
 	jps
 	echo "All servers shutdown successfully!"
 }
