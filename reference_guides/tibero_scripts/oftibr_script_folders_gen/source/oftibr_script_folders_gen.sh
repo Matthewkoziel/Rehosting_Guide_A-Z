@@ -34,12 +34,19 @@ folder_generation(){
     mkdir $TB_HOME/scripts/custom
     echo 'export PATH=$TB_HOME/scripts/custom:$PATH' >> $output_file
     echo "scripts/custom folder in TB_HOME generated!"
+    if [[ -d $HOME_DIRECTORY/tmaxsw/scripts/tibero ]]
+    then
+      echo "Copy of your custom scripts to $TB_HOME/scripts/custom"
+      cp $HOME_DIRECTORY/tmaxsw/scripts/tibero/* $TB_HOME/scripts/custom
+    fi
   else
     echo "The folder already exist!"
   fi
   
   . ~/.bash_profile
-  echo "Please run the command echo \$PATH. If it is not up to date, please execute the bash profile"
+  echo "
+  Please run the command echo \$PATH. If it is not up to date, please execute the bash profile
+  "
 }
 
 ####################################################################################
@@ -47,6 +54,5 @@ folder_generation(){
 ####################################################################################
 main(){
   folder_generation ~/.bash_profile
-  cp $HOME_DIRECTORY/tmaxsw/scripts/tibero/* $TB_HOME/scripts/custom
 }
 main

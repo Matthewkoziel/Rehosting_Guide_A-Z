@@ -23,7 +23,7 @@ start_server(){
 
 	# If the server we're checking is nodemanager, we need to use a different command to check
 	# that the process is already running or not
-	if [ "${server_name}" = "nodemanager" ]
+	if [[ ${server_name} = "nodemanager" ]]
 	then
 		server_running=$(ps -ef | grep jeus7 | grep nodemanager | wc -l)
 	else
@@ -31,17 +31,17 @@ start_server(){
 	fi
 
 	# Boot process
-	if [ "${server_running}" != "1" ]
+	if [[ ${server_running} != "1" ]]
 	then
 		echo "
 		>> The server ${server_name} is not running, the status is ${server_running}
 		"
-		if [ "${server_name}" = "adminServer" ]
+		if [[ ${server_name} = "adminServer" ]]
 		then
 			# Domain Admin Server boot
 			echo "Starting Domain Admin Server: ${server_name}"
 			startDomainAdminServer -domain $DOMAIN_NAME -u ${jeus_admin} -p ${jeus_admin_pass}
-		elif [ "${server_name}" = "nodemanager" ]
+		elif [[ ${server_name} = "nodemanager" ]]
 		then
 			# Node Manager boot
 			echo "Starting Node Manager: ${server_name}"
@@ -62,13 +62,16 @@ start_server(){
 #FUNCTION: main
 ####################################################################################
 main(){
-	source $JEUS_HOME/scripts/.j7_user_pass
+	source .j7_user_pass
 	start_server adminServer
 	start_server nodemanager
 	start_server ofgw_svr
 	start_server ofmgr_svr
 	start_server ofminer_svr
 	sleep 3
+	echo "
+	jps command:
+	"
 	jps
 	echo "All servers booted successfully!"
 }
