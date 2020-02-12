@@ -111,7 +111,7 @@
 
 **Reference Documents:** 
 
-  - "#TODO: How to use tmadmin"
+  - "[How to use tmadmin](./reference_guides/tmadmin/README.md)"
   - "#TODO: How to boot and shutdown OpenFrame"
   - "#TODO: How to boot and shutdown Jeus and Managed Servers"
   - "#TODO: How to Submit Sample JCL"
