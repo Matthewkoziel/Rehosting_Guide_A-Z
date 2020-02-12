@@ -32,6 +32,8 @@
 
 *   IMS And/Or CICS Region Configuration
 
+*   [Initiator Configuration](./reference_guides/openframe_config/initiator_config/README.md)
+
 [**Reference Documents: Post Introduction Questionnaire**](https://forms.tmaxsoft.com/tmaxsoftglobal/form/OpenFrame/formperma/dcfCXyB1IY7ohnkCgnTe7-oGBi6i7rLDSXecQr7_QG8)
 
 ## 1.2 OpenFrame Environment
