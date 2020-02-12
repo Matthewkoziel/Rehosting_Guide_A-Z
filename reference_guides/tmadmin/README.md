@@ -18,6 +18,6 @@ In the example below, you can see that everything related to OSC is in NRDY stat
 
 # Example
 
-[!alt-text](./reference_images/tmadmin_command.PNG)
+![alt-text](./reference_images/tmadmin_command.PNG)
 
-[!alt-text](./reference_images/tmadmin_si.PNG)
+![alt-text](./reference_images/tmadmin_si.PNG)
