@@ -33,6 +33,18 @@ For more information about checking server processes, please see the tmadmin com
 
 # 2. Booting OpenFrame Subsystem for CICS (OSC)
 
+Before booting OSC, you should boot tjes first. To do this, execute the following:
+
+```bash
+tjesmgr boot
+```
+
+If you have multiple nodes, you should pass the NODE you wish to boot, like so:
+
+```bash
+tjesmgr boot NODE={NODE}
+```
+
 If your environment consists of CICS transactions, you will need OSC. To boot OSC, you will use the ```oscboot``` command. This will boot all of the core processes that ```tmboot``` does, but also the OSC core processes as well. 
 
 ## 2.1 Usage
@@ -62,6 +74,18 @@ oscboot -h
 ```
 
 # 3. Booting OpenFrame Subsystem for IMS (OSI)
+
+Before booting OSI, you should boot tjes first. To do this, execute the following:
+
+```bash
+tjesmgr boot
+```
+
+If you have multiple nodes, you should pass the NODE you wish to boot, like so:
+
+```bash
+tjesmgr boot NODE={NODE}
+```
 
 If your environment consists of IMSDB/IMSDC components, you will need OSI. To boot OSI, you will use the ```osiboot``` command. This will boot all of the core processes that ```tmboot``` does, but also the OSI core processes as well.
 
