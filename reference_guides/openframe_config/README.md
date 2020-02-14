@@ -5,9 +5,9 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 # Table of Contents 
 
 - [Batch Related](#1-batch-related)
-  - [ds.conf](11-ds-conf)
-    - [DATASET_DIRECTORY](111-dataset-directory)
-  - [dstool.conf](12-dstool-conf)
+  - [ds.conf](#11-ds-conf)
+    - [DATASET_DIRECTORY](#111-dataset-directory)
+  - [dstool.conf](#12-dstool-conf)
 
 # 1. Batch Related
 
