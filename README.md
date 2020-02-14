@@ -113,9 +113,9 @@
 
   - [How to use tmadmin](./reference_guides/tmadmin/README.md)
   - [How to boot OpenFrame](./reference_guides/openframe_boot/README.md)
-  - #TODO: How to shutdown OpenFrame
-  - #TODO: How to boot and shutdown Jeus and Managed Servers
-  - #TODO: How to Submit Sample JCL
+  - [How to shutdown OpenFrame](./reference_guides/openframe_shutdown/README.md)
+  - [How to boot and shutdown Jeus](./reference_guides/jeus_scripts/jeus7/jboot_jdown/documentation/README.md)
+  - [How to submit JCL and use TJESMGR](./reference_guides/batch/How_to_use_tjesmgr/README.md)
   - #TODO: How to connect to Online Test Region
 
 ***
