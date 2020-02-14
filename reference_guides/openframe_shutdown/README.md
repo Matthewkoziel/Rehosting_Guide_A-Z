@@ -58,7 +58,7 @@ If you want to bring down a specific region,
 oscdown -n {NODE} -r {REGION}
 ```
 
-# 1. Shutting down OpenFrame Core
+# 3. Shutting down OpenFrame Core
 
 If your environment consists of neither OSC or OSI, you will use the ```tmdown``` command to bring down OpenFrame's core processes. 
 
