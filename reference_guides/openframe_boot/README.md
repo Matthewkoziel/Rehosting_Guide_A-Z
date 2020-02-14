@@ -1,6 +1,6 @@
 # OpenFrame Boot Process
 
-Booting OpenFrame consists of executing some basic commands, with some complementary commands depending on if your environment contains online regions, and/or combinations of OSI and OSC.
+Booting OpenFrame consists of executing some basic commands, with some complementary commands depending on if your environment contains online regions, and/or combinations of OSI and OSC. The main note is that the core servers must be booted first, then subsystems after.
 
 **NOTE: You should have tibero booted first before executing these.**
 
