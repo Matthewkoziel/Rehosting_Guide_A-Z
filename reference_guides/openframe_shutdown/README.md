@@ -1,4 +1,4 @@
-# OpenFrame Boot Process
+# OpenFrame Shutdown Process
 
 Shutting down OpenFrame consists of executing some basic commands, with some complementary commands depending on if your environment contains online regions, and/or combinations of OSI and OSC. The main thing to note is that if you have any subsystems, they need to be downed first, then the core system should be downed last.
 
