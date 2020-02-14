@@ -4,10 +4,15 @@
 
 # Table of Contents 
 
-- [Pre-Migration](#1.-pre-migration)
-  * [Mainframe Environment](#11-mainframe-environment)
-  * [OpenFrame Environment](#1.2-openframe-environment)
-    - [Accessing the Linux Server](#121-accessing-the-linux-server)
+- [1. Pre-Migration](#1.-pre-migration)
+  * [1.1 Mainframe Environment](#11-mainframe-environment)
+  * [1.2 OpenFrame Environment](#1.2-openframe-environment)
+    - [1.2.1 Accessing the Linux Server](#121-accessing-the-linux-server)
+      - [1.2.1.1 Accessing a Linux Server built by Rehosting Team](#1211-accessing-a-linux-server-built-by-rehosting-team)
+      - [1.2.1.2 Accessing a Linux Server on the Customer's Private Network](#1212-accessing-a-linux-server-on-the-customers-private-network)
+      - [1.2.1.3 Binary Request](#1213-binary-request)
+      - [1.2.1.4 Licensing](#1214-licensing)
+      - [1.2.1.5 Getting Familiar with Linux](#1215-getting-familiar-with-linux)
 - [Installation](#2-installation)
 - [Discovery](#3-discovery)
     * [OFMiner](#31-ofminer)
@@ -75,6 +80,23 @@
   - Accessing the Linux Server - Complete
 
 **Description:** Licenses will have to be issued for the products to fully operate. Production licenses must be requested through the Global Planning Team. For the licenses, we will need to know the hostname of the server, and in some cases we will also need to know how many cpu's are being used on the server. If you want to know what information you will need for each license, you can go to www.technet.tmaxsoft.com, then click on Demo License Request. This will ask you to fill out a form for each license. The required fields will describe what information you need to know to request the binary.
+
+#### 1.2.1.5 Getting Familiar with Linux
+
+**Description:** As most of the mainframe engineers may not be fully comfortable with Linux already, it is *_HIGHLY_* recommended that you use the below guides to start getting familiar with how to be proficient in Linux. 
+
+**Reference Documents:**
+
+- [Connect to a Server with Putty](./reference_guides/general_linux_knowledge/Connect_To_A_Server_With_PuTTY/README.md)
+- [Core Files](./reference_guides/general_linux_knowledge/Core_Files/README.md)
+- [FTP on OpenFrame](./reference_guides/general_linux_knowledge/FTP_on_OpenFrame/README.md)
+- [Grep Cheat Sheet](./reference_guides/general_linux_knowledge/Grep_Cheat_Sheet/README.md)
+- [How to use rsync](./reference_guides/general_linux_knowledge/How_To_Use_Rsync/README.md)
+- [How to use Screen](./reference_guides/general_linux_knowledge/How_To_Use_Screen/README.md)
+- [Linux Commands Cheat Sheet](./reference_guides/general_linux_knowledge/Linux_Commands_Cheat_Sheet/README.md)
+- [SED and REGEX](./refernce_guides/general_linux_knowledge/SED_and_REGEX/README.md)
+- [Using VIM Editor](./reference_guides/general_linux_knowledge/Using_VIM_Editor/README.md)
+- [Yum Cheat Sheet](./reference_guides/Yum_Cheat_Sheet/README.md)
 
 ***
 
