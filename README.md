@@ -193,8 +193,7 @@ The below information can be found by running the ```dsmigin``` command with no 
    9 = so[EBC]si -> ?[ASC]? : Replace SOSI by cpm map
 ``` 
 
-**Reference Documents: "data\_dsmigin.sh", "data\_dsmigin.conf",
-"ds\_wrap.sh"**
+**Reference Documents:** [dataset migration](./reference_guides/dataset_migration/README.md)
 
 ***
 
@@ -213,6 +212,8 @@ The below information can be found by running the ```dsmigin``` command with no 
   3. Once the excel spreadsheet is created a script should be used to parse the spreadsheet and the dsmigin commands are created.
 
   With one customer, we are accomplishing this using 1 script called dsmigin.py. This python program queries the mainframe by connecting through linux ftp. After ensuring that the dataset is not migrated (archived), it will retrieve the dataset using the FTP command. The user can also pass options to execute the dsmigin command after retrieving the datasets.
+
+  Again, see the dataset migration guide noted in section 4.1 [dataset migration](./reference_guides/dataset_migration/README.md)
 
 ### 4.2.2 VSAM Process
 
@@ -423,7 +424,7 @@ osctdlupdate <region> <module>
 
 <h3>DBD</h3>
 
-#TODO
+[DBDGEN](./reference_guides/hidb/How_to_migrate_IMSDB_to_HiDB/README.md)
 
 <h3>PSB</h3>
 
