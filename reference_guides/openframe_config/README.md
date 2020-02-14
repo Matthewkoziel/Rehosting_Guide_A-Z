@@ -37,17 +37,23 @@ Default information regarding datasets
 
 It's unlikely the customer has a default volume called DEFVOL in the mainframe, recommend to change this to their main volume. To create a volume, check the voladd tool #TODO
 
+***
+
 - SPOOL_VOLSER=VSPOOL
 
 This describes the name of the Spool's Volume Serial. 
 
 Recommendation: Leave it as default (VSPOOL)
 
+***
+
 - NVSM_BUFFER_SIZE=512
 
 Size of the non-vsam dataset buffer in Kilobytes. 
 
 Recommendation: Leave it as default (512)
+
+***
 
 - NVSM_EXTENT_LIMIT=50
 
