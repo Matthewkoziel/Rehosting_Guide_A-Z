@@ -375,6 +375,52 @@ Example:
 
 ***
 
+### OFManager
+
+<details><summary>Steps</summary>
+
+OFManager patches come in .zip or .tar.gz files. The current __resources__ and __WEB_INF__ folders under *OFMANAGER_HOME* must be backed up before patching. Additionally, the managed server containing OFManager should be offline while patching, and rebooted afterwards. 
+
+1. Shutdown Jeus Managed Server where OFManager is deployed:
+```bash
+msdown_ofmgr_svr
+# or 
+stopServer -host $hostname:$ofmgr_port_number -u $jeus_admin -p $jeus_admin_pass
+```
+
+2. Decompress/unpack the patch files:
+  - If the file ends in .tar.gz, you need to use the tar command to decompress it: `tar -zxvf {file}.tar.gz`
+  - If the file ends in .zip, you need to use the unzip command to decompress it: `unzip {file}.zip`
+
+3. Create a backup of the current __resources__ and __WEB-INF__ folders in the *OFMANAGER_HOME* directory (replace {today_date} by the actual date):
+```bash
+cd $OFMANAGER_HOME
+mv resources resources.bk{today_date}
+mv WEB-INF WEB-INF.bk{today_date}
+```
+
+4. Copy the new folders from the patch folder to *$OFMANAGER_HOME*:
+```bash
+cp -r /opt/tmaxsw/patch/ofmanager/{IMS_ticket_number}_{today_date}/resources .
+cp -r /opt/tmaxsw/patch/ofmanger/{IMS_ticket_number}_{today_date}/WEB-INF .
+```
+
+5. Copy the OLD logback.xml file from the OLD WEB-INF folder, to the NEW one:
+```bash
+cp WEB-INF.bk{today_date}/classes/logback.xml WEB-INF/classes/
+```
+
+6. Restart Jeus Managed Server where OFManager is deployed:
+```bash
+msboot_ofmgr_svr
+# or
+startManagedServer -domain $DOMAIN_NAME -server $server_name -u $jeus_admin -p $jeus_admin_pass
+```
+
+7. If you are already logged into OFManager on Chrome, please exit, and clear your cache before logging back in for the changes to take effect.
+
+</details>
+
 ### OFMiner
 
 <details><summary>Steps</summary>
