@@ -2,24 +2,60 @@
 
 Below are the configuration files which OpenFrame uses to operate and match the configuration of the customer's mainframe. All of the configuration files will end in ```.conf``` and can be found in $OPENFRAME_HOME/config folder. 
 
-## Batch Related
+# Table of Contents 
 
-* **ds.conf**
+- [Batch Related](#1-batch-related)
+  - [ds.conf](11-ds-conf)
+    - [DATASET_DIRECTORY](111-dataset-directory)
+  - [dstool.conf](12-dstool-conf)
 
-- Stores General Configurations for the Data Sets used in OpenFrame
+# 1. Batch Related
 
-| SECTION           | DESCRIPTION                                                                                    |
-|-------------------|------------------------------------------------------------------------------------------------|
-| DATASET_DIRECTORY | The SCHEMA_DIR variable can be set here for the  schema directory used by dsmigin and dsmigout |
-| DATASET_RESOURCE  | The shared memory key for dataset allocation information can be set here                       |
-|          #TODO    |                                                                                                |
+## 1.1 ds.conf
 
-* **dstool.conf**
+This configuration file stores general configuration settings for datasets used in OpenFrame.
+
+### 1.1.1 Dataset Directory
+
+Stores information on where the schema files should be pulled from for dsmigin/dsmigout.
+
+Recommendation: Leave it as default ($OPENFRAME_HOME/schema)
+
+### 1.1.2 Dataset Resource
+
+Shared Memory Key for dataset allocation information
+
+Recommendation: Leave it as default (61482)
+
+### 1.1.3 Dataset Default
+
+Default information regarding datasets
+
+- DEFAULT_VOLSER=DEFVOL
+
+It's unlikely the customer has a default volume called DEFVOL in the mainframe, recommend to change this to their main volume. To create a volume, check the voladd tool #TODO
+
+- SPOOL_VOLSER=VSPOOL
+
+This describes the name of the Spool's Volume Serial. 
+
+Recommendation: Leave it as default (VSPOOL)
+
+- NVSM_BUFFER_SIZE=512
+
+Size of the non-vsam dataset buffer in Kilobytes. 
+
+Recommendation: Leave it as default (512)
+
+- NVSM_EXTENT_LIMIT=50
+
+Maximum Extent number of the non-vsam dataset
+
+Recommendation: Find mainframe equivalent and set value equal. (Default=50)
+
+## 1.2 dstool.conf
 
 Base: Contains settings for dataset related tool programs such as Command section in OFManager
-
-
-
 
 * **cpm.conf**
 
@@ -306,6 +342,11 @@ Base: Contains settings for dataset related tool programs such as Command sectio
 
 * **smf.conf**
 * **sms.conf**
+
+We need to know the DEFAULT storage volume.
+
+Default LRECL and RECFM of a created dataset. Defautls are LRECL=80 and RECFM=FB, we need to know if this is the same on the mainframe or not.
+
 * **sort.conf**
 * **ssm.IMSADB2T.conf**
 * **tacf.conf**
