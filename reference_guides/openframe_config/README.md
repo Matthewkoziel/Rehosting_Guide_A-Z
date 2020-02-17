@@ -1,6 +1,6 @@
 # OpenFrame Configuration Files
 
-Below are the configuration files which OpenFrame uses to operate and match the configuration of the customer's mainframe. All of the configuration files will end in ```.conf``` and can be found in $OPENFRAME_HOME/config folder. 
+Below are the configuration files which OpenFrame uses to operate and match the configuration of the customer's mainframe. All of the configuration files will end in ```.conf``` and can be found in $OPENFRAME_HOME/config folder. This may be the most challenging part of a rehosting project, as getting all of the configurations correct on the first attempt may prove to be difficult. Each of the below items are items that are found in the default configuration files and should be brought to light with the customer. Each and every configuration below must be set as it is on the mainframe, or OpenFrame will not operate as expected. By completing the below section diligently, you can reduce the amount of time it takes to rehost a mainframe dramatically. 
 
 # Table of Contents 
 
@@ -13,9 +13,15 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 
 # 1. Batch Related
 
+**General Information:** For anything commented out, the default values shown will be used. For the majority of the commented out settings, the default values will be sufficient. If you must investigate the options in more detail, please consult the manuals.
+
 ## 1.1 ds.conf
 
+<details><summary>Click here for all information regarding ds.conf</summary>
+
 This configuration file stores general configuration settings for datasets used in OpenFrame.
+
+More information about ds.conf can be found in the manual: OpenFrame_Base_Fix#3_Data Set Guide_v2.1.3_en.pdf
 
 ### 1.1.1 Dataset Directory
 
@@ -37,7 +43,7 @@ Default information regarding datasets
 
 It's unlikely the customer has a default volume called DEFVOL in the mainframe, recommend to change this to their main volume. To create a volume, check the voladd tool #TODO
 
-***
+*** 
 
 - SPOOL_VOLSER=VSPOOL
 
@@ -60,6 +66,94 @@ Recommendation: Leave it as default (512)
 Maximum Extent number of the non-vsam dataset
 
 Recommendation: Find mainframe equivalent and set value equal. (Default=50)
+
+***
+
+- DSALC_SLOT_COUNT=65535
+
+Maximum number of slots allocated for a dataset. Must be a number between 256 and 65535. 
+
+Recommendation: Leave it as default (65535)
+
+***
+
+- CHECK_DSAUTH_V2=NO
+
+This option checks the permissions in the dataset allocation. Can be easier to handle if we leave this on NO at the start of the project, then change it to YES later.
+
+Recommendation: Leave it as default (NO), Then change it to YES in production.
+
+***
+
+- USE_BDAM_AS_TSAM=NO
+
+Use Tibero/TSAM as BDAM.
+
+Recommendation: Leave it as default (NO)
+
+*** 
+
+- SET_PDS_SIZE_TOTAL=NO
+
+Calculate size of a PDS by adding up the sizes of all members
+
+Recommendation: Ask the customer what they would prefer
+
+***
+
+- PASSED_NEW_DATASET_DISP=KEEP
+
+  #TODO
+
+***
+
+- SET_OUTPUT_DCB_TO_SMS=NO
+
+Specifies the DCB information of an output dataset for utilities such as SORT and IEBGENER to the SMS class following ACS rules, or to the DCB information of the input dataset.
+
+Recommendation: Leave it as default (NO)
+
+***
+
+- SET_GDG_DATASET_SORT_TYPE=LIFO
+
+Sets the GDG Dataset sort type to Last in - First Out
+
+Recommendation: Leave it as default (LIFO)
+
+***
+
+- GDG_SCRATCH_DEFAULT
+
+Sets the GDG scratch setting to either NOSCRATCH or SCRATCH.
+
+Recommendation: Leave it as default (NOSCRATCH)
+
+***
+
+- UPDATE_GENERATION_AT_END_OF_STEP=YES
+
+Updates the GDG generation at the end of a JOB step
+
+Recommendation: Leave it as default (YES)
+
+***
+
+- SAME_RELATIVE_GDSNUM_IN_JOB
+
+  #TODO
+
+Recommendation: Leave it as default (YES)
+
+***
+
+- DELETE_GDS_AT_END_OF_STEP=YES
+
+  #TODO
+
+Recommendation: Leave it as default (YES)
+
+</details>
 
 ## 1.2 dstool.conf
 
