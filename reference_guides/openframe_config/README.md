@@ -16,7 +16,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 
 **General Information:** For anything commented out, the default values shown will be used. For the majority of the commented out settings, the default values will be sufficient. If you must investigate the options in more detail, please consult the manuals.
 
-## 1.1 ds.conf
+## 1.1 ds\.conf
 
 <details><summary>Click here for all information regarding ds.conf</summary>
 
