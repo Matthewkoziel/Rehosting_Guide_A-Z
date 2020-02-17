@@ -5,10 +5,11 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 # Table of Contents 
 
 - [Batch Related](#1-batch-related)
-  - [ds.conf](#11-ds-conf)
+  - [ds.conf](#11-dsconf)
     - [DATASET_DIRECTORY](#111-dataset-directory)
     - [DATASET_RESOURCE](#112-dataset-resource)
     - [DATASET_DEFAULT](#113-dataset-default)
+    - [DATASET_LOCK](#114-dataset-lock)
   - [dstool.conf](#12-dstool-conf)
 
 # 1. Batch Related
@@ -152,6 +153,10 @@ Recommendation: Leave it as default (YES)
   #TODO
 
 Recommendation: Leave it as default (YES)
+
+### 1.1.4 Dataset Lock
+
+- 
 
 </details>
 
