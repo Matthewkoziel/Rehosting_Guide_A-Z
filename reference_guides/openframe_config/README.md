@@ -1,6 +1,8 @@
 # OpenFrame Configuration Files
 
-Below are the configuration files which OpenFrame uses to operate and match the configuration of the customer's mainframe. All of the configuration files will end in ```.conf``` and can be found in $OPENFRAME_HOME/config folder. This may be the most challenging part of a rehosting project, as getting all of the configurations correct on the first attempt may prove to be difficult. Each of the below items are items that are found in the default configuration files and should be brought to light with the customer. Each and every configuration below must be set as it is on the mainframe, or OpenFrame will not operate as expected. By completing the below section diligently, you can reduce the amount of time it takes to rehost a mainframe dramatically. 
+Below are the configuration files which OpenFrame uses to operate and match the configuration of the customer's mainframe. All of the configuration files will end in ```.conf``` and can be found in $OPENFRAME_HOME/config folder. This may be the most challenging part of a rehosting project, as getting all of the configurations correct on the first attempt may prove to be difficult. Each of the below items are items that are found in the default configuration files and should be brought to light with the customer. Each and every configuration below must be set as it is on the mainframe, or OpenFrame will not operate as expected. By completing the below section diligently, you can reduce the amount of time it takes to rehost a mainframe dramatically.
+
+**Note: Many of the below configurations may remain as default, but as OpenFrame expands and adapts, these default values may change in the given configuration files. It is recommended that each and every configuration file is set to Mainframe standards**
 
 # Table of Contents 
 
@@ -10,15 +12,23 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [DATASET_RESOURCE](#112-dataset-resource "Memory Resources for Datasets")
     - [DATASET_DEFAULT](#113-dataset-default "Default Values for Datasets")
     - [DATASET_LOCK](#114-dataset-lock)
-  - [dstool.conf](#12-dstool-conf)
+  - [dstool.conf](#12-dataset-tool-configuration-dstoolconf "Dataset Tool Configuration")
+    - [COMMON](#121-common "Common settings for tools in dstool.conf")
+    - [COBGENSCH](#122-cobgensch "cobgensch settings")
+    - [DSLOAD](#123-dsload "dsload settings")
+    - [DSVIEW](#124-dsview "dsview settings")
+    - [DSMIGIN](#125-dsmigin "dsmigin settings")
+    - [DSCREATE](#126-dscreate "dscreate settings")
+    - [OFRDMSVR](#127-ofrdmsvr "ofrdmsvr settings")
+    - [OFRUISVR](#128-ofruisvr "ofruisvr settings")
+    - [OFRDSEDT](#129-ofrdsedt "ofrdsedt settings")
+    - [SPFEDIT](#1210-spfedit "spfedit settings")
 
 # 1. Batch Related
 
 **General Information:** For anything commented out, the default values shown will be used. For the majority of the commented out settings, the default values will be sufficient. If you must investigate the options in more detail, please consult the manuals.
 
 ## 1.1 Dataset Configuration (ds.conf)
-
-<details><summary>Click here for all information regarding ds.conf</summary>
 
 This configuration file stores general configuration settings for datasets used in OpenFrame.
 
@@ -156,13 +166,182 @@ Recommendation: Leave it as default (YES)
 
 ### 1.1.4 Dataset Lock
 
-- 
+- LOCK_FLAG=LOCK
 
-</details>
+Send LOCK related client requests such as lock, unlock, lock clear, and lock list query to the lock server.
 
-## 1.2 dstool.conf
+  * LOCK: Sends to the lock server
+  * NOLOCK: Does not send to the lock server
 
-Base: Contains settings for dataset related tool programs such as Command section in OFManager
+Recommendation: Leave it as default (LOCK)
+
+***
+
+- REQUEST_RETRYINTERVAL=5
+
+Retry Interval for failed lock client requests
+
+Recommendation: Leave it as default (5)
+
+***
+
+- DBCONN=LOCK_ODBC
+
+ODBC connection name (odbc-section-name) used to connect to the database. The odbc-section-name must be specified in the ofsys.conf file.
+
+Recommendation: Check the ofsys.conf file. In cases where the ODBC connection was set in a standard, default manner, the name will be LOCK_ODBC.
+
+## 1.2 Dataset Tool Configuration (dstool.conf)
+
+Contains settings for dataset related tool programs such as Command section in OFManager, dsload, dsview, dsmigin, etc.This configuration file is separated by each tool, including a common section which will cover all tools below.
+
+### 1.2.1 Common
+
+Currently, there are no default values set in the COMMON configuration portion of this tool.
+
+### 1.2.2 COBGENSCH
+
+- ODO_MIN_ZERO_AVAILABLE=NO
+
+Set the Occurs Depending On minimum to zero (YES|NO)
+
+Recommendation: Leave it as default (NO)
+
+### 1.2.3 DSLOAD
+
+- SIZE_LIMIT=1000000
+
+Used to limit the maximum size of datasets processed by dsload. 
+
+Recommendation: Leave it as default (1000000). If a specific dataset requires a new maximum, change this value to be just larger than the dataset size.
+
+***
+
+- LOAD_DIR=${OPENFRAME_HOME}/temp
+
+This is the default export location for the dsload tool. It is recommended to use the ```[-t <target>]``` option in the dsload tool to explicitly specify where a dataset should be loaded to, but in the event that it is not, it will end up in the LOAD_DIR.
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/temp)
+
+***
+
+- DELIMITER=\r\n
+
+If the ```[-d <delimiter>]``` option is not specified in dsload, it will be defaulted to the delimiter specified above. For Linux, the common delimiter is "\r\n"
+
+Recommendation: Leave it as default (\r\n)
+
+### 1.2.4 DSVIEW
+
+NOCATALOG_VIEW=YES
+
+This setting allows non-VSAM datasets to still be viewed, even if they're not cataloged. This can be handy when trying to view a dataset using spfedit, but the dataset is not cataloged. If you still wish to see it, you can  use dsview.
+
+Recommendation: Leave it as default (YES)
+
+### 1.2.5 DSMIGIN
+
+Currently, there are no default values set in the DSMIGIN configuration portion of this tool.
+
+### 1.2.6 DSCREATE
+
+- RECAT_UPDATE_DSATTR=YES
+
+Option to update the attributes of a dataset when the RECATALOG option is used
+
+Recommendation: Leave it as default (YES)
+
+### 1.2.7 OFRDMSVR
+
+- CHECK_EXPIRE_DATE=YES
+
+Option to delete datasets after they expire
+
+Recommendation: Leave it as default (YES)
+
+***
+
+- APPLY_GDG_MEMBER=YES
+
+Option to delete GDS datasets after they expire
+
+Recommendation: Leave it as default (YES)
+
+***
+
+- CALL_SERVICE_INTERVAL=180
+
+Time interval between attempts to call service from the ofrdmsvr server process (in minutes)
+
+Recommendation: Leave it as default (180) 
+
+### 1.2.8 OFRUISVR
+
+- DSCREOWNER=MASTER
+
+Option to change the owner of datasets created with the TACF token when creating a dataset through the ofruisvr server process.
+
+* MASTER: Does not change the OWNER of the created dataset. The OWNER is set to the user ID who started the ofruisvr. (DEFAULT)
+* USER: Changes the OWNER of the created dataset into the ID of the user who are using the TACF token.
+
+Recommendation: Leave it as default (MASTER)
+
+***
+
+- COMMAND_LIST
+
+List of commands that can be executed using the OFRUISVRCOMMAND service of the ofruisvr server process. If not specified, ANY command can be executed.
+
+Recommendation: Check with the customer on what commands they will allow their employees to execute from OFManager. Examples include:
+
+  - dslist
+  - dscreate
+  - dsdelete
+  - offile
+
+***
+
+- DSVIEW_LOCKING_DATASET=NO
+
+Option to execute a lock on a dataset when using dsview
+
+Recommendation: Change this to value to (NO). When executing an spfedit to only browse a dataset, the ```-b``` option should be passed. dsview can be used similarly once this value is changed to NO.
+
+### 1.2.9 OFRDSEDT
+
+Currently, there are no default values set in the OFRDSEDT configuration portion of this tool.
+
+### 1.2.10 SPFEDIT
+
+- RECORD_READ_COUNT=1024
+
+Specifies the number of records to be loaded to the memory whenever spfedit reads a dataset. 
+
+Recommendation: Leave it as default (1024)
+
+***
+
+- END_KEY_FUNC_DEL_EOL=YES
+
+Option to delete data starting from the current cusor position to the end of the record when you press <End> from the dataset EDIT page.
+
+Recommandation: Leave it as default (YES)
+
+***
+
+- F12_KEY_FUNC_RETRIEVE=YES
+
+Option to retrieve the last command entered on the Primary Command line when <F12> is pressed from the Dataset EDIT/BROWSE page.
+
+Recommndation: Leave it as default (YES)
+
+***
+
+- REPLACE_CREATE_NEEDED=YES
+
+Option to create a new dataset when there is no dataset to replace while executing the REPLACE command.
+
+Recommendation: Leave it as default (YES)
 
 * **cpm.conf**
 
