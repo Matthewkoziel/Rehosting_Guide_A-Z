@@ -5,7 +5,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 # Table of Contents 
 
 - [Batch Related](#1-batch-related)
-  - [ds.conf](#11-dataset-configuration-ds-conf "Dataset Configuration")
+  - [ds.conf](#11-dataset-configuration-dsconf "Dataset Configuration")
     - [DATASET_DIRECTORY](#111-dataset-directory "Location settings for Dataset Schema files")
     - [DATASET_RESOURCE](#112-dataset-resource "Memory Resources for Datasets")
     - [DATASET_DEFAULT](#113-dataset-default "Default Values for Datasets")
