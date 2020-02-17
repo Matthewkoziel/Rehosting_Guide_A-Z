@@ -23,6 +23,8 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [OFRUISVR](#128-ofruisvr "ofruisvr settings")
     - [OFRDSEDT](#129-ofrdsedt "ofrdsedt settings")
     - [SPFEDIT](#1210-spfedit "spfedit settings")
+  - [cpm.conf](#13-cpm-configuration-cpmconf "EBCDIC to ASCII conversion settings")
+    - [DEFAULT_CODEPAGE](#131-default-codepage "Default conversion file settings for CPM")
 
 # 1. Batch Related
 
@@ -343,9 +345,41 @@ Option to create a new dataset when there is no dataset to replace while executi
 
 Recommendation: Leave it as default (YES)
 
-* **cpm.conf**
+## 1.3 CPM Configuration (cpm.conf)
 
-  Base: The cpm.conf configuration file contains the settings for conversion process from Mainframe to OpenFrame.
+The cpm.conf configuration file contains the settings for conversion process from EBCDIC to ASCII and ASCII to EBCDIC.
+
+### 1.3.1 DEFAULT_CODEPAGE
+
+- EBC2ASC=${OPENFRAME_HOME}/cpm/EBCASCUS.cpm
+
+Sets the EBCDIC to ASCII cpm file. There are many different cpm files in ${OPENFRAME_HOME}/cpm which can be modified using the cpmmgr tool. Learn more about the cpmmgr tool here: #TODO
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/EBCASCUS.cpm)
+
+***
+
+- ASC2EBC=${OPENFRAME_HOME}/cpm/ASCEBCUS.cpm
+
+Sets the ASCII to EBCDIC cpm file. 
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/ASCEBCUS.cpm)
+
+***
+
+- SO=0A42
+
+Sets the SO hexa code for SOSI characters in mainframe.
+
+Recommendation: Confirm with customer the SOSI values and set accordingly
+
+***
+
+- SI=0A41
+
+Sets the SI hexa code for SOSI characters in mainframe
+
+Recommendation: Confirm with customer the SOSI values and set accordingly
 
 * **dbutil.conf**
 * **dstool.conf**
