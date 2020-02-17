@@ -381,8 +381,11 @@ Sets the SI hexa code for SOSI characters in mainframe
 
 Recommendation: Confirm with customer the SOSI values and set accordingly
 
+
+
+
+
 * **dbutil.conf**
-* **dstool.conf**
 
   Base: Contains settings for dataset related tool programs such as Command section in OFManager
 
