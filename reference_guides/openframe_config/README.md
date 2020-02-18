@@ -25,6 +25,11 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [SPFEDIT](#1210-spfedit "spfedit settings")
   - [cpm.conf](#13-cpm-configuration-cpmconf "EBCDIC to ASCII conversion settings")
     - [DEFAULT_CODEPAGE](#131-default-codepage "Default conversion file settings for CPM")
+  - [ezaci.conf](#14-ezaci-configuration-ezaciconf "EBCDIC to ASCII in COBOL configuration")
+    - [E2A](#141-e2a "EBCDIC to ASCII")
+    - [A2E](#142-a2e "ASCII to EBCDIC")
+  - [ezplus.conf](#15-ezplus-configuration-ezplusconf "EZPLUS Configuration for EZTPA00 Utility")
+    - [EZV](#151-ezv "EZPLUS work area")
 
 # 1. Batch Related
 
@@ -381,6 +386,42 @@ Sets the SI hexa code for SOSI characters in mainframe
 
 Recommendation: Confirm with customer the SOSI values and set accordingly
 
+## 1.4 EZACI Configuration (ezaci.conf)
+
+ezaci.conf configuration file is an API configuration file used when using ASCII and EBCDIC code in COBOL. In COBOL code, you may see the following:
+
+```COBOL
+CALL 'EZACIA2E' USING <target-data>
+      <target-data-length>
+      <convert-cpm-table-name>
+      RETURNING <retrun-code>.
+```
+
+Check to make sure the libofezaci.so file is linked in ${OPENFRAME_HOME}/lib.
+
+### 1.4.1 E2A
+
+- US=EBCASCUS.cpm
+
+Recommendation: Check to make sure your cpm file is linked to the EBCASCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
+
+### 1.4.2 A2E
+
+- US=ASCEBCUS.cpm
+
+Recommendation: Check to make sure your cpm file is linked to the ASCEBCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
+
+## 1.5 EZPLUS Configuration (ezplus.conf)
+
+ezplus.conf is a configuration file for the EZTPA00 utility which is used to execute CA-Easytrieve Plus scripts entered as SYSIN from JCL.
+
+### 1.5.1 EZV
+
+- WORK_DIR=${OPENFRAME_HOME}/temp/ezwork
+
+Specifies a work area for calling ProTrieve from EZTPA00. It is used to temporarily save the script to transfer to ProTrieve.
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/temp/ezwork)
 
 
 
@@ -389,7 +430,6 @@ Recommendation: Confirm with customer the SOSI values and set accordingly
 
   Base: Contains settings for dataset related tool programs such as Command section in OFManager
 
-* **ezaci.conf**
 * **ezplus.conf**
 * **ftp.conf**
 * **hidb.conf**
