@@ -37,6 +37,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [ERROR](#164-error "FTP Error Configuration")
     - [COMMAND_OPERATION](#165-command-operation "Command Operation FTP Configuration")
     - [OPTION](#166-option "FTP Option Confiugration")
+  - [idcams.conf](#17-idcams-configuration-idcamsconf "IDCAMS Configuration")
 
 # 1. Batch Related
 
@@ -495,76 +496,30 @@ Recommendation: Leave it as default (Y)
 
 Recommendation: Leave it as default (Y)
 
-* **dbutil.conf**
+## 1.7 IDCAMS Configuration (idcams.conf)
 
-  Base: Contains settings for dataset related tool programs such as Command section in OFManager
+The IDCAMS utility uses the idcams.conf configuration file in ${OPENFRAME_HOME}/config. When IDCAMS is used by TACF, it will prompt for Username, Group name, and Password which can be defined in the configuration file as well as other features.
 
-* **ftp.conf**
-* **hidb.conf**
+### 1.7.1 DEFAULT_USER
 
-  Specifies the basic settings of OpenFrame/HiDB. In the [GENERAL] section, you can specify:
+- USERNAME
+- GROUPNAME
+- PASSWORD
 
-  <details><summary>See hidb.conf main options</summary>
+Defines the username, groupname, and password for bypassing the prompt by storing the above information. However, if you execute the IDCAMS as a JOB step, the configuration itself is bypassed.
 
-    <pre>- COPYBOOK_DIR: Directory fo a copybook that OpenFrame/HiDB and ofschema refer to. COPYBOOK_DIR sets the preferred path used by OpenFrame/HiDB, which refers to copybooks under the subdirectory dbd_name/segment_name or psbpcb_id/senseg_name. 
-    - TABLESPACE: Table space in which OpenFrame/hiDB creates segment tables, indexes, and views.
-    - HIDB_OBJECT_DIR: Directory under which the hidbmgr tool generates DL/I function code
-    - FIX_DATA_ERROR:
-      - YES: Indicates that when an invalid data is encountered while the hidbmgr tool generates a DL/I statement, the data is set as the default value (for example, binary: 0) and no error is thrown
-      - NO: Indicates that when an invalid data is encountered while the hidbmgr generates a DL/I statement, an error is processed and the program is terminated. (Default)
-    - NO_INDEX_TABLE: 
-      - YES: Indicates that secondary indexes are stored in the same table as the target segment table. The target and source segments must be identical, and you cannot change the index segment directly on the segment table
-      - NO: Indicates that secondary indexes are stored in seperate index segment table. (Default)
-    - IGNORE_FILLER: 
-      - YES: Indicates that the dbdgen tool does not create a FILLER column, and that FILLER is not processed by the DL/I function created by the psbgen tool.
-      - NO: Indicates that the dbdgen tool creates a FILLER column, and the FILLER is processed by the DL/I function. (Default)
-    - COMMIT_INTERVAL: Maximum count that HiDB performs a DL/I function before commit. Set to a number from 0. If set to 0, commit is performed once when the database session ends. (Default: 0)
-    - RESOLVE_HINT_DIR: Directory where the index hint mapping information is to be used when using the user-defined index hint in the select API of the DL/I library created by the dligen command of the hidbmgr tool.
-    - FIRST_FETCH_COUNT: FIRST_ROWS hint value in the select API of the DL/I library created by the dligen command of the hidbmgr tool. Set to a number from 0. If set to 0, the FIRST_ROWS hint is not used (Default: 10)
-    - GU_PREDICT_FAILURE_THRESHOLD: Number of consecutive failed GET UNIQUE. Set to a number from 0. If GET UNIQUE fails consecutively as many times as the set number, an appropriate select query is requested. (Default: 0)
-    - #TODO: FIX THIS SENTENCE: GU_PREDICT_FAILURE_RESET: Number of consecutive success GET UNIQUE. Set to a number from 0. If GET UNIQUE success consecutively as many as the set number when the select query executed because GU_PREDICT_FAILURE_THRESHOLD is reached, it operates normally (Default: 0)
-    - HIDB_ALTER_KEYSEQ: 
-      - YES: Allows the user of a user-defined sorting order when defininig virtual columns and indexes in the database or when using a where condition for a select query. This setting is not recommended. 
-      - NO: Performs the binary sort order. (Default)
-    - DATABASE_CHARSET: Character set name that corresponds to the setting in the original database when using ALTER_KEYSEQ
-    - EBCDIC_CHARSET: Character set name that corresponds to the user-desired sort order when using ALTER_KEYSEQ.
-    - OF_CHARSET: System local value for multi-byte character processing.
-    - IGNORE_AUTH_CHECK: 
-      - YES: integrates with TACF to use it's user authentication.
-      - NO: does not use TACF user authentication. (Default)
-    - FETCH_COL_DEFAULT_VALUE: Hex value of the character to be set when the data fetched from the select API of the DL/I library created by the dligen command of the hidbmgr tool is null. (Default: 0x00)
-    - RESET_APPBUF_IF_GET_FAIL: 
-      - YES: sets the buffer data passed from the application to null when the DLI GET command fails. (Default)
-      - NO: Does not change teh buffer data when the DLI GET command fails.
-    - SKIP_POSITIONING_IF_GET_FAIL: 
-      - YES: Does not specify the location of the last segment accessed when the DLI GET command fails. This setting is not recommended.
-      - NO: Does not change the buffer data when the DLI GET command fails. (Default)
-    - HiDB_IMPORT_DIR: Directory path to store data when using high-speed loading of hdload and hidbptmgr tools
-    - USE_LEAD_FOR_GN: 
-      - YES: Requests a select query along with LEAD for a DLI GET NEXT request that does not specify a search condition. (Default)
-      - NO: Does not use LEAD
-    - USE_LEAD_FOR_GNP: 
-      - YES: requests a select query along with LEAD for a DLI GET NEXT IN PARENT request that does not specify a search condition. (Default)
-      - NO: Does not use LEAD
+### 1.7.2 TACF
 
-  In the [DEBUG] section, you can specify:
+- CHECK_DSAUTH=NO
 
-    - GENERAL:
-      - YES: Enables the default debugging flags when OpenFrame/HiDB is running.
-      - NO: Disables the default debugging flags when OpenFrame/HiDB is running. (Default)
-    - SHOW_BUFFER: (Enabled when GENERAL is set to YES)
-      - YES: Processing a DL/I statement returns the buffer value of each column.
-      - NO: Processing a DL/I statement does not return the buffer value of each column. (Default)
-    - DISABLE_COMMIT
-      - YES: Indicates that a DL/I operation does not save changes to the database.
-      -NO: Indicates that a DL/I operation saves changes to the database. (Default)</pre>
-    </details>
+When TACF is used with IDCAMS, setting the CHECK_DSAUTH to YES performs a permission check upon each access to the dataset from IDCAMS functional commands.
 
-* **idcams.conf**
+***
+***
+***
+
 * **ikjeft01.conf**
-* **ims.conf**
 
-  HiDB: Used to configure control block data sets used in the DB/DC system. More specifically, allows for configuration of the default library data set and volume serial that define DBD control blocks, PSB control blocks, DAB control blocks, and ACB control blocks.
 
 * **isrsupc.conf**
 * **keyseq.conf**
