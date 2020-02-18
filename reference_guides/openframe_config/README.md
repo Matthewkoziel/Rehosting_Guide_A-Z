@@ -30,6 +30,13 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [A2E](#142-a2e "ASCII to EBCDIC")
   - [ezplus.conf](#15-ezplus-configuration-ezplusconf "EZPLUS Configuration for EZTPA00 Utility")
     - [EZV](#151-ezv "EZPLUS work area")
+  - [ftp.conf](#16-ftp-configuration-ftpconf "FTP Configuration")
+    - [DIRECTORY](#161-directory "Directory Configuration")
+    - [UNIT](#162-unit "Unit Configuration")
+    - [DATASET_DEFAULT](#163-dataset-default "Dataset FTP Default Configuration")
+    - [ERROR](#164-error "FTP Error Configuration")
+    - [COMMAND_OPERATION](#165-command-operation "Command Operation FTP Configuration")
+    - [OPTION](#166-option "FTP Option Confiugration")
 
 # 1. Batch Related
 
