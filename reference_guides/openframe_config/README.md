@@ -38,6 +38,9 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [COMMAND_OPERATION](#165-command-operation "Command Operation FTP Configuration")
     - [OPTION](#166-option "FTP Option Confiugration")
   - [idcams.conf](#17-idcams-configuration-idcamsconf "IDCAMS Configuration")
+    - [DEFAULT_USER](#171-default-user "Default Configuration for IDCAMS")
+    - [TACF](#172-tacf "Security Configuration for IDCAMS")
+    - [AMS](#173-ams "AMS Configuration")
 
 # 1. Batch Related
 
@@ -513,6 +516,10 @@ Defines the username, groupname, and password for bypassing the prompt by storin
 - CHECK_DSAUTH=NO
 
 When TACF is used with IDCAMS, setting the CHECK_DSAUTH to YES performs a permission check upon each access to the dataset from IDCAMS functional commands.
+
+### 1.7.3 AMS
+
+Currently, there are no default values set in the AMS configuration portion of this tool.
 
 ***
 ***
