@@ -6,7 +6,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 
 # Table of Contents 
 
-- [Batch Related](#1-batch-related)
+- [Batch Related](#1-batch-related "Configuration Files related to BATCH")
   - [ds.conf](#11-dataset-configuration-dsconf "Dataset Configuration")
     - [DATASET_DIRECTORY](#111-dataset-directory "Location settings for Dataset Schema files")
     - [DATASET_RESOURCE](#112-dataset-resource "Memory Resources for Datasets")
@@ -696,7 +696,7 @@ CLASS=4
 
 For default printer, you should use the command ```cat```
 
-For an LRS printer, you should use the command ```LRS.sh```
+For an LRS printer, you should use the command ```LRS.sh``` which should be placed in ${OPENFRAME_HOME}/bin directory
 
 <details>
   <summary>Source code for the LRS.sh</summary>
@@ -757,6 +757,36 @@ No Configurations for this section yet
   #TODO
 
 ## 1.12 RETURN CODE Configuration (rc.conf)
+
+Specifies which programs to stop JOB execution for certain return codes by specific number or range.
+
+### 1.12.1 PGM_NAME
+
+Allows for stopping a JOB based on a specific program name
+
+Examples:
+
+- IKJEFT01=8-4095
+
+If IKJEFT01 finishes with a Return Code of anything between 8 and 4095, the JOB will stop at this step.
+
+- IKJEFT01=4,8-4095
+
+If IKJEFT01 finishes with a Return Code of 4, or anything between 8 and 4095, the JOB will stop at this step.
+
+Recommendation: Check with the customer for which programs/utilities they wish to set up a return code configuration for.
+
+### 1.12.2 PGM_TYPE
+
+Allows for stopping a JOB based on a program type.
+
+Examples:
+
+- ALL=16-4095
+
+Recommendation: Check with the customer for which program types they wish to set up a return code configuration for.
+
+## 1.13 
 
 
 ***
@@ -959,7 +989,6 @@ No Configurations for this section yet
 
 * **osi.ofsys.seq_for_OSI_ONLY**
 * **osi.ofsys.seq_orig**
-* **rc.conf**
 * **saf.conf**
 
   Base: Contains the OpenFrame System Access control settings
