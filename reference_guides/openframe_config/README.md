@@ -45,6 +45,18 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [SHARED_OBJECT](#181-shared-object "Shared Object Configuration")
     - [REPORT_DBCONN](#182-report-dbconn "Database Configuration for IKJEFT01")
     - [TACF](#183-tacf "IKJEFT01 TACF Rules")
+  - [isrsupc.conf](#19-isrsupc-configuration-isrsupcconf "Configuration for ISRSUPC Utility")
+    - [LINECMP](#191-linecmp)
+  - [keyseq.conf](#110-keyseq-configuration-keyseqconf "Key Sequence Configuration")
+    - [DSNAME](#1101-dsname "Keyseq based on dsname")
+    - [PREFIX](#1102-prefix "Keyseq based on prefix")
+    - [SUFFIX](#1103-suffix "Keyseq based on suffix")
+  - [print.conf](#111-printer-configuration-printconf "Printer Configuration")
+    - [SSPRT](#1111-ssprt "Samsung Printer Configuration")
+    - [PRINTERX](#1112-printerx "PRINTERX Configuration")
+    - [INTRDR](#1113-intrdr "Internal Reader Configuration")
+    - [PMSVR](#1114-pmsvr "TP Scheduling Time Interval")
+    - [WRITER](#1115-writer "Writer Configurations")
 
 # 1. Batch Related
 
@@ -578,15 +590,179 @@ Checks TACF authorization when IKJEFT01 access a dataset.
 
 Recommendation: Leave it as default (NO). Check with customer to see if they want to change this during production time.
 
+## 1.9 ISRSUPC Configuration (isrsupc.conf)
+
+This configuration file is for the ISRSUPC utilities.
+
+### 1.9.1 LINECMP
+
+- USE_FAST_COMPARE=NO
+
+  #TODO
+
+## 1.10 KEYSEQ Configuration (keyseq.conf)
+
+Dataset Key Sequence Configurations for indexed datasets (VSAM KSDS, or ISAM Datasets) used in OpenFrame. This configuration file specifies whether ASCII or EBCDIC order is used to arrange a datasets key order.
+
+Key sequenced is determined by three rules
+
+* Dataset Name
+* Prefix of dataset name
+* Suffix of dataset name
+
+If it conforms to all three rules, the priority of the rules is dtermined by the order that they are listed. If a dataset conforms to multiple rules, the rule that matches the most number of characters in the name is selected.
+
+- % : denotes exactly one alphanumeric character
+- * : denotes one or more characters within a qualifier
+
+### 1.10.1 DSNAME
+
+Under DSNAME you can specify a full dataset name and set the sort order equal to EBCDIC or ASCII 
+
+Example: 
+
+```
+PROD.BILL.%%%%.*=EBCDIC
+```
+
+Recommendation: Check with the customer if this is required. It's possible they will want to set up a number of rules, or none. 
+
+### 1.10.2 PREFIX
+
+Selects a key sequence using the prefix of the dataset name
+
+Example:
+
+```
+PROD.BILL.=EBCDIC
+SYS1.=ASCII
+```
+
+Recommendation: Check with the customer if this is required, and set accordingly.
+
+### 1.10.3 SUFFIX
+
+Selects a key sequence using the suffix of the dataset name
+
+Example:
+
+```
+.DATA.A1=ASCII
+.DATA.B1=EBCDIC
+```
+
+Recommendation: Check with the customer if this is required, and set accordingly.
+
+## 1.11 PRINTER Configuration (print.conf)
+
+Allows you to define class, command, and driver for printers. Printers can be defined for each or multiple classes. When a JOB completes, the spool dataset is registered in the OUTPUTQ as an output unit. Then, depending on the classes you have defined in print.conf, it will be sent to that printer.
+
+### 1.11.1 SSPRT
+
+Samsung Printer Configurations
+
+No Configuration settings for this yet
+
+### 1.11.2 PRINTERX
+
+In this section, we can define a printer with the following format:
+
+```bash
+[PRINTERX]
+  CLASS=
+  COMMAND=
+  DRIVER_PATH=
+```
+
+- PRINTERX
+
+You should rename the X in PRINTER*X* to a 1-byte character between A-Z or 0-9.
+
+- CLASS
+
+You can specify any class letter(s) or number(s) here:
+
+Example: 
+
+```bash
+CLASS=AB
+```
+
+```bash
+CLASS=4
+```
+
+- COMMAND
+
+For default printer, you should use the command ```cat```
+
+For an LRS printer, you should use the command ```LRS.sh```
+
+<details>
+  <summary>Source code for the LRS.sh</summary>
+
+```bash
+#!/bin/sh
+
+_FullPath=`echo ${1}`
+echo " File Name [" ${_FileName} "]"                                       ### DEBUG
+#
+_VPSX_SPOOL="/opt/lrs/lrsq/vpsx_spooler_linux.exe"
+_VPSX_CONF="/opt/lrs/lrsq/vpsx_spooler_controlfile_linux"
+
+#Martin wanted to have MAXLL as NULL
+sed -i 's/MAXLL=.*/MAXLL=/g' ${3}
+
+#cp ${1} ~/
+
+#echo "${_VPSX_SPOOL} -i ${1} -ec ${2} -cc ${3} -control  ${_VPSX_CONF} -d"               ### DEBUG
+${_VPSX_SPOOL} -i ${1} -ec ${2} -cc ${3} -control  ${_VPSX_CONF} -d
+
+#${_VPSX_SPOOL} -i ${1} -ec ${2} -cc ${3} -control  ${_VPSX_CONF} -d
+```
+</details>
+
+- DRIVER_PATH
+
+For default printer, you should use the path: ${OPENFRAME_HOME}/lib/libdfltprt.so
+
+For an LRS printer, you should use the path: ${OPENFRAME_HOME}/lib/liblrsprt.so
+
+### 1.11.3 INTRDR
+
+- DRIVER_PATH=${OPENFRAME_HOME}/lib/libirdrprt.so
+
+Defines the library file path for the internal reader
+
+Recommendation: Leave this as default (${OPENFRAME_HOME}/lib/libirdrprt.so)
+
+### 1.11.4 PMSVR 
+
+- INTERVAL = 50000
+
+Specifies TP scheduling time interval of the ofrpmsvr server (in microseconds)
+
+Recommendation: Leave it as default (50000)
+
+- THRESHOLD = 100
+
+Set the print process retry threshold value
+
+Recommendation: Leave it as default (100)
+
+### 1.11.5 WRITER
+
+No Configurations for this section yet
+
+  #TODO
+
+## 1.12 RETURN CODE Configuration (rc.conf)
+
+
 ***
 ***
 ***
 
-* **ikjeft01.conf**
-
-
-* **isrsupc.conf**
-* **keyseq.conf**
 * **ofosc.seq**
 * **ofstudio.conf**
 * **ofsys.seq**
@@ -783,7 +959,6 @@ Recommendation: Leave it as default (NO). Check with customer to see if they wan
 
 * **osi.ofsys.seq_for_OSI_ONLY**
 * **osi.ofsys.seq_orig**
-* **print.conf**
 * **rc.conf**
 * **saf.conf**
 
