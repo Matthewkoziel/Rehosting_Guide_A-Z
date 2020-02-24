@@ -1,51 +1,50 @@
-# Using VSCode with Gitlab <!-- omit in toc -->
+# Devops - Using VSCode with Gitlab <!-- omit in toc -->
 
 ## Table of Contents <!-- omit in toc -->
 
 TODO Finalize the Table of Contents with the formatting and links
 
-Architecture of the Gitlab server
-Git Client Installation
-    Default installation (Windows)
-    Installation Using the Thumbdrive Edition
-    Installation on a Linux machine
-VSCode IDE Installation
-    Default Installation (Windows)
-    Installation on a Linux machine
-VSCode Configuration
-    Extensions
-        Through VS Code
-        Manual installation of extensions
-    Settings
-Using VSCode with Git
-    Git Clone
-    Creating new branch
-    Saving changes
-    Reviewing changes
-    Git commit
-    Git Push/Pull
-Gitlab 
-    Merge request
-    CI/CD - Pipeline setup
-    CI/CD - Running a Pipeline
+1. Devops Architecture  
+1. Git Client Installation  
+    1. Default installation (Windows)  
+    1. Installation Using the Thumbdrive Edition  
+    1. Installation on a Linux machine  
+1. VSCode IDE Installation  
+    1. Default Installation (Windows)  
+    1. Installation on a Linux machine  
+1. VSCode Configuration  
+1. VSCode Extensions
+    1. Installation using extend view on VSCode
+    1. Manual Installation of extensions  
+    1. Settings  
+1. Using VSCode with Git  
+    1. Git Clone  
+    1. Creating new branch  
+    1. Saving changes  
+    1. Reviewing changes  
+    1. Git commit  
+    1. Git Push/Pull  
+1. Gitlab  
+    1. Merge request  
+    1. CI/CD - Pipeline setup  
+    1. CI/CD - Running a Pipeline  
 
-
-## Architecture of the Gitlab server
+## Devops Architecture
 
 ![alt text](./reference_images/architecture_diagram.jpg "Architecture diagram")
 
 1. Perform the command git clone to the local repository
-2. Add the folder to VSCode Workspace
-3. Modificaton of source code through VSCode IDE
-4. Commit the changes on local repository
-5. Push the changes to remote repository, to the Gitlab server
-6. Login into the Gitlab server through your web browser
-7. Trigger deployment of the source code using Gitlab pipeline
-8. New module gets deployed either on TEST environment or PRODUCTION environment
+1. Add the folder to VSCode Workspace
+1. Modificaton of source code through VSCode IDE
+1. Commit the changes on local repository
+1. Push the changes to remote repository, to the Gitlab server
+1. Login into the Gitlab server through your web browser
+1. Trigger deployment of the source code using Gitlab pipeline
+1. New module gets deployed either on TEST environment or PRODUCTION environment
 
 ## Git Client Installation
 
-### Default installation (Windows)
+### Windows
 
 __a.__ Open the Start Menu and search "cmd":
 
@@ -75,17 +74,22 @@ __e.__ Depending on your operating, click on one of those buttons:
 
 ![alt text](./reference_images/git_choice_operating_system.png "Choice of operating system")
 
-__f.__ Let's say you are working on Windows. When you click on the button, git download start automatically. You also have another alternative: 
+__f.__ Let's say you are working on Windows. When you click on the button, git download start automatically.
 
-![alt text](./reference_images/git_download_start.png "Download start - potential alternative")
-
-*Note: I recommend to use the installer downloaded by default. But if you have some access restrictions on your machine you may have to use the alternative, the thumbdrive edition, to be able to have git installed on your machine. The reason is you need system admin permissions to install git. Please refer to the section "__Installation Using the Thumbdrive Edition__" to have more information about this type of installation.*
-
-__g.__ Go to your __Downloads__ folder and execute the git setup. The name of the file is similar to __Git-2.25.0-64-bit.exe__, depending on the version you install.
+__g.__ Go to your __Downloads__ folder and execute the git setup.
 
 __h.__ Follow the installation steps:
 
-TODO Fill the installation steps, some of then with screenshots
+![alt text](./reference_images/git_install_1.png "Git Install")
+![alt text](./reference_images/git_install_2.png "Git Install")
+![alt text](./reference_images/git_install_3.png "Git Install")
+![alt text](./reference_images/git_install_4.png "Git Install")
+![alt text](./reference_images/git_install_5.png "Git Install")
+![alt text](./reference_images/git_install_6.png "Git Install")
+![alt text](./reference_images/git_install_7.png "Git Install")
+![alt text](./reference_images/git_install_8.png "Git Install")
+![alt text](./reference_images/git_install_9.png "Git Install")
+![alt text](./reference_images/git_install_10.png "Git Install")
 
 __f.__ Now git is successfully installed on your machine, we want to check that everything is working fine. Open the Start Menu, search "cmd" and execute the command `git` to see if you have the good output.
 
@@ -93,53 +97,29 @@ __f.__ Now git is successfully installed on your machine, we want to check that 
 
 *Note: If you have further questions about git and its commands, please refer to the official documentation here [**Git Reference Manual**](https://git-scm.com/docs)*
 
-### Installation Using the Thumbdrive Edition
-
-Doing that kind of installation you have to setup environment variables additionally.
-
-TODO Fill this section
-
-### Installation on a Linux machine
-
-TODO Fill this section
-
-- Debian - Ubuntu
-
-- Redhat - CentOS
-
 ## VSCode IDE Installation
 
-### Default installation (Windows)
+### Windows
 
 __a.__ Go to the following URL: [**VSCode Downloads**](https://code.visualstudio.com/download)
 
 ![alt text](./reference_images/vscode_website.png "Visual Studio Code website")
 
-__b.__ Depending on your operating system, click on one of those buttons:
+__b.__ Download User Installer and execute it to install.
 
-![alt text](./reference_images/vscode_choice_operating_system.png "Choice of operating system")
+__c.__ Follow the installation steps:
 
-__c.__ Let's say you are working on __Windows__. When you click on the button, VSCode download start automatically.
+![alt text](./reference_images/vscode_install_1.png "VSCode Install")
+![alt text](./reference_images/vscode_install_2.png "VSCode Install")
+![alt text](./reference_images/vscode_install_3.png "VSCode Install")
+![alt text](./reference_images/vscode_install_4.png "VSCode Install")
+![alt text](./reference_images/vscode_install_5.png "VSCode Install")
 
-*Note: I recommend to use the installer downloaded by default. But if you have some access restrictions on your machine you may have to use the User Installer (just below the Windows button, choose either 64bit or 32bit depending on your environment). In that kind of situation, choose C:\\\\Users\\\\userid\\\\vscode as installation folder.*
+__d.__ After successful installation, you can now run __VSCode IDE__. Go to the installation folder and execute __Code.exe__.
 
-__d.__ Follow the installation steps:
-
-TODO Fill the installation steps, some of then with screenshots
-
-__e.__ After successful installation, you can now run __VSCode IDE__. Go to the installation folder and execute __Code.exe__, or seach "*vs code*" in the __Start Menu__.
-
-TODO Add a screenshot for each situation
+![alt text](./reference_images/vscode_execute.png "VSCode Execute")
 
 *Note: If you have further questions about VS Code and its features, please refer to the official documentation here [**VS Code Reference Manual**](https://code.visualstudio.com/docs)*
-
-### Installation on a Linux machine
-
-TODO Fill this scetion
-
-- Debian - Ubuntu
-
-- Redhat - CentOS
 
 ## VSCode Configuration
 
@@ -149,44 +129,50 @@ TODO Fill this scetion
 
 __a.__ Go to the Extensions tab in VS Code and install the extensions you want:
 
-TODO Do a screenshot with a clean VS Code
+![alt text](./reference_images/vscode_extension_1.png "VSCode Extension")
+![alt text](./reference_images/vscode_extension_2.png "VSCode Extension")
 
-__b.__ Here is a list of Extensions I recommend you to install:
-    - COBOL
-    - Date & Time
-    - Git Extension Pack
-    - Git Blame
-    - Todo Tree
+__b.__ Go to the Extensions tab and check if the extension is enabled
 
-*Note: If you have some access restrictions on your machine that does not allowed to install extensions through VS Code, you may have to install them manually. Please follow the steps im the next section.*
+![alt text](./reference_images/vscode_extension_3.png "VSCode Extension")
+
+__c.__ Recommended Extensions:
+- COBOL  
+- Date & Time  
+- Git Extension Pack  
+- Git Blame  
+- Git Lens  
+- Todo Tree  
 
 #### Manual installation of extensions
 
-__a.__ To install these extensions manually, go the the extensions for VS Code webpage: [**Extensions**](https://marketplace.visualstudio.com/VSCode)
+If you have some access restrictions on your machine that does not allowed to install extensions through VS Code, you may have to install them manually.
+
+__a.__ Go the extensions on VS Code webpage: [**Extensions**](https://marketplace.visualstudio.com/VSCode)
    
 ![alt text](./reference_images/vscode_extensions_webpage.png "VS Code Extensions webpage")
 
-__b.__ From here you can search for an extension and download the corresponding VSIX file:
+__b.__ Search for an extension and download the corresponding VSIX file:
 
 ![alt text](./reference_images/vscode_cobol_extension_download.png "COBOL Extension Download")
 
-__c.__ To setup a VSIX extension in VS Code, go to the extensions tab, Open the menu and hit the button __Install form VSIX...__:
+__c.__ Go to the extensions tab on VSCode and Open the menu by clicking "..." and hit the button __Install form VSIX...__:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_extension_manual_1.png "VSCode Extension Manual")
 
 __d.__ Go to the folder where you downloaded the VSIX file and open it. The extension is now successfully installed!
 
-TODO Add the corresponding screenshot
+![alt text](./reference_images/vscode_extension_manual_2.png "VSCode Extension Manual")
 
 ### Settings
 
 __a.__ Open the menu File, go to __Preferences__ and __Settings__ (You can also just hit the shortcut __CTRL+,__):
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_settings_1.png "VSCode Settings")
 
 __b.__ Search for settings.json and edit the file:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_settings_2.png "VSCode Settings")
 
 __c.__ Add the following lines to this file 
 ```json
@@ -208,7 +194,7 @@ __d.__ After the change, save the file and restart VS Code.
 ### Git Clone
 
 __a.__ Press F1 to toggle the command prompt:
-   
+
 TODO Do the screenshot with a clean version of VS Code
 
 __b.__ Type __Git Clone__ and then press __Enter__:
