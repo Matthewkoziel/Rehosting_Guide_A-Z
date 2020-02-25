@@ -845,8 +845,8 @@ Recommendation: Leave it as default (YES)
 
 Option to ignore the SIZE option in an OPTION statement.
 
-* YES: ignore the SIZE option
-* NO:  Do not ignore the SIZE option
+  * YES: ignore the SIZE option
+  * NO:  Do not ignore the SIZE option
 
 Recommendation: Leave it as default (NO)
 
