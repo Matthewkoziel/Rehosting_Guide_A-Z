@@ -83,6 +83,23 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [JCL](#11512-jcl "Tjclrun JCL Configuration")
     - [OPTION](#11513-option "Tjclrun OPTION Configuration")
     - [DEBUG](#11514-debug "Tjclrun DEBUG Configuration")
+  - [tjes.conf](#116-tjes-configuration-tjesconf "TJES Configuration")
+    - [NODEINFO](#1161-nodeinfo "TJES Node Configuration")
+    - [JOBDEF](#1162-jobdef "TJES JOB Def Configuration")
+    - [JOBCLASS](#1163-jobclass "TJES JOB CLASS Configuration")
+    - [JOBGDEF](#1164-jobgdef "TJES JOB Group Configuration")
+    - [SCHEDULING](#1165-scheduling "TJES Scheduling Configuration")
+    - [RESOURCE](#1166-resource "TJES Resource Configuration")
+    - [PROCLIB](#1167-proclib "TJES PROCLIB Configuration")
+    - [DYNAMIC_LIBRARY](#1168-dynamic-library "TJES Dynamic Library Configuration")
+    - [LOG](#1169-log "TJES Log Configuration")
+    - [SPOOL](#11610-spool "TJES Spool Configuration")
+    - [INTRDR](#11611-intrdr "TJES Internal Reader Configuration")
+    - [INITDEF](#11612-initdef "TJES Initiator Definition Configuration")
+    - [OUTCLASS](#11613-outclass "TJES OUTPUT CLASS Configuration")
+    - [OUTDEF](#11614-outdef "TJES OUTPUT Queue Configuration")
+    - [TACF](#11615-tacf "TJES TACF Configuration")
+    - [OPRMSG](#11616-oprmsg "OPRMSG Configuration")
 
 # 1. Batch Related
 
@@ -1234,6 +1251,162 @@ NO  : The messages are not included. It is recommended that this is not set to Y
 
 Recommendation: Leave it as default (NO)
 
+## 1.16 TJES Configuration (tjes.conf)
+
+OpenFrame's Tmax Job Entry System (TJES) Configuration File. 
+
+### 1.16.1 NODEINFO
+
+Configures information on nodes
+
+- NODENAME=NODE1
+
+Defines the current node name.
+
+Recommendation: Leave it as default (NODE1)
+
+- NODELIST=NODE1
+
+Defines all node names. Node names are separated by semicolon (;).
+
+Recommendation: If you have installed any additional OpenFrame nodes, add them to this list.
+
+### 1.16.2 JOBDEF
+
+This section manages JOBs in TJES.
+
+- STARTNUM=1
+
+Specifies the starting number for a JOBID. 
+
+Recommendation: Leave it as default (1)
+
+- ENDNUM=99999
+
+Specifies the ending JOBID. Therefore, the largest JOBID can be JOB99999 and it would start at JOB00001 with the above settings.
+
+Recommendation: Leave it as default (99999)
+
+- FULL_WARNING=80
+
+Configures the boundary rate (in percent) of the JOBQ before displaying a warning about a full jOBQ. The boundary can be an integer between 0 and 99.
+
+Recommendation: Ask the customer what percent they would like to set.
+
+### 1.16.3 JOBCLASS
+
+This section is for the default properties of the TJES job class.
+
+- ${CLASS}=${STATUS}
+
+We can specify a class here and give a status of either START or HOLD. Any class between A-Z or 0-9 can be given in the CLASS portion, where the STATUS portion can either be START or HOLD. If not specified, START is given to the class.
+
+Recommendation: Check with the customer if there are any JOB classes that are put on HOLD status. They should be defined in this configuration. If the CLASS starts with START, you need not define it.
+
+### 1.16.4 JOBGDEF
+
+### 1.16.5 SCHEDULING
+
+- DUPL_JOBNAME=NO
+
+Decides whether to execute the job with the same JOBNAME concurrently (Default: NO)
+
+Recommendation: Leave it as default (NO)
+
+- PRTYJECL=YES
+
+Defines whether to use the priority in the submitted JCL. (Default: YES)
+
+Recommendation: Leave it as default (YES)
+
+-PRTYJOB=YES
+
+Defines whether to use the priorirty of the submitted JCL (Default: NO)
+
+Recommendation: Change this to (YES)
+
+-PRTYHIGH=10
+
+Defines the maximum value for the priority attribute. Values higher than the maximum value will be ignored. It can be an integer from 0 to 10.
+
+Recommendation: Leave it as default (10)
+
+- PRTYLOW=5
+
+Defines the minimum allowable value for the priority attribute. Values lower than the minimum will be ignored. It can be an integer from 0 to 10.
+
+Recommendation: Leave it as default (5)
+
+- PRTYRATE=1440
+
+Defines a number used in calculating the aging per day rate. The job priority incremements by 1 after a certain amount of time passes. That amount of time is calculated by dividing 86400 seconds by the PRTYRATE given. If you specify 1440 seconds, the job priority will increase by 1 every 60 seconds.
+
+You can specify any number between 0 to 86400
+
+Recommendation: Leave it as default (1440)
+
+- INTERVAL=1
+
+Defines the interval to schedule the scheduler in seconds (Default: 1)
+
+Recommendation: Leave it as default (1)
+
+### 1.16.6 RESOURCE
+
+This section describes the UNIX resources used in the TJES.
+
+- SHMKEY=62039
+
+Configures the shared memory key to communicate between obmjinit and tjclrun in TJES
+
+Recommendation: Leave it as default (62039)
+
+- DBCONN=BASE_ODBC
+
+The ODBC connection named used to access a system database. This name must be defined in the [odbc-section-name] section of ofsys.conf. 
+
+Recommendation: Check your ODBC connection settings. If everything is default, it will most likely be BASE_ODBC.
+
+### 1.16.7 PROCLIB
+
+This section describes the dataset required to operate a JOB.
+
+- JCLLIB=SYS1.JCLLIB:${JCL_PATH}
+
+If executing a JCL without the specific path, the JCL will be executed based on the priority list given above.
+
+Recommendation: Change this to fit the customer's requirements. Customers will most likely have a PDS they execute JCL from by prirority.
+
+- USERLIB=SYS1.USERLIB:${COB_PATH}
+
+This list is a concatenation of the COBOL PDSs used for Batch. Similar to JCLLIB, it is priority based, and seperated by colon (:).
+
+Recommendation: Change this to fit the customer's requirements. Customers will most likely have multiple COBOL PDSs and whichever is priority should come first in the list, and visa versa.
+
+-PROC00=SYS1.PROCLIB:${PROC_PATH}
+
+Similar to JCLLIB and USERLIB, this is where Procedures are called from on a priority basis separated by colon (:)
+
+Recommendation: Change this to fit the customer's requirements. Customers may have multiple Procedure PDSs so they should be listed on priority basis.
+
+### 1.16.8 DYNAMIC_LIBRARY
+
+### 1.16.9 LOG
+
+### 1.16.10 SPOOL
+
+### 1.16.11 INTRDR
+
+### 1.16.12 INITDEF
+
+### 1.16.13 OUTCLASS
+
+### 1.16.14 OUTDEF
+
+### 1.16.15 TACF
+
+### 1.16.16 OPRMSG
+
 ***
 ***
 ***
@@ -1451,7 +1624,6 @@ Default LRECL and RECFM of a created dataset. Defautls are LRECL=80 and RECFM=FB
 
   TACF: When TACF is installed, the TACF configuration file tacf.conf is generated. This file contains basic TACF configuration information, specifies resource information for TACF ODBC connection, specifies whether TACF will check the group that users belong to when they attempt to access resources, and specifies to control whether RACF allows users to access datasets whos profiles are not registered in TACF.
 
-* **tjclrun.conf**
 * **tjes.conf**
 
   - JOBCLASS
