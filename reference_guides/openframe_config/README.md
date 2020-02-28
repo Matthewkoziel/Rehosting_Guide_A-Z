@@ -1503,13 +1503,55 @@ Depending on the output class of the SYSOUT, default output disposition and defa
 
 - ${class}=${normal_disp}${,abnormal_disp}:${default_lrecl}
 
+If OUTCLASS specified in JCL is not specified in OTUCLASS of tjes.conf, (PURGE,PURGE) is used as a default output disposition. The default lrecl can only be used when RECFM has a fixed format. If RECFM has a fixed format and the default lrecl is not specified, 80 is used.
 
+Recommendation: Check with the customer on what each OUTCLASS class should be set to.
 
 ### 1.16.14 OUTDEF
 
+- OUTNUM=8000
+
+Defines the size of the OUTPUTQ. Can be an integer between 1 and 99999. The larger the OUTPUTQ, the more information can be stored, however, it is recommended that the size is adjusted properly because a large amount of information may hinder performance for changing and checking each output status. 
+
+Recommendation: Leave it as default, increase if necessary.
+
+- USE_OUTPUTQ=YES
+
+Defines whether to execute OUTPUT processing.
+
+Recommendation: Leave it as default (YES)
+
+- DATA_DIR=${OPENFRAME_HOME}/shared
+
+Defines a directory into which to copy the OUTPUT from spool.
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/shared)
+
+- REMOVE_SPOOL=NO
+
+Option to execute post-processing after OUTPUT processing completes. If this element is set to YES, the SPOOL will be deleted when removing OUTPUT from OUTPUTQ. If set to NO, the SPOOL will not be deleted (Default is (NO))
+
+Recommendation: Leave it as default (NO)
+
 ### 1.16.15 TACF
 
+- CHECK_JOBNAMEAUTH=NO
+
+This element decies whether to check authority over JOBNAME when controlling jobs for SUBMIT, REMOVE, START and HOLD.
+
+Recommendation: Change this value to (YES)
+
+- CHECK_SPOOLAUTH=NO
+
+This element decides whether to check authority to open SPOOL through PODD command in tjesmgr 
+
+Recommendation: Change this value to (YES)
+
 ### 1.16.16 OPRMSG
+
+- USE_CONSOLE=YES
+
+  #TODO
 
 ***
 ***
