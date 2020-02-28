@@ -1391,13 +1391,103 @@ Recommendation: Change this to fit the customer's requirements. Customers may ha
 
 ### 1.16.8 DYNAMIC_LIBRARY
 
+- TEMPLIB=SYS1.TEMPLIB
+
+Specifies the TEMP Libraries. This is the name of the PDS dataset to be used for temporarily saving the existing library when the user library is modified.
+
+Recommendation: You should be able to leave this as default, but check with the customer if they have a similar PDS name on the mainframe that they use. If so, change SYS1.TEMPLIB to that PDS name.
+
 ### 1.16.9 LOG
+
+- JOBLOG=${OPENFRAME_HOME}/log/joblog/job.log
+
+Assigns a file path for the JOBLOG which logs the status of the changes of the JOBs
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/log/joblog/job.log)
+
+- SUBMITLOG=${OPENFRAME_HOME}/log/submitlog/submit.log
+
+Assigns a file path of SUBMITLOG which logs the JCL submit trials and results.
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/log/submitlog/submit.log)
 
 ### 1.16.10 SPOOL
 
+- SPOOL_VOLUME_SER=VSPOOL
+
+This defines SPOOL VOLUME SERIAL defined in the volume.conf configuration file.
+
+Recommendation: Check what the customer wants to name the spool volume serial and assign this variable as well as define it in volume.conf configuration file.
+
+- SPOOL_BACKUP_DIR=${OPENFRAME_HOME}/spbackup
+
+Defines the directory for storing the spool backup data when using the BACKUP feature.
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/spbackup)
+
+- SPOOL_UNPACK_DIR=${OPENFRAME_HOME}/spunpack
+
+Defines the directory used for decompressed spools from backups
+
+Recommendation: Leave it as default (${OPENFRAME_HOME}/spunpack)
+
+- USE_DATABASE=NO
+
+  #TODO
+
+- SYSOUT_AS_A_FILE=NO
+
+  #TODO
+
 ### 1.16.11 INTRDR
 
+- HOLD=NO
+
+Defines whether the job status should be set to HOLD when the JCL is submitted by an internal reader
+
+Recommendation: Leave it as default (NO)
+
+- NODENAME=NODE1
+
+Defines which node to execute the job when the JCL is submitted by an internal reader
+
+Recommendation: If you have more than one node, you should check which node will be your main node to submit JCL to if submitted by an internal reader.
+
+- USERNAME=${USERNAME}
+
+Sets which user is to receive the TACF certificate when the JCL is submitted using an internal reader
+
+Recommendation: Specify a Username that the customer already uses on the mainframe.
+
+- GROUPNAME=${GROUPNAME}
+
+Defines which user group is to receive the TACF certificate when the JCL is submitted using an internal reader.
+
+Recommendation: Specify a group that the customer already uses on the mainframe
+
+- PASSWORD=${PASSWORD}
+
+Sets the password for the user to receive the TACF certification when the JCL is submitted using an internal reader
+
+Recommendation: Check with the customer what the user's password will be and set it here.
+
+- ENPASSWD=****
+
+This attribute encrypts the user password to receive the TACF certificate when the JCL is submitted using an internal reader
+
+*Either the PASSWORD or ENPASSWD field should be configured, not both. To configure only one or the other, Add a pound symbol (#) before the line to comment it.*
+
 ### 1.16.12 INITDEF
+
+This section describes the initial configuration values of the RUNNER in TJES.
+
+- INITNUM=${VALUE}
+
+Defines the total slot count of the node. Usually, 11 is defined, but there is no limit for the number of slots, except for the size of the memory installed on the machine. One runner will reqire a 256 bytes of memory to be allocated by obmjinit. It's recommended to use less than 500 slots and manage it as CLASS ACTIVE, and INACTIVE.
+
+Recommendation: Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
+
+[Link to Initiator Configuration JCL](./initiator_config/README.md)
 
 ### 1.16.13 OUTCLASS
 
