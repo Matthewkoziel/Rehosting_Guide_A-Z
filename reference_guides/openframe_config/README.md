@@ -1487,9 +1487,23 @@ Defines the total slot count of the node. Usually, 11 is defined, but there is n
 
 Recommendation: Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
 
+*See guide in next section*
+
+- INITxxxx = ${name},${classes},${ACTIVE|INACTIVE}
+
+Specifies each Runner slot. Each "xxxx" represents the number of the runner slot. It should start at 0000 and go up to 9999. The ${name} can be anything, it has no special meaning. It's recommended to keep the name sort and sweet. If your INIT is 0000, you can use 0 as the name. The classes you can assign should be the same as the classes on the mainframe. If they have initiators running on the classes ABC, it should match in the classes section. Lastly, the ACTIVE|INACTIVE specifies if that runner is active or not.
+
+Recommendation: Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
+
 [Link to Initiator Configuration JCL](./initiator_config/README.md)
 
 ### 1.16.13 OUTCLASS
+
+Depending on the output class of the SYSOUT, default output disposition and default lrecl are configured.
+
+- ${class}=${normal_disp}${,abnormal_disp}:${default_lrecl}
+
+
 
 ### 1.16.14 OUTDEF
 
