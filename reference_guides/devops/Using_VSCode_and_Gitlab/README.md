@@ -4,32 +4,29 @@
 
 <!-- TODO Finalize the Table of Contents with the formatting and links -->
 
-1. Devops Architecture  
-1. Git Client Installation  
-    1. Default installation (Windows)  
-    1. Installation Using the Thumbdrive Edition  
-    1. Installation on a Linux machine  
-1. VSCode IDE Installation  
-    1. Default Installation (Windows)  
-    1. Installation on a Linux machine  
-1. VSCode Configuration  
-1. VSCode Extensions
-    1. Installation using extend view on VSCode
-    1. Manual Installation of extensions  
-    1. Settings  
-1. Using VSCode with Git  
-    1. Git Clone  
-    1. Creating new branch  
-    1. Saving changes  
-    1. Reviewing changes  
-    1. Git commit  
-    1. Git Push/Pull  
-1. Gitlab  
-    1. Merge request  
-    1. CI/CD - Pipeline setup  
-    1. CI/CD - Running a Pipeline  
+- [1. Architecture of the Gitlab server](#1-architecture-of-the-gitlab-server)
+- [2. Git Client Installation](#2-git-client-installation)
+  - [2.1 Default installation (Windows)](#21-default-installation-windows)
+- [3. VSCode IDE Installation](#3-vscode-ide-installation)
+  - [3.1 Windows](#31-windows)
+- [4. VSCode Configuration](#4-vscode-configuration)
+  - [4.1 Extensions](#41-extensions)
+    - [4.1.1 Through VS Code](#411-through-vs-code)
+    - [4.1.2 Manual installation of extensions](#412-manual-installation-of-extensions)
+  - [4.2 Settings](#42-settings)
+- [5. Using VSCode with Git](#5-using-vscode-with-git)
+  - [5.1 Git Clone](#51-git-clone)
+  - [5.2 Creating new branch](#52-creating-new-branch)
+  - [5.3 Saving changes](#53-saving-changes)
+  - [5.4 Reviewing changes](#54-reviewing-changes)
+  - [5.5 Git commit](#55-git-commit)
+  - [5.6 Git Push/Pull](#56-git-pushpull)
+- [6. Gitlab](#6-gitlab)
+  - [6.1 Merge request](#61-merge-request)
+  - [6.2 CI/CD - Pipeline setup](#62-cicd---pipeline-setup)
+  - [6.3 CI/CD - Running a Pipeline](#63-cicd---running-a-pipeline)
 
-## Devops Architecture
+## 1. Architecture of the Gitlab server
 
 ![alt text](./reference_images/architecture_diagram.jpg "Architecture diagram")
 
@@ -42,9 +39,9 @@
 1. Trigger deployment of the source code using Gitlab pipeline
 1. New module gets deployed either on TEST environment or PRODUCTION environment
 
-## Git Client Installation
+## 2. Git Client Installation
 
-### Windows
+### 2.1 Default installation (Windows)
 
 __a.__ Open the Start Menu and search "cmd":
 
@@ -97,9 +94,9 @@ __f.__ Now git is successfully installed on your machine, we want to check that 
 
 *Note: If you have further questions about git and its commands, please refer to the official documentation here [**Git Reference Manual**](https://git-scm.com/docs)*
 
-## VSCode IDE Installation
+## 3. VSCode IDE Installation
 
-### Windows
+### 3.1 Windows
 
 __a.__ Go to the following URL: [**VSCode Downloads**](https://code.visualstudio.com/download)
 
@@ -121,11 +118,11 @@ __d.__ After successful installation, you can now run __VSCode IDE__. Go to the 
 
 *Note: If you have further questions about VS Code and its features, please refer to the official documentation here [**VS Code Reference Manual**](https://code.visualstudio.com/docs)*
 
-## VSCode Configuration
+## 4. VSCode Configuration
 
-### Extensions
+### 4.1 Extensions
 
-#### Through VS Code
+#### 4.1.1 Through VS Code
 
 __a.__ Go to the Extensions tab in VS Code and install the extensions you want:
 
@@ -144,7 +141,7 @@ __c.__ Recommended Extensions:
 - Git Lens  
 - Todo Tree  
 
-#### Manual installation of extensions
+#### 4.1.2 Manual installation of extensions
 
 If you have some access restrictions on your machine that does not allowed to install extensions through VS Code, you may have to install them manually.
 
@@ -164,7 +161,7 @@ __d.__ Go to the folder where you downloaded the VSIX file and open it. The exte
 
 ![alt text](./reference_images/vscode_extension_manual_2.png "VSCode Extension Manual")
 
-### Settings
+### 4.2 Settings
 
 __a.__ Open the menu File, go to __Preferences__ and __Settings__ (You can also just hit the shortcut __CTRL+,__):
 
@@ -190,9 +187,9 @@ __c.__ Add the following lines to this file
 
 __d.__ After the change, save the file and restart VS Code.
 
-## Using VSCode with Git
+## 5. Using VSCode with Git
 
-### Git Clone
+### 5.1 Git Clone
 
 __a.__ Press F1 to toggle the command prompt. Type __Git Clone__ and then press __Enter__:
 
@@ -210,7 +207,7 @@ __d.__ Finally, you can add the folder to the Workspace. Right click on empty ar
 
 ![alt text](./reference_images/vscode_git_clone_4.png "VSCode Git Clone")
 
-### Creating new branch
+### 5.2 Creating new branch
 
 __a.__ Hit the button related to the branch in the bottom left corner:
 
@@ -231,7 +228,7 @@ __c.__ Branch name in the bottom left corner gets changed.
 
 ![alt text](./reference_images/vscode_git_branch_5.png "VSCode Git Branch")  
 
-### Saving changes
+### 5.3 Saving changes
 
 Whenever you make some modifications on a file, you have to save it:
 
@@ -248,7 +245,7 @@ Whenever you make some modifications on a file, you have to save it:
 
 ![alt text](./reference_images/vscode_git_change_2.png "VSCode Git Branch")  
 
-### Reviewing changes
+### 5.4 Reviewing changes
 
 __a.__ To open the Working Tree:
     - Click on the dedicated button in the top right corner    
@@ -261,7 +258,7 @@ __b.__ Here is what you can see:
 
 ![alt text](./reference_images/vscode_git_change_4.png "VSCode Git Branch")  
 
-### Git commit
+### 5.5 Git commit
 
 __a.__ On Source Control View, you can see the list of files which have been modified but not have been committed:
 
@@ -285,7 +282,7 @@ __e.__ Either Ctrl+Enter or the dedicated button, commit changes to the local re
 
 Now your local repository is up to date.
 
-### Git Push/Pull
+### 5.6 Git Push/Pull
 
 __a.__ To push/pull the changes to and from remote repository, click on synchronize icon:
 
@@ -299,9 +296,9 @@ When the remote repository have changes (another developer added his own changes
     - 1 to push / 1 to pull  
     ![alt text](./reference_images/git_push_pull_4.png "VSCode Git Commit")  
 
-## Gitlab  
+## 6. Gitlab
 
-### Merge request
+### 6.1 Merge request
 
 __a.__ Since you created your own branch and pushed the changes on it, the Admin Developer has to review your changes before adding them to the master branch of the project. To do that, you have to create a merge request:  
     - Open your web browser -> Go to your Gitlab server -> Log in -> Go to the merge request webpage
@@ -327,7 +324,7 @@ __e.__ If everything is correct, approve the merge request by clicking the __Mer
 
 ![alt text](./reference_images/gitlab_merge_request_4.png "Gitlab Merge Request")  
 
-### CI/CD - Pipeline setup
+### 6.2 CI/CD - Pipeline setup
 
 __a.__ Make sure you have a file called ".gitlab-ci.yml" in your project, this is a configuration file for the pipeline.
 
@@ -347,7 +344,7 @@ __c.__ In __ops__ project, there is a __profile__ folder which contain one folde
 
 ![alt text](./reference_images/gitlab_pipeline_setup_3.png "Gitlab Pipeline Setup")  
 
-### CI/CD - Running a Pipeline
+### 6.3 CI/CD - Running a Pipeline
 
 __a.__ Goto project on gitlab and click __CI/CD__ -> __Pipelines__ -> __Run Pipeline__.
 
