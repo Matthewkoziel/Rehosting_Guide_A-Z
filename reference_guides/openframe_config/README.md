@@ -1553,6 +1553,10 @@ Recommendation: Change this value to (YES)
 
   #TODO
 
+## 1.17 TJESMGR Configuration (tjesmgr.conf)
+
+
+
 ***
 ***
 ***
@@ -1769,8 +1773,6 @@ Default LRECL and RECFM of a created dataset. Defautls are LRECL=80 and RECFM=FB
 * **tacf.conf**
 
   TACF: When TACF is installed, the TACF configuration file tacf.conf is generated. This file contains basic TACF configuration information, specifies resource information for TACF ODBC connection, specifies whether TACF will check the group that users belong to when they attempt to access resources, and specifies to control whether RACF allows users to access datasets whos profiles are not registered in TACF.
-
-* **tjes.conf**
 
   - JOBCLASS
       + What: Specifies what a JOB should do when submitted on OpenFrame. (START, HOLD, etc)
