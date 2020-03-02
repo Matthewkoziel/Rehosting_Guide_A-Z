@@ -360,4 +360,4 @@ __b.__ Set up pipeline variables and click __Run Pipeline__ to trigger pipeline:
 
 __d.__ Check if the pipeline is successful or not:
 
-![alt text](./reference_images/gitlab_pipeline_run_3.png "Gitlab Pipeline Run")  
+![alt text](./reference_images/gitlab_pipeline_run_3_edit.jpg "Gitlab Pipeline Run")  
