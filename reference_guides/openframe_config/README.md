@@ -121,13 +121,13 @@ More information about ds.conf can be found in the manual: OpenFrame_Base_Fix#3_
 
 Stores information on where the schema files should be pulled from for dsmigin/dsmigout.
 
-Recommendation: Leave it as default ($OPENFRAME_HOME/schema)
+*Recommendation:* Leave it as default ($OPENFRAME_HOME/schema)
 
 ### 1.1.2 Dataset Resource
 
 Shared Memory Key for dataset allocation information
 
-Recommendation: Leave it as default (61482)
+*Recommendation:* Leave it as default (61482)
 
 ### 1.1.3 Dataset Default
 
@@ -143,7 +143,7 @@ It's unlikely the customer has a default volume called DEFVOL in the mainframe, 
 
 This describes the name of the Spool's Volume Serial. 
 
-Recommendation: Leave it as default (VSPOOL)
+*Recommendation:* Leave it as default (VSPOOL)
 
 ***
 
@@ -151,7 +151,7 @@ Recommendation: Leave it as default (VSPOOL)
 
 Size of the non-vsam dataset buffer in Kilobytes. 
 
-Recommendation: Leave it as default (512)
+*Recommendation:* Leave it as default (512)
 
 ***
 
@@ -159,7 +159,7 @@ Recommendation: Leave it as default (512)
 
 Maximum Extent number of the non-vsam dataset
 
-Recommendation: Find mainframe equivalent and set value equal. (Default=50)
+*Recommendation:* Find mainframe equivalent and set value equal. (Default=50)
 
 ***
 
@@ -167,7 +167,7 @@ Recommendation: Find mainframe equivalent and set value equal. (Default=50)
 
 Maximum number of slots allocated for a dataset. Must be a number between 256 and 65535. 
 
-Recommendation: Leave it as default (65535)
+*Recommendation:* Leave it as default (65535)
 
 ***
 
@@ -175,7 +175,7 @@ Recommendation: Leave it as default (65535)
 
 This option checks the permissions in the dataset allocation. Can be easier to handle if we leave this on NO at the start of the project, then change it to YES later.
 
-Recommendation: Leave it as default (NO), Then change it to YES in production.
+*Recommendation:* Leave it as default (NO), Then change it to YES in production.
 
 ***
 
@@ -183,7 +183,7 @@ Recommendation: Leave it as default (NO), Then change it to YES in production.
 
 Use Tibero/TSAM as BDAM.
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 *** 
 
@@ -191,7 +191,7 @@ Recommendation: Leave it as default (NO)
 
 Calculate size of a PDS by adding up the sizes of all members
 
-Recommendation: Ask the customer what they would prefer
+*Recommendation:* Ask the customer what they would prefer
 
 ***
 
@@ -205,7 +205,7 @@ Recommendation: Ask the customer what they would prefer
 
 Specifies the DCB information of an output dataset for utilities such as SORT and IEBGENER to the SMS class following ACS rules, or to the DCB information of the input dataset.
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ***
 
@@ -213,7 +213,7 @@ Recommendation: Leave it as default (NO)
 
 Sets the GDG Dataset sort type to Last in - First Out
 
-Recommendation: Leave it as default (LIFO)
+*Recommendation:* Leave it as default (LIFO)
 
 ***
 
@@ -221,7 +221,7 @@ Recommendation: Leave it as default (LIFO)
 
 Sets the GDG scratch setting to either NOSCRATCH or SCRATCH.
 
-Recommendation: Leave it as default (NOSCRATCH)
+*Recommendation:* Leave it as default (NOSCRATCH)
 
 ***
 
@@ -229,7 +229,7 @@ Recommendation: Leave it as default (NOSCRATCH)
 
 Updates the GDG generation at the end of a JOB step
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ***
 
@@ -237,7 +237,7 @@ Recommendation: Leave it as default (YES)
 
   #TODO
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ***
 
@@ -245,7 +245,7 @@ Recommendation: Leave it as default (YES)
 
   #TODO
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ### 1.1.4 Dataset Lock
 
@@ -256,7 +256,7 @@ Send LOCK related client requests such as lock, unlock, lock clear, and lock lis
   * LOCK: Sends to the lock server
   * NOLOCK: Does not send to the lock server
 
-Recommendation: Leave it as default (LOCK)
+*Recommendation:* Leave it as default (LOCK)
 
 ***
 
@@ -264,7 +264,7 @@ Recommendation: Leave it as default (LOCK)
 
 Retry Interval for failed lock client requests
 
-Recommendation: Leave it as default (5)
+*Recommendation:* Leave it as default (5)
 
 ***
 
@@ -272,7 +272,7 @@ Recommendation: Leave it as default (5)
 
 ODBC connection name (odbc-section-name) used to connect to the database. The odbc-section-name must be specified in the ofsys.conf file.
 
-Recommendation: Check the ofsys.conf file. In cases where the ODBC connection was set in a standard, default manner, the name will be LOCK_ODBC.
+*Recommendation:* Check the ofsys.conf file. In cases where the ODBC connection was set in a standard, default manner, the name will be LOCK_ODBC.
 
 ## 1.2 Dataset Tool Configuration (dstool.conf)
 
@@ -288,7 +288,7 @@ Currently, there are no default values set in the COMMON configuration portion o
 
 Set the Occurs Depending On minimum to zero (YES|NO)
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.2.3 DSLOAD
 
@@ -296,7 +296,7 @@ Recommendation: Leave it as default (NO)
 
 Used to limit the maximum size of datasets processed by dsload. 
 
-Recommendation: Leave it as default (1000000). If a specific dataset requires a new maximum, change this value to be just larger than the dataset size.
+*Recommendation:* Leave it as default (1000000). If a specific dataset requires a new maximum, change this value to be just larger than the dataset size.
 
 ***
 
@@ -304,7 +304,7 @@ Recommendation: Leave it as default (1000000). If a specific dataset requires a 
 
 This is the default export location for the dsload tool. It is recommended to use the ```[-t <target>]``` option in the dsload tool to explicitly specify where a dataset should be loaded to, but in the event that it is not, it will end up in the LOAD_DIR.
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/temp)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/temp)
 
 ***
 
@@ -312,7 +312,7 @@ Recommendation: Leave it as default (${OPENFRAME_HOME}/temp)
 
 If the ```[-d <delimiter>]``` option is not specified in dsload, it will be defaulted to the delimiter specified above. For Linux, the common delimiter is "\r\n"
 
-Recommendation: Leave it as default (\r\n)
+*Recommendation:* Leave it as default (\r\n)
 
 ### 1.2.4 DSVIEW
 
@@ -320,7 +320,7 @@ NOCATALOG_VIEW=YES
 
 This setting allows non-VSAM datasets to still be viewed, even if they're not cataloged. This can be handy when trying to view a dataset using spfedit, but the dataset is not cataloged. If you still wish to see it, you can  use dsview.
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ### 1.2.5 DSMIGIN
 
@@ -332,7 +332,7 @@ Currently, there are no default values set in the DSMIGIN configuration portion 
 
 Option to update the attributes of a dataset when the RECATALOG option is used
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ### 1.2.7 OFRDMSVR
 
@@ -340,7 +340,7 @@ Recommendation: Leave it as default (YES)
 
 Option to delete datasets after they expire
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ***
 
@@ -348,7 +348,7 @@ Recommendation: Leave it as default (YES)
 
 Option to delete GDS datasets after they expire
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ***
 
@@ -356,7 +356,7 @@ Recommendation: Leave it as default (YES)
 
 Time interval between attempts to call service from the ofrdmsvr server process (in minutes)
 
-Recommendation: Leave it as default (180) 
+*Recommendation:* Leave it as default (180) 
 
 ### 1.2.8 OFRUISVR
 
@@ -367,7 +367,7 @@ Option to change the owner of datasets created with the TACF token when creating
 * MASTER: Does not change the OWNER of the created dataset. The OWNER is set to the user ID who started the ofruisvr. (DEFAULT)
 * USER: Changes the OWNER of the created dataset into the ID of the user who are using the TACF token.
 
-Recommendation: Leave it as default (MASTER)
+*Recommendation:* Leave it as default (MASTER)
 
 ***
 
@@ -375,7 +375,7 @@ Recommendation: Leave it as default (MASTER)
 
 List of commands that can be executed using the OFRUISVRCOMMAND service of the ofruisvr server process. If not specified, ANY command can be executed.
 
-Recommendation: Check with the customer on what commands they will allow their employees to execute from OFManager. Examples include:
+*Recommendation:* Check with the customer on what commands they will allow their employees to execute from OFManager. Examples include:
 
   - dslist
   - dscreate
@@ -388,7 +388,7 @@ Recommendation: Check with the customer on what commands they will allow their e
 
 Option to execute a lock on a dataset when using dsview
 
-Recommendation: Change this to value to (NO). When executing an spfedit to only browse a dataset, the ```-b``` option should be passed. dsview can be used similarly once this value is changed to NO.
+*Recommendation:* Change this to value to (NO). When executing an spfedit to only browse a dataset, the ```-b``` option should be passed. dsview can be used similarly once this value is changed to NO.
 
 ### 1.2.9 OFRDSEDT
 
@@ -400,7 +400,7 @@ Currently, there are no default values set in the OFRDSEDT configuration portion
 
 Specifies the number of records to be loaded to the memory whenever spfedit reads a dataset. 
 
-Recommendation: Leave it as default (1024)
+*Recommendation:* Leave it as default (1024)
 
 ***
 
@@ -424,7 +424,7 @@ Recommndation: Leave it as default (YES)
 
 Option to create a new dataset when there is no dataset to replace while executing the REPLACE command.
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ## 1.3 CPM Configuration (cpm.conf)
 
@@ -436,7 +436,7 @@ The cpm.conf configuration file contains the settings for conversion process fro
 
 Sets the EBCDIC to ASCII cpm file. There are many different cpm files in ${OPENFRAME_HOME}/cpm which can be modified using the cpmmgr tool. Learn more about the cpmmgr tool here: #TODO
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/EBCASCUS.cpm)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/cpm/EBCASCUS.cpm)
 
 ***
 
@@ -444,7 +444,7 @@ Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/EBCASCUS.cpm)
 
 Sets the ASCII to EBCDIC cpm file. 
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/ASCEBCUS.cpm)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/cpm/ASCEBCUS.cpm)
 
 ***
 
@@ -452,7 +452,7 @@ Recommendation: Leave it as default (${OPENFRAME_HOME}/cpm/ASCEBCUS.cpm)
 
 Sets the SO hexa code for SOSI characters in mainframe.
 
-Recommendation: Confirm with customer the SOSI values and set accordingly
+*Recommendation:* Confirm with customer the SOSI values and set accordingly
 
 ***
 
@@ -460,7 +460,7 @@ Recommendation: Confirm with customer the SOSI values and set accordingly
 
 Sets the SI hexa code for SOSI characters in mainframe
 
-Recommendation: Confirm with customer the SOSI values and set accordingly
+*Recommendation:* Confirm with customer the SOSI values and set accordingly
 
 ## 1.4 EZACI Configuration (ezaci.conf)
 
@@ -479,13 +479,13 @@ Check to make sure the libofezaci.so file is linked in ${OPENFRAME_HOME}/lib.
 
 - US=EBCASCUS.cpm
 
-Recommendation: Check to make sure your cpm file is linked to the EBCASCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
+*Recommendation:* Check to make sure your cpm file is linked to the EBCASCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
 
 ### 1.4.2 A2E
 
 - US=ASCEBCUS.cpm
 
-Recommendation: Check to make sure your cpm file is linked to the ASCEBCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
+*Recommendation:* Check to make sure your cpm file is linked to the ASCEBCUS.cpm file. If there is a custom file used instead, you will have to change this configuration to use the same cpm file here.
 
 ## 1.5 EZPLUS Configuration (ezplus.conf)
 
@@ -497,7 +497,7 @@ ezplus.conf is a configuration file for the EZTPA00 utility which is used to exe
 
 Specifies a work area for calling ProTrieve from EZTPA00. It is used to temporarily save the script to transfer to ProTrieve.
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/temp/ezwork)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/temp/ezwork)
 
 ## 1.6 FTP Configuration (ftp.conf)
 
@@ -509,7 +509,7 @@ This configuration file has settings related to the FTP utility in OpenFrame. Pl
 
 Sets the work directory that is used for the FTP program to send data to the FTP server. If there is no entry, or nothing is specified, the [DIRECTORY] TEMP_DIR from the ofsys.conf is specified by default.
 
-Recommendation: Check with the customer what volume you wish to send FTP'd files to.
+*Recommendation:* Check with the customer what volume you wish to send FTP'd files to.
 
 ### 1.6.2 UNIT
 
@@ -526,13 +526,13 @@ Determines whether to check permission to allocate datasets.
   * YES: Checks permission for the dataset
   * NO:  Does not check permission for the dataset (DEFAULT)
 
-Recommendation: Leave it as default until near ready for production.
+*Recommendation:* Leave it as default until near ready for production.
 
 ### 1.6.4 ERROR
 
 These are just messages that can be returned to the user for various errors.
 
-Recommendation: Leave them all as default.
+*Recommendation:* Leave them all as default.
 
 ### 1.6.5 COMMAND_OPERATION
 
@@ -540,7 +540,7 @@ Recommendation: Leave them all as default.
 
 Determines how to process the PUT command if the dataset does not exist. If there is no entry, or nothing is specified, NO is specified by default.
 
-Recommendation: Leave it as default (N)
+*Recommendation:* Leave it as default (N)
 
 ### 1.6.6 OPTION
 
@@ -550,19 +550,23 @@ Option to use SFTP mode. If set to Y, the FTP utility uses secured connection (p
 
 If there is no entry, or nothing is specified, this is set to N
 
-Recommendation: If the customer is on a private network, you can leave this as N. If their security team requires all FTP's to be SFTP's, then you should enable this.
+*Recommendation:* If the customer is on a private network, you can leave this as N. If their security team requires all FTP's to be SFTP's, then you should enable this.
+
+***
 
 - USE_EXIT=Y
 
 Option to exit with return code of ERROR(R00016) instead of 0 when an error, which is defined in the ERROR statement, occurs while using FTP and EXIT statement is specified in the JCL (EXIT statement is specified in PARM).
 
-Recommendation: Leave it as default (Y)
+*Recommendation:* Leave it as default (Y)
+
+***
 
 - FTP_HANDLE_DATASET=Y
 
   #TODO
 
-Recommendation: Leave it as default (Y)
+*Recommendation:* Leave it as default (Y)
 
 ## 1.7 IDCAMS Configuration (idcams.conf)
 
@@ -596,19 +600,19 @@ Configuration file for the IKJEFT01 utility.
 
 Sets whether the database is used or not.
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 - SYSTEM=DBPA
 
 Sets the default database system name
 
-Recommendation: Leave it as default (DBPA)
+*Recommendation:* Leave it as default (DBPA)
 
 - DLOPEN_GLOBAL
 
 Option to use externam variables in batch application
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.8.2 REPORT_DBCONN
 
@@ -616,7 +620,9 @@ Recommendation: Leave it as default (NO)
 
 Specifies the shared object module for logging. The extension IKCONN.so for the module is either IKCONN.so or IKCONN.sl according to system devices. Check the IKCONN module extension in the ${OPENFRAME_HOME}/lib directory. 
 
-Recommendation: Leave it as default (${OPENFRAME_HOME/lib/IKCONN.so}). Double check that the extension is correct in ${OPENFRAME_HOME}/lib directory.
+*Recommendation:* Leave it as default (${OPENFRAME_HOME/lib/IKCONN.so}). Double check that the extension is correct in ${OPENFRAME_HOME}/lib directory.
+
+***
 
 - SYSTEM:${SYSTEM_NAME}
 
@@ -629,7 +635,7 @@ The below settings can be changed to match the type of database for the SYSTEM d
 * USERNAME=
 * PASSWORD=
 
-Recommendation: If you are using Tibero, the default information provided should be enough. If you are using a different database, make sure you get this information from the database administrator and fill it out here.
+*Recommendation:* If you are using Tibero, the default information provided should be enough. If you are using a different database, make sure you get this information from the database administrator and fill it out here.
 
 ### 1.8.3 TACF
 
@@ -637,7 +643,7 @@ Recommendation: If you are using Tibero, the default information provided should
 
 Checks TACF authorization when IKJEFT01 access a dataset.
 
-Recommendation: Leave it as default (NO). Check with customer to see if they want to change this during production time.
+*Recommendation:* Leave it as default (NO). Check with customer to see if they want to change this during production time.
 
 ## 1.9 ISRSUPC Configuration (isrsupc.conf)
 
@@ -674,7 +680,7 @@ Example:
 PROD.BILL.%%%%.*=EBCDIC
 ```
 
-Recommendation: Check with the customer if this is required. It's possible they will want to set up a number of rules, or none. 
+*Recommendation:* Check with the customer if this is required. It's possible they will want to set up a number of rules, or none. 
 
 ### 1.10.2 PREFIX
 
@@ -687,7 +693,7 @@ PROD.BILL.=EBCDIC
 SYS1.=ASCII
 ```
 
-Recommendation: Check with the customer if this is required, and set accordingly.
+*Recommendation:* Check with the customer if this is required, and set accordingly.
 
 ### 1.10.3 SUFFIX
 
@@ -700,7 +706,7 @@ Example:
 .DATA.B1=EBCDIC
 ```
 
-Recommendation: Check with the customer if this is required, and set accordingly.
+*Recommendation:* Check with the customer if this is required, and set accordingly.
 
 ## 1.11 PRINTER Configuration (print.conf)
 
@@ -783,7 +789,7 @@ For an LRS printer, you should use the path: ${OPENFRAME_HOME}/lib/liblrsprt.so
 
 Defines the library file path for the internal reader
 
-Recommendation: Leave this as default (${OPENFRAME_HOME}/lib/libirdrprt.so)
+*Recommendation:* Leave this as default (${OPENFRAME_HOME}/lib/libirdrprt.so)
 
 ### 1.11.4 PMSVR 
 
@@ -791,13 +797,15 @@ Recommendation: Leave this as default (${OPENFRAME_HOME}/lib/libirdrprt.so)
 
 Specifies TP scheduling time interval of the ofrpmsvr server (in microseconds)
 
-Recommendation: Leave it as default (50000)
+*Recommendation:* Leave it as default (50000)
+
+***
 
 - THRESHOLD = 100
 
 Set the print process retry threshold value
 
-Recommendation: Leave it as default (100)
+*Recommendation:* Leave it as default (100)
 
 ### 1.11.5 WRITER
 
@@ -823,7 +831,7 @@ If IKJEFT01 finishes with a Return Code of anything between 8 and 4095, the JOB 
 
 If IKJEFT01 finishes with a Return Code of 4, or anything between 8 and 4095, the JOB will stop at this step.
 
-Recommendation: Check with the customer for which programs/utilities they wish to set up a return code configuration for.
+*Recommendation:* Check with the customer for which programs/utilities they wish to set up a return code configuration for.
 
 ### 1.12.2 PGM_TYPE
 
@@ -833,7 +841,7 @@ Examples:
 
 - ALL=16-4095
 
-Recommendation: Check with the customer for which program types they wish to set up a return code configuration for.
+*Recommendation:* Check with the customer for which program types they wish to set up a return code configuration for.
 
 ## 1.13 SORT Configuration (sort.conf)
 
@@ -845,19 +853,23 @@ This configuration file is for the DFSORT (SYNCSORT, PROSORT) utilities.
 
 Sets whether to use the workspace specified in the configuration file. (If set to NO, you may skip this WORKSPACE section)
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
+
+***
 
 - COUNT=3
 
 Specifies the number of workspaces to use, the default value is 3, and the number can be set up to 10. Each workspace should be numbered from 0 to 9 if using all 10.
 
-Recommendation: Leave it as default (3)
+*Recommendation:* Leave it as default (3)
+
+***
 
 - WORKSPACEX=${OPENFRAME_HOME}/temp/sort0
 
 The X in WORKSPACEX signifies a number starting at 0 working up to 9. Specifies the path of the workspace when USE is set to YES
 
-Recommendation: Leave it as default (Set the path in ${OPENFRAME_HOME}/temp and number the sorts from 0 to 9 with respect to the WORKSPACE number)
+*Recommendation:* Leave it as default (Set the path in ${OPENFRAME_HOME}/temp and number the sorts from 0 to 9 with respect to the WORKSPACE number)
 
 ### 1.13.2 OPTION
 
@@ -865,25 +877,33 @@ Recommendation: Leave it as default (Set the path in ${OPENFRAME_HOME}/temp and 
 
 Specifies whether to use stable sort or not. This setting is for SYNCSORT, and the default is YES. If you use ProSort, use the setting of the ProSort tip file or EQUALS/NOEQUALS
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 - MEMORY_LIMIT=512
 
 Sets the maximume size of memory that SORT can use. If set to 0, it means unlimited. For ProSort, recommendation is between 64 and 512 MB.
 
-Recommendation: Leave it as default (512)
+*Recommendation:* Leave it as default (512)
+
+***
 
 - SEQUENCE=ASCII
 
 Specifies a sort order. This option is for SYNCSORT.
 
-Recommendation: Change this to EBCDIC
+*Recommendation:* Change this to EBCDIC
+
+***
 
 - SOLRF=YES
 
 Specifies which length will be used when the SORTOUT record length is not set 
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 - FSZEST=NO
 
@@ -894,7 +914,7 @@ YES: ignore the SIZE option
 NO:  Do not ignore the SIZE option
 ```
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.13.3 PATH
 
@@ -916,19 +936,23 @@ Specifies a default user for TEXTRUN if no user is specified.
 
 Specifies the username
 
-Recommendation: Do not specify a user. This will require the user to enter their username
+*Recommendation:* Do not specify a user. This will require the user to enter their username
+
+***
 
 - PASSWORD=${PASSWORD}
 
 Specifies the password
 
-Recommendation: Do not specify a password. This will require the user to enter their password
+*Recommendation:* Do not specify a password. This will require the user to enter their password
+
+***
 
 - GROUPNAME
 
 Specifies the groupname
 
-Recommendation: Do not specify a group name. 
+*Recommendation:* Do not specify a group name. 
 
 ### 1.14.2 EXIT_CODE
 
@@ -943,19 +967,23 @@ STOP
 FLUSH
 ```
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 - STOP=253
 
 If STOP status is equal to 253, if the JOB ends with STOP status, the return code 253 will be sent
 
-Recommendation: Set STOP equal to 253
+*Recommendation:* Set STOP equal to 253
+
+***
 
 - FLUSH=254
 
 If FLUSH status is equal to 254, if the JOB ends with FLUSH status, the return code 254 will be sent
 
-Recommendation: Set FLUSH equal to 254
+*Recommendation:* Set FLUSH equal to 254
 
 ### 1.14.3 MONITORING
 
@@ -963,13 +991,15 @@ Recommendation: Set FLUSH equal to 254
 
 Specifies the number of times to retry a connection to the JOB monitoring server, in the event the connection is lost. If this option is not specified, the default retry count is set to 3.
 
-Recommendation: Leave it as default (<BLANK>)
+*Recommendation:* Leave it as default (<BLANK>)
+
+***
 
 - RETRY_INTERVAL
 
 Sets the time interval (in seconds) between attempts to reconnect to a monitoring service. If this option is not specified, the default time interval is 3 seconds.
 
-Recommendation: Leave it as default (<BLANK>)
+*Recommendation:* Leave it as default (<BLANK>)
 
 ### 1.14.4 AUTOEDIT
 
@@ -977,7 +1007,7 @@ Recommendation: Leave it as default (<BLANK>)
 
 Specifies whether or not to use the AUTOEDIT syntax of CONTROL-M.
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.14.5 OPTION
 
@@ -985,13 +1015,15 @@ Recommendation: Leave it as default (NO)
 
 This option sets the default node to be used with the -n option is not given during JOB submission. The default value is an asterisk(\*), meaning that a JOB can be executed on any node.
 
-Recommendation: Check with the customer to see if they have a preference on which node a JOB should be run on by default. If they have no preference, then use the asterisk (\*)
+*Recommendation:* Check with the customer to see if they have a preference on which node a JOB should be run on by default. If they have no preference, then use the asterisk (\*)
+
+***
 
 - LOG=Y
 
 Logs the TEXTRUN commands in ${OPENFRAME_HOME}/log/cmd
 
-Recommendation: Leave it as default (Y)
+*Recommendation:* Leave it as default (Y)
 
 ## 1.15 TJCLRUN Configuration (tjclrun.conf)
 
@@ -1005,19 +1037,25 @@ If the minimum required parameters for JCL JOBs are omitted, the default values 
 
 If the class parameter is ommited from the job data, the default job class value is assigned (this attribute is required). Can be any single letter (A-Z) or number (0-9)
 
-Recommendation: Check with the customer what default CLASS they prefer, and set accordingly.
+*Recommendation:* Check with the customer what default CLASS they prefer, and set accordingly.
+
+***
 
 - MSGCLASS = A
 
 If the MSGCLASS parameter is ommited in the job data, the default job MSGCLASS value is assigned (This attribute is required). Can be any single letter (A-Z) or number (0-9)
 
-Recommendation: Check with the customer what default MSGCLASS they prefer, and set accordingly.
+*Recommendation:* Check with the customer what default MSGCLASS they prefer, and set accordingly.
+
+***
 
 - MSGLEVEL[1] = 1
 
 If the first sub-parameter of the MSGLEVEL in the job data is omitted, the default MSGLEVEL value is used (this attribute is required). Can be any number (0-2)
 
-Recommendation: Leave it as default (1)
+*Recommendation:* Leave it as default (1)
+
+***
 
 - MSGLEVEL[2] = 1
 
@@ -1028,7 +1066,9 @@ If the second sub-parameter of the MSGLEVEL i n the JOB data is omitted, the def
 1 : The dataset allocation results and log messages are printed.
 ```
 
-Recommendation: Leave it as default (1)
+*Recommendation:* Leave it as default (1)
+
+***
 
 - TIME=NOLIMIT
 
@@ -1041,7 +1081,7 @@ NOLIMIT: Has no limit for TIME
 MAXIMUM: Uses the maximum value 357912
 ```
 
-Recommendation: Change this value from NOLIMIT to a set amount of time in minutes. If you want to set it for 1 minute and 10 seconds, it should be like TIME=(1,10)
+*Recommendation:* Change this value from NOLIMIT to a set amount of time in minutes. If you want to set it for 1 minute and 10 seconds, it should be like TIME=(1,10)
 
 ### 1.15.2 PERFORM
 
@@ -1051,7 +1091,9 @@ Specifies whether to indicate CPU usage priority and configures CPU priorities
 
 Specifies whether or not the PERFORM parameter will be used to indicate CPU usage priority (This attribute is optional). If this element is not specified, PERFORM parameters will be ignored in JCL.
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
+
+***
 
 - <PERFORM_VALUE> = <NICE_VALUE>
 
@@ -1067,13 +1109,15 @@ Specifies the length of records in the instream-dataset and the count limit of r
 
 Specifies the length of records in the instream-dataset in JCL (This attribute is optional). If the instream-dataset is shorter than the specified length, the dataset will be padded with spaces. If the instream-dataset is longer than the specified length, excess data will be truncated (default: 80)
 
-Recommendation: Leave it as default (80)
+*Recommendation:* Leave it as default (80)
+
+***
 
 - OUTLIM = 0
 
 Specifies the count limit of records that can be written in a spool dataset in JCL (This attribute is optional). A value between 0 and 16777215 can be specified. If the value is less than 0 or greater than 16777215, 0 or 16777215 is used, respectively. If 0 is specified, record count has no limit. If this element is not specified, the default value is 0.
 
-Recommendation: Leave it as default (0)
+*Recommendation:* Leave it as default (0)
 
 ### 1.15.4 DDTAB
 
@@ -1083,7 +1127,7 @@ Defines the maximum possible number of JCL DD data used in JCL (including JCL pr
 
 Defines the maximum possible number of JCL DD data used in JCL (including JCL procedures) when tjclrun executes jobs (This attribute is optional). The default is 512, and the maximum is 65535. For example, if DDTAB_MAX is set to 1024, up to 1024 D of data (including the JCL procedures called from the job or INPJCL) can be used in a single job. Anything larger is regarded as a possible error and the job will shut down abnormally. The error message "No free DD entry in ddtab" is printed to the SYSMSG. In this case, DDTAB_MAX value can be raised to avoid the error.
 
-Recommendation: Leave it as default (1024)
+*Recommendation:* Leave it as default (1024)
 
 ### 1.15.5 SYSLIB
 
@@ -1093,19 +1137,23 @@ Configures the default directories for lower level batch execution programs or c
 
 Specifies the binary file paths, separated by colon (:). Each customer will have different paths, but anything related to ${OPENFRAME_HOME} should be the same for all environments.
 
-Recommendation: You will need to check the paths for each of these sections, and may be different customer to customer.
+*Recommendation:* You will need to check the paths for each of these sections, and may be different customer to customer.
+
+***
 
 - LIB_PATH=${OPENFRAME_HOME}/lib:${OPENFRAME_HOME}/core/lib:${TB_HOME}/client/lib:${COBDIR}/lib:/usr/lib:/lib:/lib/i686:/usr/local/lib:${PROSORT_HOME}/lib:${OFCOB_HOME}/lib:${ODBC_HOME}/lib:${OFPLI_HOME}/lib:${OFASM_HOME}/lib:${PROTRIEVE_HOME}/lib
 
 Specifies the libary file paths, separated by colon (:). Each customer will have different paths, but anything related to ${OPENFRAME_HOME} should be the same for all environments.
 
-Recommendation: You will need to check the paths for each of these sections, and may be different customer to customer.
+*Recommendation:* You will need to check the paths for each of these sections, and may be different customer to customer.
+
+***
 
 - COB_PATH=${COBPATH}
 
 Specifies a COBOL directory path.
 
-Recommendation: You will need to check the paths for each of these sections, and may be different customer to customer.
+*Recommendation:* You will need to check the paths for each of these sections, and may be different customer to customer.
 
 ### 1.15.6 PRELOAD
 
@@ -1122,7 +1170,7 @@ YES : tjclrun invokes the PGMRTS00 utility if the pgoram is not executable and d
 NO  : tjclrun can only invoke programs compiled as an executable (default)
 ```
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.15.8 DBCONN_INFO
 
@@ -1132,19 +1180,23 @@ Database Connection Information
 
 Specifies the name of the Database
 
-Recommendation: Leave it as default (<BLANK>)
+*Recommendation:* Leave it as default (<BLANK>)
+
+***
 
 - USERNAME= 
 
 Specifies the default username of the Database
 
-Recommendation: Leave it as default (<BLANK>)
+*Recommendation:* Leave it as default (<BLANK>)
+
+***
 
 - PASSWORD=
 
 Specifies the password of the default user of the Database
 
-Recommendation: Leave it as default (<BLANK>)
+*Recommendation:* Leave it as default (<BLANK>)
 
 ### 1.15.9 ACCOUNT
 
@@ -1157,7 +1209,7 @@ YES : the tjclrun program should be installed as root. Programs invoked during t
 NO  : The operator who booted the TJES system, especially the Runner slot process owner becomes the process owner of any batch programs invoked during tjclrun or job steps. In this case, this user cannot operate as another user with the USER parameter in the JCL job data. All OS level ownerships are checked as the operator and the process owner is also the OS userid of the same operator (DEFAULT).
 ```
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.15.10 TACF
 
@@ -1167,13 +1219,15 @@ Determines whether or not to check the TACF access authority among the TACF supp
 
 Determines whether or not to check the TACF access authority among the TACF support features by tjclrun (This attribute is optional). 
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
+
+***
 
 - CHECK_UTAUTH=NO
 
 Determines whether or not to check the TACF execution authority for the main utility programs in the TACF support featurues (This attribute is optional). 
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.15.11 AMS
 
@@ -1183,7 +1237,7 @@ Decides whether to keep the connection with AMS while the Runner is running, or 
 
 The option to cut and connect whenever needed is NOKEEP while the option to keep the connection with AMS is KEEP.
 
-Recommendation: Leave it as default (KEEP)
+*Recommendation:* Leave it as default (KEEP)
 
 ### 1.15.12 JCL
 
@@ -1198,17 +1252,21 @@ YES : The trailing part is ignored and removed (DEFAULT)
 NO  : It is treated as the input stream dataset omitting 'SYSIN DD *' line
 ```
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 - SYMBOL_DELIM=NO
 
   #TODO
 
+***
+
 - PASSWORD_ENCRYPT=NO
 
 Option to encrypt a PASSWORD value within INPJCL in JOBSPOOL to "\*" (Default is NO). Note, that this setting is not applied if the line that includes a PASSWORD value is in a comment.
 
-Recommendation: Change this to value to (YES)
+*Recommendation:* Change this to value to (YES)
 
 ### 1.15.13 OPTION
 
@@ -1223,7 +1281,9 @@ YES : The largest RC among RCs of the processed steps is used as the RC of the j
 NO  : The RC of the last processed step is used as RC of the job (DEFAULT)
 ```
 
-Recommendation: Change this value to (YES)
+*Recommendation:* Change this value to (YES)
+
+***
 
 - PGM_NOT_FOUND=ERROR
 
@@ -1234,11 +1294,15 @@ ERROR : Throw an error
 FLUSH : Flush a job (DEFAULT)
 ```
 
-Recommendation: Change this value to (ERROR)
+*Recommendation:* Change this value to (ERROR)
+
+***
 
 - IGNORE_USER_ABEND=YES
 
   #TODO
+
+***
 
 - PUT_DD_INFO
 
@@ -1255,7 +1319,7 @@ YES : The printed log includes date information per process step to help analyze
 NO  : The messages are not included. It is recommended that this is not set to YES unless the performance of tjclrun is being analyzed (DEFAULT)
 ```
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ## 1.16 TJES Configuration (tjes.conf)
 
@@ -1269,13 +1333,15 @@ Configures information on nodes
 
 Defines the current node name.
 
-Recommendation: Leave it as default (NODE1)
+*Recommendation:* Leave it as default (NODE1)
+
+***
 
 - NODELIST=NODE1
 
 Defines all node names. Node names are separated by semicolon (;).
 
-Recommendation: If you have installed any additional OpenFrame nodes, add them to this list.
+*Recommendation:* If you have installed any additional OpenFrame nodes, add them to this list.
 
 ### 1.16.2 JOBDEF
 
@@ -1285,19 +1351,23 @@ This section manages JOBs in TJES.
 
 Specifies the starting number for a JOBID. 
 
-Recommendation: Leave it as default (1)
+*Recommendation:* Leave it as default (1)
+
+***
 
 - ENDNUM=99999
 
 Specifies the ending JOBID. Therefore, the largest JOBID can be JOB99999 and it would start at JOB00001 with the above settings.
 
-Recommendation: Leave it as default (99999)
+*Recommendation:* Leave it as default (99999)
+
+***
 
 - FULL_WARNING=80
 
 Configures the boundary rate (in percent) of the JOBQ before displaying a warning about a full jOBQ. The boundary can be an integer between 0 and 99.
 
-Recommendation: Ask the customer what percent they would like to set.
+*Recommendation:* Ask the customer what percent they would like to set.
 
 ### 1.16.3 JOBCLASS
 
@@ -1307,9 +1377,11 @@ This section is for the default properties of the TJES job class.
 
 We can specify a class here and give a status of either START or HOLD. Any class between A-Z or 0-9 can be given in the CLASS portion, where the STATUS portion can either be START or HOLD. If not specified, START is given to the class.
 
-Recommendation: Check with the customer if there are any JOB classes that are put on HOLD status. They should be defined in this configuration. If the CLASS starts with START, you need not define it.
+*Recommendation:* Check with the customer if there are any JOB classes that are put on HOLD status. They should be defined in this configuration. If the CLASS starts with START, you need not define it.
 
 ### 1.16.4 JOBGDEF
+
+  #TODO
 
 ### 1.16.5 SCHEDULING
 
@@ -1317,31 +1389,41 @@ Recommendation: Check with the customer if there are any JOB classes that are pu
 
 Decides whether to execute the job with the same JOBNAME concurrently (Default: NO)
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
+
+***
 
 - PRTYJECL=YES
 
 Defines whether to use the priority in the submitted JCL. (Default: YES)
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 -PRTYJOB=YES
 
 Defines whether to use the priorirty of the submitted JCL (Default: NO)
 
-Recommendation: Change this to (YES)
+*Recommendation:* Change this to (YES)
+
+***
 
 -PRTYHIGH=10
 
 Defines the maximum value for the priority attribute. Values higher than the maximum value will be ignored. It can be an integer from 0 to 10.
 
-Recommendation: Leave it as default (10)
+*Recommendation:* Leave it as default (10)
+
+***
 
 - PRTYLOW=5
 
 Defines the minimum allowable value for the priority attribute. Values lower than the minimum will be ignored. It can be an integer from 0 to 10.
 
-Recommendation: Leave it as default (5)
+*Recommendation:* Leave it as default (5)
+
+***
 
 - PRTYRATE=1440
 
@@ -1349,13 +1431,15 @@ Defines a number used in calculating the aging per day rate. The job priority in
 
 You can specify any number between 0 to 86400
 
-Recommendation: Leave it as default (1440)
+*Recommendation:* Leave it as default (1440)
+
+***
 
 - INTERVAL=1
 
 Defines the interval to schedule the scheduler in seconds (Default: 1)
 
-Recommendation: Leave it as default (1)
+*Recommendation:* Leave it as default (1)
 
 ### 1.16.6 RESOURCE
 
@@ -1365,13 +1449,15 @@ This section describes the UNIX resources used in the TJES.
 
 Configures the shared memory key to communicate between obmjinit and tjclrun in TJES
 
-Recommendation: Leave it as default (62039)
+*Recommendation:* Leave it as default (62039)
+
+***
 
 - DBCONN=BASE_ODBC
 
 The ODBC connection named used to access a system database. This name must be defined in the [odbc-section-name] section of ofsys.conf. 
 
-Recommendation: Check your ODBC connection settings. If everything is default, it will most likely be BASE_ODBC.
+*Recommendation:* Check your ODBC connection settings. If everything is default, it will most likely be BASE_ODBC.
 
 ### 1.16.7 PROCLIB
 
@@ -1381,19 +1467,23 @@ This section describes the dataset required to operate a JOB.
 
 If executing a JCL without the specific path, the JCL will be executed based on the priority list given above.
 
-Recommendation: Change this to fit the customer's requirements. Customers will most likely have a PDS they execute JCL from by prirority.
+*Recommendation:* Change this to fit the customer's requirements. Customers will most likely have a PDS they execute JCL from by prirority.
+
+***
 
 - USERLIB=SYS1.USERLIB:${COB_PATH}
 
 This list is a concatenation of the COBOL PDSs used for Batch. Similar to JCLLIB, it is priority based, and seperated by colon (:).
 
-Recommendation: Change this to fit the customer's requirements. Customers will most likely have multiple COBOL PDSs and whichever is priority should come first in the list, and visa versa.
+*Recommendation:* Change this to fit the customer's requirements. Customers will most likely have multiple COBOL PDSs and whichever is priority should come first in the list, and visa versa.
 
--PROC00=SYS1.PROCLIB:${PROC_PATH}
+***
+
+- PROC00=SYS1.PROCLIB:${PROC_PATH}
 
 Similar to JCLLIB and USERLIB, this is where Procedures are called from on a priority basis separated by colon (:)
 
-Recommendation: Change this to fit the customer's requirements. Customers may have multiple Procedure PDSs so they should be listed on priority basis.
+*Recommendation:* Change this to fit the customer's requirements. Customers may have multiple Procedure PDSs so they should be listed on priority basis.
 
 ### 1.16.8 DYNAMIC_LIBRARY
 
@@ -1401,7 +1491,7 @@ Recommendation: Change this to fit the customer's requirements. Customers may ha
 
 Specifies the TEMP Libraries. This is the name of the PDS dataset to be used for temporarily saving the existing library when the user library is modified.
 
-Recommendation: You should be able to leave this as default, but check with the customer if they have a similar PDS name on the mainframe that they use. If so, change SYS1.TEMPLIB to that PDS name.
+*Recommendation:* You should be able to leave this as default, but check with the customer if they have a similar PDS name on the mainframe that they use. If so, change SYS1.TEMPLIB to that PDS name.
 
 ### 1.16.9 LOG
 
@@ -1409,13 +1499,15 @@ Recommendation: You should be able to leave this as default, but check with the 
 
 Assigns a file path for the JOBLOG which logs the status of the changes of the JOBs
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/log/joblog/job.log)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/log/joblog/job.log)
+
+***
 
 - SUBMITLOG=${OPENFRAME_HOME}/log/submitlog/submit.log
 
 Assigns a file path of SUBMITLOG which logs the JCL submit trials and results.
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/log/submitlog/submit.log)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/log/submitlog/submit.log)
 
 ### 1.16.10 SPOOL
 
@@ -1423,23 +1515,31 @@ Recommendation: Leave it as default (${OPENFRAME_HOME}/log/submitlog/submit.log)
 
 This defines SPOOL VOLUME SERIAL defined in the volume.conf configuration file.
 
-Recommendation: Check what the customer wants to name the spool volume serial and assign this variable as well as define it in volume.conf configuration file.
+*Recommendation:* Check what the customer wants to name the spool volume serial and assign this variable as well as define it in volume.conf configuration file.
+
+***
 
 - SPOOL_BACKUP_DIR=${OPENFRAME_HOME}/spbackup
 
 Defines the directory for storing the spool backup data when using the BACKUP feature.
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/spbackup)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/spbackup)
+
+***
 
 - SPOOL_UNPACK_DIR=${OPENFRAME_HOME}/spunpack
 
 Defines the directory used for decompressed spools from backups
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/spunpack)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/spunpack)
+
+***
 
 - USE_DATABASE=NO
 
   #TODO
+
+***
 
 - SYSOUT_AS_A_FILE=NO
 
@@ -1451,31 +1551,41 @@ Recommendation: Leave it as default (${OPENFRAME_HOME}/spunpack)
 
 Defines whether the job status should be set to HOLD when the JCL is submitted by an internal reader
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
+
+***
 
 - NODENAME=NODE1
 
 Defines which node to execute the job when the JCL is submitted by an internal reader
 
-Recommendation: If you have more than one node, you should check which node will be your main node to submit JCL to if submitted by an internal reader.
+*Recommendation:* If you have more than one node, you should check which node will be your main node to submit JCL to if submitted by an internal reader.
+
+***
 
 - USERNAME=${USERNAME}
 
 Sets which user is to receive the TACF certificate when the JCL is submitted using an internal reader
 
-Recommendation: Specify a Username that the customer already uses on the mainframe.
+*Recommendation:* Specify a Username that the customer already uses on the mainframe.
+
+***
 
 - GROUPNAME=${GROUPNAME}
 
 Defines which user group is to receive the TACF certificate when the JCL is submitted using an internal reader.
 
-Recommendation: Specify a group that the customer already uses on the mainframe
+*Recommendation:* Specify a group that the customer already uses on the mainframe
+
+***
 
 - PASSWORD=${PASSWORD}
 
 Sets the password for the user to receive the TACF certification when the JCL is submitted using an internal reader
 
-Recommendation: Check with the customer what the user's password will be and set it here.
+*Recommendation:* Check with the customer what the user's password will be and set it here.
+
+***
 
 - ENPASSWD=****
 
@@ -1491,15 +1601,17 @@ This section describes the initial configuration values of the RUNNER in TJES.
 
 Defines the total slot count of the node. Usually, 11 is defined, but there is no limit for the number of slots, except for the size of the memory installed on the machine. One runner will reqire a 256 bytes of memory to be allocated by obmjinit. It's recommended to use less than 500 slots and manage it as CLASS ACTIVE, and INACTIVE.
 
-Recommendation: Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
+*Recommendation:* Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
 
 *See guide in next section*
+
+***
 
 - INITxxxx = ${name},${classes},${ACTIVE|INACTIVE}
 
 Specifies each Runner slot. Each "xxxx" represents the number of the runner slot. It should start at 0000 and go up to 9999. The ${name} can be anything, it has no special meaning. It's recommended to keep the name sort and sweet. If your INIT is 0000, you can use 0 as the name. The classes you can assign should be the same as the classes on the mainframe. If they have initiators running on the classes ABC, it should match in the classes section. Lastly, the ACTIVE|INACTIVE specifies if that runner is active or not.
 
-Recommendation: Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
+*Recommendation:* Run the JCL described in the initiator_config section of this guide on the mainframe to determine the ACTIVE initiators and how many are required for OpenFrame.
 
 [Link to Initiator Configuration JCL](./initiator_config/README.md)
 
@@ -1511,7 +1623,7 @@ Depending on the output class of the SYSOUT, default output disposition and defa
 
 If OUTCLASS specified in JCL is not specified in OTUCLASS of tjes.conf, (PURGE,PURGE) is used as a default output disposition. The default lrecl can only be used when RECFM has a fixed format. If RECFM has a fixed format and the default lrecl is not specified, 80 is used.
 
-Recommendation: Check with the customer on what each OUTCLASS class should be set to.
+*Recommendation:* Check with the customer on what each OUTCLASS class should be set to.
 
 ### 1.16.14 OUTDEF
 
@@ -1519,25 +1631,31 @@ Recommendation: Check with the customer on what each OUTCLASS class should be se
 
 Defines the size of the OUTPUTQ. Can be an integer between 1 and 99999. The larger the OUTPUTQ, the more information can be stored, however, it is recommended that the size is adjusted properly because a large amount of information may hinder performance for changing and checking each output status. 
 
-Recommendation: Leave it as default, increase if necessary.
+*Recommendation:* Leave it as default, increase if necessary.
+
+***
 
 - USE_OUTPUTQ=YES
 
 Defines whether to execute OUTPUT processing.
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
+
+***
 
 - DATA_DIR=${OPENFRAME_HOME}/shared
 
 Defines a directory into which to copy the OUTPUT from spool.
 
-Recommendation: Leave it as default (${OPENFRAME_HOME}/shared)
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/shared)
+
+***
 
 - REMOVE_SPOOL=NO
 
 Option to execute post-processing after OUTPUT processing completes. If this element is set to YES, the SPOOL will be deleted when removing OUTPUT from OUTPUTQ. If set to NO, the SPOOL will not be deleted (Default is (NO))
 
-Recommendation: Leave it as default (NO)
+*Recommendation:* Leave it as default (NO)
 
 ### 1.16.15 TACF
 
@@ -1545,13 +1663,15 @@ Recommendation: Leave it as default (NO)
 
 This element decies whether to check authority over JOBNAME when controlling jobs for SUBMIT, REMOVE, START and HOLD.
 
-Recommendation: Change this value to (YES)
+*Recommendation:* Change this value to (YES)
+
+***
 
 - CHECK_SPOOLAUTH=NO
 
 This element decides whether to check authority to open SPOOL through PODD command in tjesmgr 
 
-Recommendation: Change this value to (YES)
+*Recommendation:* Change this value to (YES)
 
 ### 1.16.16 OPRMSG
 
@@ -1573,19 +1693,25 @@ EXIST  : Shows spools with spool files only
 GTZERO : Shows spools with the file size larger than 0
 ```
 
-Recommendation: Leave it as default (GTZERO)
+*Recommendation:* Leave it as default (GTZERO)
+
+***
 
 - EDITOR=/usr/bin/vi -w&ROWCOUNT &FILEPATH
 
 Defines which editor to use
 
-Recommendation: Leave it as default (/usr/bin/vi -w&ROWCOUNT &FILEPATH). If vi does not exist at that exact path, you may have to change this value slightly.
+*Recommendation:* Leave it as default (/usr/bin/vi -w&ROWCOUNT &FILEPATH). If vi does not exist at that exact path, you may have to change this value slightly.
+
+***
 
 - VIEWER=/usr/bin/vi -w&ROWCOUNT -R &FILEPATH
 
 Defines which viewer to open a spool.
 
-Recommendation: Leave it as default (/usr/bin/vi -w&ROWCOUNT -R &FILEPATH). Again, if vi does not exist at that exact path, you may have to change this value slightly.
+*Recommendation:* Leave it as default (/usr/bin/vi -w&ROWCOUNT -R &FILEPATH). Again, if vi does not exist at that exact path, you may have to change this value slightly.
+
+***
 
 - DEFAULT_RUNNING_NODE=ANY
 
@@ -1594,7 +1720,7 @@ MY  : Enables JOB execution only on its own node if no node is defined upon job 
 ANY : Enables job execution from any node if no node is defined upon job submission
 ```
 
-Recommendation: Leave it as default (ANY)
+*Recommendation:* Leave it as default (ANY)
 
 ### 1.17.2 DEFAULT_USER
 
@@ -1606,7 +1732,7 @@ Specifies the default user to execute tjesmgr commands if no user is specified.
 
 - GROUPNAME=${GROUPNAME}
 
-Recommendation: Check with customer to see which default user they would like to use for tjesmgr commands.
+*Recommendation:* Check with customer to see which default user they would like to use for tjesmgr commands.
 
 ### 1.17.3 TACF
 
@@ -1614,7 +1740,7 @@ Recommendation: Check with customer to see which default user they would like to
 
 If this is set to YES, authorization is checked against the tjesmgr commands
 
-Recommendation: Leave it as default (YES)
+*Recommendation:* Leave it as default (YES)
 
 ## 1.18 Time Sharing Option Configuration (tso.conf)
 
@@ -1626,37 +1752,49 @@ Configurations for OpenFrame TSO
 
 Specifies search paths for clist resources, if not defined, default is SYS1.TSOLIB 
 
-Recommendation: Check with the customer for which pds contains their CLIST resources and change this accordingly.
+*Recommendation:* Check with the customer for which pds contains their CLIST resources and change this accordingly.
+
+***
 
 - COBLIB=SYS1.COBLIB
 
 Specifies search paths for cobol programs for EXCEFW. If not defined, the default is SYS1.COBLIB
 
-Recommendation: Check with the customer for which pds contains their COBOL resources and change this accordingly.
+*Recommendation:* Check with the customer for which pds contains their COBOL resources and change this accordingly.
+
+***
 
 - PLF_DIRECTORY=${OPENFRAME_HOME}/shared/TSO
 
   #TODO
 
+***
+
 - DEFAULT_FEXPORT_PLF=DEFEXP.PRM;1
 
   #TODO
+
+***
 
 - DEFAULT_FIMPORT_PLF=DEFIMP.PRM;1
 
   #TODO
 
+***
+
 - IPF_ERRCODE=-92065,-92062,-92068,-92067
 
 Specifies ipf error codes which cobol does not check. 
 
-Recommendation: Leave it as default (-92065,-92062,-92068,-92067)
+*Recommendation:* Leave it as default (-92065,-92062,-92068,-92067)
+
+***
 
 - ASC2EBC_CPM=ASCJEFK.cpm
 
 Specifies the CPM map file, to confert ASCII data to EBCDIC
 
-Recommendation: Check the mapping and go through it with the customer. Then assign the cpm file here.
+*Recommendation:* Check the mapping and go through it with the customer. Then assign the cpm file here.
 
 ### 1.18.2 MAP
 
@@ -1664,19 +1802,25 @@ Recommendation: Check the mapping and go through it with the customer. Then assi
 
 Specifies the paths for Map resources. If not defined, the default is SYS1.TSOMAP.
 
-Recommendation: Check with the customer for where their MAP resources are and change this value accordingly.
+*Recommendation:* Check with the customer for where their MAP resources are and change this value accordingly.
+
+***
 
 - DEFAULT_LOG=LOGIN
 
 LOGIN MAP name. If not defined, the default is LOGIN
 
-Recommendation: Check with the customer for what their LOGIN MAP name is and change this accordingly.
+*Recommendation:* Check with the customer for what their LOGIN MAP name is and change this accordingly.
+
+***
 
 - DEFAULT_LOGOFF=LOGOFF
 
 LOGOFF MAP name. If not defined, the default is LOGOFF
 
-Recommendation: Check with the customer for what their LOGOFF MAP name is and change this accordingly.
+*Recommendation:* Check with the customer for what their LOGOFF MAP name is and change this accordingly.
+
+***
 
 - DEFAULT_NEWPASS=NEWPASS
 
@@ -1684,25 +1828,31 @@ When password is expired, this option allows them to create a new password. Defa
 
 Other options include #TODO
 
-Recommendation: Leave it as default (NEWPASS)
+*Recommendation:* Leave it as default (NEWPASS)
+
+***
 
 - DEFAULT_COMMAND=INIT
 
 Specifies the start command MAP name.
 
-Recommendation: Check with the customer to see what their start command is and change this accordingly.
+*Recommendation:* Check with the customer to see what their start command is and change this accordingly.
+
+***
 
 - FIMPORT_MAP=FIMPMAP
 
 MAP Name for getting PLF paramenters in fimport.
 
-Recommendation: Check with the customer to see if they have a different MAP name and change this accordingly
+*Recommendation:* Check with the customer to see if they have a different MAP name and change this accordingly.
+
+***
 
 - FEXPORT_MAP=FEXPMAP
 
 MAP name for getting PLF parameters in fexport.
 
-Recommendation: Check with the customer to see if they have a different MAP name and change this accordingly.
+*Recommendation:* Check with the customer to see if they have a different MAP name and change this accordingly.
 
 ### 1.18.3 TSOMGR
 
@@ -1710,37 +1860,47 @@ Recommendation: Check with the customer to see if they have a different MAP name
 
 DEFAULT procedure name. If not defined, default is INITPROC
 
-Recommendation: Check with the customer to see if they have a different PROCEDURE name and change it accordingly.
+*Recommendation:* Check with the customer to see if they have a different PROCEDURE name and change it accordingly.
+
+***
 
 - USING_CLASS=X
 
 When submitting JCL (including PROCEDURES), set CLASS in the JCL file. If not defined, the default class is A.
 
-Recommendation: Check with the customer to see if they would like to set a different class and change this value accordingly.
+*Recommendation:* Check with the customer to see if they would like to set a different class and change this value accordingly.
+
+***
 
 - USING_OUTCLASS=A
 
 When submitting JCL (including PROCEDURES), set OUTCLASS in the JCL file. If not defined, the default is (A).
 
-Recommendation: Check with the customer to see if they would like to set a different OUTCLASS and change this value accordingly.
+*Recommendation:* Check with the customer to see if they would like to set a different OUTCLASS and change this value accordingly.
+
+***
 
 - CHECK_JOB_INTERVAL=3
 
 TSO JOB check scheduling interval (in seconds). If not defined, the default is 10.
 
-Recommendation: Change this value to (3)
+*Recommendation:* Change this value to (3)
+
+***
 
 - MAX_TSO_COUNT=30
 
 Specifies the Maximum TSO users count.
 
-Recommendation: Leave it as default (30)
+*Recommendation:* Leave it as default (30)
+
+***
 
 - LOG_LEVEL=I
 
 System module log level I for message or D for debug. If not defined, default is I
 
-Recommendation: Leave it as default (I). If there are any problems, it may be beneficial to change this to D for debugging and then changing it back to I once the issue is resolved.
+*Recommendation:* Leave it as default (I). If there are any problems, it may be beneficial to change this to D for debugging and then changing it back to I once the issue is resolved.
 
 ### 1.18.4 LOGIN_PROC
 
@@ -1752,13 +1912,15 @@ Currently, there are no configurations for this section.
 
 Specifies the HOST domain name for HELLO statement. Must be defined, but it can be any unknown domain names.
 
-Recommendation: Check with the customer for the SMTP domain name.
+*Recommendation:* Check with the customer for the SMTP domain name.
+
+***
 
 - SENDER_ADDRESS=${EMAIL_ADDRESS}
 
 Specifies an email address for MAIL FROM statement. (Must be defined)
 
-Recommendation: Check with the customer for the user they wish to send emails from.
+*Recommendation:* Check with the customer for the user they wish to send emails from.
 
 ## 1.19 UNIT Configuration (unit.conf)
 
@@ -1770,19 +1932,23 @@ Stores configurations of the I/O debice info and system UNIT info for OpenFrame.
 
 Maximum number of devices that can be specified in the [DEVICE] section.
 
-Recommendation: Leave it as default (1024)
+*Recommendation:* Leave it as default (1024)
+
+***
 
 - MAX_ESOTERIC_DEVICES=1024
 
 Maximum number of devices groups that can be specified in the ESOTERIC section.
 
-Recommendation: Leave it as default (1024)
+*Recommendation:* Leave it as default (1024)
+
+***
 
 - MAX_DEVNUM_LIST=1024
 
 Maximum number of device numbers that can be included in the device groups specified in the ESOTERIC section.
 
-Recommendation: Leave it as default (1024)
+*Recommendation:* Leave it as default (1024)
 
 ### 1.19.2 DEVICE
 
@@ -1826,13 +1992,52 @@ Example:
 SYSDA=0001-0004,0006
 ```
 
-***
-***
-***
+## 1.20 Volume Configuration (volume.conf)
 
-* **unit.conf**
-* **volume.conf**
-* **vtam.conf**
+Stores info on all volumes that are registered in OpenFrame. The device number used in this configuration file has to be pre-defined in the unit.conf file.
+
+### 1.20.1 HEADER
+
+- MAX_VOLUME_ENTERIES=1024
+
+Specifies maximum number of entries allowed in the VOLUME section.
+
+*Recommendation:* Leave it as default (1024). If more volumes are needed, increase this value.
+
+### 1.20.2 VOLUME
+
+- {VOL_SERIAL}={DEVICE_NUM},{USE_ATTR},{MOUNT_ATTR},{PATH},{TAPE_SWITCH_ATTR (OPTIONAL)},{SHARED_ATTR (OPTIONAL)}
+
+```
+VOL_SERIAL       : Unique volume serial allocated to the system with alphanumeric characters ranging from 1-6 characters.
+
+DEVICE_NUM       : Device number registered in the unit.conf file.
+
+USE_ATTR         : User Attribute
+  - PRIVATE: 
+  - PUBLIC
+  - STORAGE
+
+MOUNT_ATTR       : Mount Attribute
+  - PERMANENT
+  - REMOVABLE
+
+PATH             : Unix directory path on which the volume is mounted
+
+TAPE_SWITCH_ATTR : Option to enable TAPE switch (DEFAULT: NO) 
+
+SHARED_ATTR      : Option to enable volume sharing. (DEFAULT: NO)
+- YES   : Enable Sharing
+- NO    : Disable Sharing
+```
+
+### 1.20.3 TABLESPACE
+
+Currently, there are no configurations for TABLESPACE.
+
+  #TODO
+
+***
 
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
