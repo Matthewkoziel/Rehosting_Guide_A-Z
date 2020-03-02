@@ -1,59 +1,57 @@
-# Using VSCode with Gitlab <!-- omit in toc -->
+# Devops - Using VSCode with Gitlab <!-- omit in toc -->
 
 ## Table of Contents <!-- omit in toc -->
 
-+ [1. Architecture of the Gitlab server](#1-architecture-of-the-gitlab-server)
-+ [2. Git Client Installation](#2-git-client-installation)
-    + [2.1 Default installation (Windows)](#21-default-installation-windows)
-    + [2.2 Installation Using the Thumbdrive Edition](#22-installation-using-the-thumbdrive-edition)
-    + [2.3 Installation on a Linux machine](#23-installation-on-a-linux-machine)
-+ [3. VSCode IDE Installation](#3-vscode-ide-installation)
-    + [3.1 Default Installation (Windows)](#31-default-installation-windows)
-    + [3.2 Installation on a Linux machine](#32-installation-on-a-linux-machine)
-+ [4. VSCode Configuration](#4-vscode-configuration)
-    + [4.1 Extensions](#41-extensions)
-        + [4.1.1 Through VS Code](#411-through-vs-code)
-        + [4.1.2 Manual installation of extensions](#412-manual-installation-of-extensions)
-    + [4.2 Settings](#42-settings)
-+ [5. Using VSCode with Git](#5-using-vscode-with-git)
-    + [5.1 Git Clone](#51-git-clone)
-    + [5.2 Creating new branch](#52-creating-new-branch)
-    + [5.3 Saving changes](#53-saving-changes)
-    + [5.4 Reviewing changes](#54-reviewing-changes)
-    + [5.5 Git commit](#55-git-commit)
-    + [5.6 Git Push/Pull](#56-git-pushpull)
-+ [6. Gitlab](#6-gitlab)
-    + [6.1 Merge request](#61-merge-request)
-    + [6.2 CI/CD - Pipeline setup](#62-cicd---pipeline-setup)
-    + [6.3 CI/CD - Running a Pipeline](#63-cicd---running-a-pipeline)
+<!-- TODO Finalize the Table of Contents with the formatting and links -->
 
+- [1. Architecture of the Gitlab server](#1-architecture-of-the-gitlab-server)
+- [2. Git Client Installation](#2-git-client-installation)
+  - [2.1 Default installation (Windows)](#21-default-installation-windows)
+- [3. VSCode IDE Installation](#3-vscode-ide-installation)
+  - [3.1 Windows](#31-windows)
+- [4. VSCode Configuration](#4-vscode-configuration)
+  - [4.1 Extensions](#41-extensions)
+    - [4.1.1 Through VS Code](#411-through-vs-code)
+    - [4.1.2 Manual installation of extensions](#412-manual-installation-of-extensions)
+  - [4.2 Settings](#42-settings)
+- [5. Using VSCode with Git](#5-using-vscode-with-git)
+  - [5.1 Git Clone](#51-git-clone)
+  - [5.2 Creating new branch](#52-creating-new-branch)
+  - [5.3 Saving changes](#53-saving-changes)
+  - [5.4 Reviewing changes](#54-reviewing-changes)
+  - [5.5 Git commit](#55-git-commit)
+  - [5.6 Git Push/Pull](#56-git-pushpull)
+- [6. Gitlab](#6-gitlab)
+  - [6.1 Merge request](#61-merge-request)
+  - [6.2 CI/CD - Pipeline setup](#62-cicd---pipeline-setup)
+  - [6.3 CI/CD - Running a Pipeline](#63-cicd---running-a-pipeline)
 
 ## 1. Architecture of the Gitlab server
 
 ![alt text](./reference_images/architecture_diagram.jpg "Architecture diagram")
 
 1. Perform the command git clone to the local repository
-2. Add the folder to VSCode Workspace
-3. Modificaton of source code through VSCode IDE
-4. Commit the changes on local repository
-5. Push the changes to remote repository, to the Gitlab server
-6. Login into the Gitlab server through your web browser
-7. Trigger deployment of the source code using Gitlab pipeline
-8. New module gets deployed either on TEST environment or PRODUCTION environment
+1. Add the folder to VSCode Workspace
+1. Modification of source code through VSCode IDE
+1. Commit the changes on local repository
+1. Push the changes to remote repository, to the Gitlab server
+1. Login into the Gitlab server through your web browser
+1. Trigger deployment of the source code using Gitlab pipeline
+1. New module gets deployed either on TEST environment or PRODUCTION environment
 
 ## 2. Git Client Installation
 
 ### 2.1 Default installation (Windows)
 
-**a.** Open the Start Menu and search "cmd":
+__a.__ Open the Start Menu and search "cmd":
 
 ![alt text](./reference_images/start_menu_cmd.png "Start Menu search for cmd")
 
-**b.** Open the command prompt and type the command `git`:
+__b.__ Open the command prompt and type the command `git`:
 
 ![alt text](./reference_images/cmd_git_command.png "git command in cmd")
 
-**c.** The two potential outputs you should have are:
+__c.__ The two potential outputs you should have are:
 
 - Git successfully installed:
 
@@ -65,79 +63,60 @@
 
 If you have this last output, please do the following steps.
 
-**d.** Go to the following URL: [**Git Downloads**](https://git-scm.com/downloads)
+__d.__ Go to the following URL: [**Git Downloads**](https://git-scm.com/downloads)
 
 ![alt text](./reference_images/git_website.png "Git website")
 
-**e.** Depending on your operating, click on one of those buttons:
+__e.__ Depending on your operating, click on one of those buttons:
 
 ![alt text](./reference_images/git_choice_operating_system.png "Choice of operating system")
 
-**f.** Let's say you are working on Windows. When you click on the button, git download start automatically. You also have another alternative: 
+__f.__ Let's say you are working on Windows. When you click on the button, git download start automatically.
 
-![alt text](./reference_images/git_download_start.png "Download start - potential alternative")
+__g.__ Go to your __Downloads__ folder and execute the git setup.
 
-> **Note**: I recommend to use the installer downloaded by default. But if you have some access restrictions on your machine you may have to use the alternative, the thumbdrive edition, to be able to have git installed on your machine. The reason is you need system admin permissions to install git. Please refer to the section "**Installation Using the Thumbdrive Edition**" to have more information about this type of installation.*
+__h.__ Follow the installation steps:
 
-**g.** Go to your **Downloads** folder and execute the git setup. The name of the file is similar to **Git-2.25.0-64-bit.exe**, depending on the version you install.
+![alt text](./reference_images/git_install_1.png "Git Install")
+![alt text](./reference_images/git_install_2.png "Git Install")
+![alt text](./reference_images/git_install_3.png "Git Install")
+![alt text](./reference_images/git_install_4.png "Git Install")
+![alt text](./reference_images/git_install_5.png "Git Install")
+![alt text](./reference_images/git_install_6.png "Git Install")
+![alt text](./reference_images/git_install_7.png "Git Install")
+![alt text](./reference_images/git_install_8.png "Git Install")
+![alt text](./reference_images/git_install_9.png "Git Install")
+![alt text](./reference_images/git_install_10.png "Git Install")
 
-**h.** Follow the installation steps:
-
-TODO Fill the installation steps, some of them with screenshots
-
-**f.** Now git is successfully installed on your machine, we want to check that everything is working fine. Open the Start Menu, search "cmd" and execute the command `git` to see if you have the good output.
+__f.__ Now git is successfully installed on your machine, we want to check that everything is working fine. Open the Start Menu, search "cmd" and execute the command `git` to see if you have the good output.
 
 ![alt text](./reference_images/start_menu_cmd.png "Start Menu search for cmd")
 
-> **Note**: If you have further questions about git and its commands, please refer to the official documentation here [**Git Reference Manual**](https://git-scm.com/docs)
-
-### 2.2 Installation Using the Thumbdrive Edition
-
-Doing that kind of installation you have to setup environment variables, additionally.
-
-TODO Fill this section
-
-### 2.3 Installation on a Linux machine
-
-TODO Fill this section
-
-- Debian - Ubuntu
-
-- Redhat - CentOS
+*Note: If you have further questions about git and its commands, please refer to the official documentation here [**Git Reference Manual**](https://git-scm.com/docs)*
 
 ## 3. VSCode IDE Installation
 
-### 3.1 Default installation (Windows)
+### 3.1 Windows
 
-**a.** Go to the following URL: [**VSCode Downloads**](https://code.visualstudio.com/download)
+__a.__ Go to the following URL: [**VSCode Downloads**](https://code.visualstudio.com/download)
 
 ![alt text](./reference_images/vscode_website.png "Visual Studio Code website")
 
-**b.** Depending on your operating system, click on one of those buttons:
+__b.__ Download User Installer and execute it to install.
 
-![alt text](./reference_images/vscode_choice_operating_system.png "Choice of operating system")
+__c.__ Follow the installation steps:
 
-**c.** Let's say you are working on **Windows**. When you click on the button, VSCode download start automatically.
+![alt text](./reference_images/vscode_install_1.png "VSCode Install")
+![alt text](./reference_images/vscode_install_2.png "VSCode Install")
+![alt text](./reference_images/vscode_install_3.png "VSCode Install")
+![alt text](./reference_images/vscode_install_4.png "VSCode Install")
+![alt text](./reference_images/vscode_install_5.png "VSCode Install")
 
-> **Note**: I recommend to use the installer downloaded by default. But if you have some access restrictions on your machine you may have to use the User Installer (just below the Windows button, choose either 64bit or 32bit depending on your environment). In that kind of situation, choose C:\\\\Users\\\\userid\\\\vscode as installation folder.
+__d.__ After successful installation, you can now run __VSCode IDE__. Go to the installation folder and execute __Code.exe__.
 
-**d.** Follow the installation steps:
+![alt text](./reference_images/vscode_execute.png "VSCode Execute")
 
-TODO Fill the installation steps, some of then with screenshots
-
-**e.** After successful installation, you can now run **VSCode IDE**. Go to the installation folder and execute **Code.exe**, or seach "_vs code_" in the **Start Menu**.
-
-TODO Add a screenshot for each situation
-
-> **Note**: If you have further questions about VS Code and its features, please refer to the official documentation here [**VS Code Reference Manual**](https://code.visualstudio.com/docs)
-
-### 3.2 Installation on a Linux machine
-
-TODO Fill this scetion
-
-- Debian - Ubuntu
-
-- Redhat - CentOS
+*Note: If you have further questions about VS Code and its features, please refer to the official documentation here [**VS Code Reference Manual**](https://code.visualstudio.com/docs)*
 
 ## 4. VSCode Configuration
 
@@ -145,48 +124,55 @@ TODO Fill this scetion
 
 #### 4.1.1 Through VS Code
 
-**a.** Go to the Extensions tab in VS Code and install the extensions you want:
+__a.__ Go to the Extensions tab in VS Code and install the extensions you want:
 
-TODO Do a screenshot with a clean VS Code
+![alt text](./reference_images/vscode_extension_1.png "VSCode Extension")
+![alt text](./reference_images/vscode_extension_2.png "VSCode Extension")
 
-**b.** Here is a list of Extensions I recommend you to install:
-    - COBOL
-    - Date & Time
-    - Git Extension Pack
-    - Git Blame
-    - Todo Tree
+__b.__ Go to the Extensions tab and check if the extension is enabled
 
-> **Note**: If you have some access restrictions on your machine that does not allowed to install extensions through VS Code, you may have to install them manually. Please follow the steps im the next section.
+![alt text](./reference_images/vscode_extension_3.png "VSCode Extension")
+
+__c.__ Recommended Extensions:
+- COBOL  
+- Date & Time  
+- Git Extension Pack  
+- Git Blame  
+- Git Lens  
+- Todo Tree  
 
 #### 4.1.2 Manual installation of extensions
 
-**a.** To install these extensions manually, go the the extensions for VS Code webpage: [**Extensions**](https://marketplace.visualstudio.com/VSCode)
+If you have some access restrictions on your machine that does not allowed to install extensions through VS Code, you may have to install them manually.
+
+__a.__ Go the extensions on VS Code webpage: [**Extensions**](https://marketplace.visualstudio.com/VSCode)
    
 ![alt text](./reference_images/vscode_extensions_webpage.png "VS Code Extensions webpage")
 
-**b.** From here you can search for an extension and download the corresponding VSIX file:
+__b.__ Search for an extension and download the corresponding VSIX file:
 
 ![alt text](./reference_images/vscode_cobol_extension_download.png "COBOL Extension Download")
 
-**c.** To setup a VSIX extension in VS Code, go to the extensions tab, Open the menu and hit the button **Install form VSIX...**:
+__c.__ Go to the extensions tab on VSCode and Open the menu by clicking "..." and hit the button __Install form VSIX...__:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_extension_manual_1.png "VSCode Extension Manual")
 
-**d.** Go to the folder where you downloaded the VSIX file and open it. The extension is now successfully installed!
+__d.__ Go to the folder where you downloaded the VSIX file and open it. The extension is now successfully installed!
 
-TODO Add the corresponding screenshot
+![alt text](./reference_images/vscode_extension_manual_2.png "VSCode Extension Manual")
 
 ### 4.2 Settings
 
-**a.** Open the menu File, go to **Preferences** and **Settings** (You can also just hit the shortcut **CTRL+,**):
+__a.__ Open the menu File, go to __Preferences__ and __Settings__ (You can also just hit the shortcut __CTRL+,__):
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_settings_1.png "VSCode Settings")
 
-**b.** Search for settings.json and edit the file:
+__b.__ Search for settings.json and edit the file:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_settings_2.png "VSCode Settings")
 
-**c.** Add the following lines to this file 
+__c.__ Add the following lines to this file 
+
 ```json
 {
     "files.encoding": "iso88591",
@@ -199,46 +185,48 @@ TODO Do the screenshot with a clean version of VS Code
 }
 ```
 
-**d.** After the change, save the file and restart VS Code.
+__d.__ After the change, save the file and restart VS Code.
 
 ## 5. Using VSCode with Git
 
 ### 5.1 Git Clone
 
-**a.** Press F1 to toggle the command prompt:
-   
-TODO Do the screenshot with a clean version of VS Code
+__a.__ Press F1 to toggle the command prompt. Type __Git Clone__ and then press __Enter__:
 
-**b.** Type **Git Clone** and then press **Enter**:
- 
-TODO Do the screenshot with a clean version of VS Code
-   
-**c.** It will ask you the repository URL. Use the URL for the Gitlab project.
-   
-TODO Do the screenshot without customer reference
+![alt text](./reference_images/vscode_git_clone_1.png "VSCode Git Clone")
 
-**d.** Select the folder where you want to clone the project (under _C:\\\\Users\\\\userid_, you can create a folder **gitrepo** for instance). This is going to be your **local repository**:
+__b.__ It will ask you the repository URL. Use the URL for the Gitlab project.
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_clone_2.png "VSCode Git Clone")
+
+__c.__ Select the folder where you want to clone the project (under *C:\\\\Users\\\\userid*, you can create a folder __gitrepo__ for instance). This is going to be your __local repository__:
+
+![alt text](./reference_images/vscode_git_clone_3.png "VSCode Git Clone")
    
-**e.** Finally, you can add the folder to the Workspace. Right click on empty area in **Explorer** and do **Add Folder to Workspace...**. Select the previously cloned project you want to add:
+__d.__ Finally, you can add the folder to the Workspace. Right click on empty area in __Explorer__ and do __Add Folder to Workspace...__. Select the previously cloned project you want to add:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_clone_4.png "VSCode Git Clone")
 
 ### 5.2 Creating new branch
 
-**a.** Hit the button related to the branch in the bottom left corner:
+__a.__ Hit the button related to the branch in the bottom left corner:
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_branch_1.png "VSCode Git Branch")  
 
-**b.** The command prompt appear in the top middle of the window. Create a new branch using your userid first, and then test for instance. Here are good examples of branch names:
+__b.__ The command prompt appear in the top middle of the window. Create a new branch using your userid first, and then test for instance. Here are good examples of branch names:
 
 - userid-test
 - userid-new-cobol-feature
 - userid-program_name-ehancement
 - ...
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_branch_2.png "VSCode Git Branch")  
+![alt text](./reference_images/vscode_git_branch_3.png "VSCode Git Branch")  
+![alt text](./reference_images/vscode_git_branch_4.png "VSCode Git Branch")  
+
+__c.__ Branch name in the bottom left corner gets changed.  
+
+![alt text](./reference_images/vscode_git_branch_5.png "VSCode Git Branch")  
 
 ### 5.3 Saving changes
 
@@ -248,153 +236,128 @@ Whenever you make some modifications on a file, you have to save it:
   1. White circle next to the filename appears
   2. Number of files which have not been saved gets displayed
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_change_1.png "VSCode Git Branch")  
 
 - Situation after saving changes on a file:
-  1. White circle changed to **X** (button to close the file in the Editor)
+  1. White circle changed to __X__ (button to close the file in the Editor)
   2. Number of files which have not been committed to the git local repository gets displayed
-  3. **M** which means **Modified** appears next to the filename in the Explorer
+  3. __M__ which means __Modified__ appears next to the filename in the Explorer
 
-TODO Do the screenshot with a clean version of VS Code
+![alt text](./reference_images/vscode_git_change_2.png "VSCode Git Branch")  
 
 ### 5.4 Reviewing changes
 
-**a.** To open the Working Tree, you have two options:
-    - Click on the dedicated button in the top right corner
-    - Double click on the modified file
+__a.__ To open the Working Tree:
+    - Click on the dedicated button in the top right corner    
 
-TODO Add a screenshot for the two options
+![alt text](./reference_images/vscode_git_change_3.png "VSCode Git Branch")  
 
-**b.** Here is what you can see: 
+__b.__ Here is what you can see:  
+    - Left: Local repository version  
+    - Right: Current version  
 
-TODO Add screenshot where I can see addtion, deletion and modification of code
+![alt text](./reference_images/vscode_git_change_4.png "VSCode Git Branch")  
 
 ### 5.5 Git commit
 
-**a.** On Source Control View, you can see the list of files which have been modified but not have been committed:
+__a.__ On Source Control View, you can see the list of files which have been modified but not have been committed:
 
-TODO Add screenshot where I can see one file modified, one file added, one file deleted and one file I do nothing with it
+![alt text](./reference_images/vscode_git_commit_1.png "VSCode Git Commit")  
 
-**b.** You have multiple options about the changes:
-    - **Open** the file
-    - **Discard Changes** with the **arrow**
-    - **Add Changes** to Stages Changes with the **+**
+__b.__ By clicking the __arrow__, you can discard changes rollback to version on local repository
 
-**c.** Click on the +.
+![alt text](./reference_images/vscode_git_commit_2.png "VSCode Git Commit")  
 
-TODO Add screenshot 
+__c.__  By clikcing __+__, you can add changes and make them in staged state
 
-**d.** Type the commit message just above:
+![alt text](./reference_images/vscode_git_commit_3.png "VSCode Git Commit")  
 
-TODO Add screenshot
+__d.__ After staging the changes, type the commit message just above:
 
-**e.** Either Ctrl+Enter or the dedicated button, commit changes to the local repository:
+![alt text](./reference_images/vscode_git_commit_4.png "VSCode Git Commit")  
 
-TODO Add screenshot 
+__e.__ Either Ctrl+Enter or the dedicated button, commit changes to the local repository:
+
+![alt text](./reference_images/vscode_git_commit_5.png "VSCode Git Commit")  
 
 Now your local repository is up to date.
 
 ### 5.6 Git Push/Pull
 
-**a.** Now we want to push our changes to the remote repository, the Gitlab server. As you can see on the screenshot below, there is a change that needs to be pushed:
+__a.__ To push/pull the changes to and from remote repository, click on synchronize icon:
 
-TODO Add screenshot
+![alt text](./reference_images/git_push_pull_1.png "VSCode Git Commit")  
 
-**b.** After the commit, push to make the changes on remote repository to synchronize the code. Hit the **push/pull** button:
+When the remote repository have changes (another developer added his own changes for instance), you need to pull from remote. Here are some of situations you can have:
+    - Nothing to push / pull  
+    ![alt text](./reference_images/git_push_pull_2.png "VSCode Git Commit")  
+    - 1 to push / nothing to pull  
+    ![alt text](./reference_images/git_push_pull_3.png "VSCode Git Commit")  
+    - 1 to push / 1 to pull  
+    ![alt text](./reference_images/git_push_pull_4.png "VSCode Git Commit")  
 
-TODO Zoom of the previous screenshot
-
-When the remote repository have changes (another developer added his own changes for instance), you need to pull from remote. Here are the four types of situations you can have:
-    - Nothing to push / pull
-    - 1 to push / nothing to pull
-    - 1 to push / 1 to pull
-    - Nothing to push / 1 to pull
-
-TODO Add screenshots for each type of situation
-
-## 6. Gitlab 
+## 6. Gitlab
 
 ### 6.1 Merge request
 
-**a.** Since you created your own branch and pushed the changes on it, the Admin Developer has to review your changes before adding them to the master branch of the project. To do that, you have to create a merge request:
-    - Open your web browser
-    - Go to your Gitlab server
-    - Log in
-    - Go to the merge request webpage
+__a.__ Since you created your own branch and pushed the changes on it, the Admin Developer has to review your changes before adding them to the master branch of the project. To do that, you have to create a merge request:  
+    - Open your web browser -> Go to your Gitlab server -> Log in -> Go to the merge request webpage
 
-TODO Add a screenshot for the last step
+__b.__ Fill __Title__, __Description__, __Assignee__ and submit merge request:  
 
-**b.** Fill **Title**, **Description**, **Assignee**. Please look at the example below:
+![alt text](./reference_images/gitlab_merge_request_1.png "Gitlab Merge Request")  
 
-TODO Add screenshot
+*Note: You can optionally choose to delete your branch after merging. Deleting unnecessary branches is HIGHLY RECOMMENDED for better maintenance*
 
-> **Note**: You can optionally choose to delete your branch after merging. Deleting unnecessary branches is HIGHLY RECOMMENDED for better maintenance
+__c.__ After creating a merge request, you can see that __Merge Request count__ has been added:
 
-**c.** After creating a merge request, you can see that **Merge Request count** has been added:
+![alt text](./reference_images/gitlab_merge_request_2.png "Gitlab Merge Request")  
 
-TODO Add screenshot
+__d.__ As the Admin Developer, you have 3 different type of views if you click on the merge request item:
+   - __Discussion__: can leave comments on this thread
+   - __Commits__: see all commits for the merge request
+   - __Changes__: see the content of the changes
 
-**d.** As the Admin Developer, you have 3 different type of views if you click on the merge request item:
-   - **Discussion**: can leave comments on this thread
-   - **Commits**: see all commits for the merge request
-   - **Changes**: see the content of the changes
+![alt text](./reference_images/gitlab_merge_request_3.png "Gitlab Merge Request")  
 
-TODO Add screeshots for each situation 
+__e.__ If everything is correct, approve the merge request by clicking the __Merge__ button
 
-**e.** If everything is correct, approve the merge request by clicking the **Merge** button
-
-TODO Add screenshot
-
-**f.** After merging, leave a "_merge completion_" message and close the request:
-
-TODO Add screeshot
+![alt text](./reference_images/gitlab_merge_request_4.png "Gitlab Merge Request")  
 
 ### 6.2 CI/CD - Pipeline setup
 
-**a.** Make sure you have a file called ".gitlab-ci.yml" in your project, this is a configuration file for the pipeline.
+__a.__ Make sure you have a file called ".gitlab-ci.yml" in your project, this is a configuration file for the pipeline.
 
-TODO Add screenshot
+![alt text](./reference_images/gitlab_pipeline_setup_1.png "Gitlab Pipeline Setup")  
 
-> **Note**: If you don't have that file in your project but the Gitlab server contains other projects that have tghat file, take it from there and modify the variables depending on your environment.*
+*Note: If you don't have that file in your project but the Gitlab server contains other projects that have tghat file, take it from there and modify the variables depending on your environment.*
 
-**b.** Go to **Settings**, then **CI/CD**. Enable pipeline runners for your project:
+__b.__ Go to __Settings__, then __CI/CD__. Enable pipeline runners for your project:
 
-TODO Add screenshot
+![alt text](./reference_images/gitlab_pipeline_setup_2.png "Gitlab Pipeline Setup")  
 
-**c.** In **ops** project, there is a **profile** folder which contain one folder for each project, named same as these projects:
-   
-TODO Add screenshot
+__c.__ In __ops__ project, there is a __profile__ folder which contain one folder for each project, named same as these projects. in each profile, there are 4 different variables in profile you may change:  
+    - __BUILD_SCRIPT__: build script being used during pipeline run. build scripts are in the scripts folder in __ops__ project.  
+    - __BUILD_INCLUDE__: Specify git project which contain includes or copybooks you want to use during the compilation. If you want to specify multiple, use a colon (:) between the names. You can also give branch name in front of the project name with '/' and default is master.  
+    - __BUILD_INSTALL__: Installation destination which is a PDS name in Openframe volume. If you want to specify multiple, use a colon (:) between the names.  
+    - __BUILD_OPTION__: additional options which gets passed to __BUILD_SCRIPT__.  
 
-**d.** There are 4 different variables in profile you may change:
-    - `BUILD_SCRIPT`: build script being used during pipeline running	(build scripts are in the scripts folder in **ops** project)
-    - `BUILD_INCLUDE`: you can include copybooks for the compilation
-    - `BUILD_INSTALL`: installation destination for the target
-    - `BUILD_OPTION`: additional options
-
-TODO Add screenshots with several examples, specifically if you have multiple options you use a comma (:) to separate the options
+![alt text](./reference_images/gitlab_pipeline_setup_3.png "Gitlab Pipeline Setup")  
 
 ### 6.3 CI/CD - Running a Pipeline
 
-**a.** When you are in your project, click **CI/CD** and then **Pipelines**.
-   
-TODO Add screenshot   
+__a.__ Goto project on gitlab and click __CI/CD__ -> __Pipelines__ -> __Run Pipeline__.
 
-**b.** Then click **Run Pipeline**.
-   
-**c.** You now have to set up pipeline variables:
-    - Run for: choice of the branch of the project you want5 to use to run the pipeline
-    - SERVER: either TEST or PROD, depending on which server you want to deploy the code
-    - SOURCE: source code you want to compile and then deploy
-    - PROFILE: must be predefined in ops project 
+![alt text](./reference_images/gitlab_pipeline_run_1.png "Gitlab Pipeline Run")  
 
-TODO Add screenshot
+__b.__ Set up pipeline variables and click __Run Pipeline__ to trigger pipeline:  
+    - Run for: choice of the branch of the project you want5 to use to run the pipeline  
+    - SERVER: either TEST or PROD, depending on which server you want to deploy the code  
+    - SOURCE: source code you want to compile and then deploy  
+    - PROFILE: must be predefined in ops project   
 
-**d.** Then click **Run Pipeline** at the bottom of the list of the variables.
+![alt text](./reference_images/gitlab_pipeline_run_2.png "Gitlab Pipeline Run")  
 
-TODO Add screenshot
+__d.__ Check if the pipeline is successful or not:
 
-**e.** Check if the pipeline is successful or not:
-
-TODO Add screenshot for success (and its log), another one for failed (and its log)
-
-
+![alt text](./reference_images/gitlab_pipeline_run_3.png "Gitlab Pipeline Run")  
