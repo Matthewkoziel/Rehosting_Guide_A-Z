@@ -2250,6 +2250,30 @@ This server is responsible for recording OSC application transaction logs. It co
 
 This server runs OpenFrame Manager. It must be set up if OpenFrame Manager will be used.
 
+## 2.1.2 OSC Sequence Configuration (ofc.ofsys.seq)
+
+This sequence file dictates what server processes are started when the ```oscboot``` command is issued. The sequence file will have a list of server processes which can can be sectioned using a comment (#).
+
+Example:
+
+```bash
+#OSC
+oscmgr
+oscmnsvr
+osccmsvr
+oscmnsvr
+oscolsvr
+oscscsvr
+oscdfsvr
+oscjcsvr
+```
+
+## 2.1.3 OSC LU Configuration (osc.lu.conf)
+
+LU stands for Logical Unit. Logical units are access points through which a user or application program accessess the SNA network to communicate with another user or application program. In OpenFrame, online transactions can be accessed through Terminal LU's which users connect to through OSC, webterminal, and OpenFrame Gateway (OFGW)
+
+
+
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
 
