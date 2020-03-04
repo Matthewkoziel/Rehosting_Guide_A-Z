@@ -2760,8 +2760,6 @@ Designates a dataset where disk-managed TSQ data will be stored.
 
 *Recommendation:* Check if the customer has a preference on a dataset name. 
 
-TEST
-
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
 
