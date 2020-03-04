@@ -2691,6 +2691,77 @@ If set to IDENTIFY, the user is assumed to be already verified when making DPL r
 
 *Recommendation:* Leave it as default (\<BLANK\>)
 
+#### 2.1.4.3 SD
+
+This section contains environment variables related to the system definition dataset used by the OSC application server.
+
+- DSNAME=OSC.SDLIB.OSCOIVP1
+
+Specifies the name of the dataset that manages the OSC system definition (OSC SD)
+
+*Recommendation:* Change this to whatever dataset the customer is using on the mainframe. If they have no suggestion, you can use the default, and change the last node to the region name.
+
+***
+
+- GRPLIST=BASELIST,OIVPLIST
+
+Specifies the name of the resource definition group used when starting up the system. If two or more names are specified, they must be separated with commas. Names must be less than 8 bytes.
+
+*Recommendation:* Change this value to the GRPLISTs defined in the mainframe.
+
+#### 2.1.4.4 TDQ
+
+TDQ stands for Transient Data Queue. This section contains environment variables related to the TDQ.
+
+- TDQ_INTRA_DSNAME=OSC.TDQLIB.INTRA
+
+Specifies the name of the dataset that manages the intra-partition TDQ.
+
+*Recommendation:* Change this to the dataset used by the customer.
+
+***
+
+- TDQ_LOG_ADDRESS={IP_ADDRESS}:{PORT}
+
+Specifies the address of the TDQ log server to connect to. In most cases, this will be the IP address of the server you are connected to.
+
+The default port is 8654. If there are no conficts, you may use it, otherwise you may have to find an open port.
+
+*Recommendation:* If you are using a single node, the IP Address can be found by executing ```hostname -i```. The default port is recommended, but can be changed if necessary.
+
+#### 2.1.4.5 TSQ
+
+This section contains environment variables related to the Temporary Storage Queue (TSQ).
+
+- DFLTDEST=AUX
+
+Specifies whether or not a TSQ without TSMODEL will be managed on the disk or in memory. If set to AUX, the TSQ will be managed on the disk. (Default value: AUX). The alternative is MAIN which will manage TSQ on memory.
+
+*Recommendation:* Leave it as default (AUX)
+
+***
+
+- MAINDEST=SHM
+
+Specifies where to store TSQ when DFLTDEST=MAIN
+
+```
+DB  : Stores TSQ in the Database
+SHM : Stores TSQ in the shared memory (default)
+```
+
+*Recommendation:* Use AUX in the DFLTDEST section. However, if you choose to use DFLTDEST=MAIN, it is recommended to store TSQ in the shared memory.
+
+***
+
+- QDATA_DSNAME=OSC.TSQLIB.DATA
+
+Designates a dataset where disk-managed TSQ data will be stored.
+
+*Recommendation:* Check if the customer has a preference on a dataset name. 
+
+TEST
+
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
 
