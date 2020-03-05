@@ -2776,6 +2776,358 @@ Designates a dataset where disk-managed TSQ data will be stored.
 
 *Recommendation:* Check if the customer has a preference on a dataset name. 
 
+# 2.2 OSI
+
+## 2.2.1 OSI Configuration (osi.conf)
+
+### 2.2.1.1 GENERAL
+
+- LOG_LEVEL=D
+
+Configures the log level output of the TN3270 Gateway.
+
+```
+D  : Debug Mode
+I  : Information Mode (DEFAULT)
+E  : Error Mode
+```
+
+*Recommendation:* Leave it as default (I) If there is an issue, it's recommended to change to Debug Mode (D) to find the source of the issue.
+
+### 2.2.1.2 TSAM_CLIENT
+
+- USERNAME={USERNAME}
+
+The username used when accessing Tibero/TSAM.
+
+*Recommendation:* Check with the customer to see if they want to set up a default user.
+
+***
+
+- PASSWORD={PASSWORD}
+
+The password for the username above.
+
+*Recommendation:* Change this to the user above's password.
+
+***
+
+- DATABASE={TB_SID}
+
+The SID of the database used as the Tibero/TSAM server. This information can be found with the following command, in most cases.
+
+```bash
+echo $TB_SID
+```
+
+*Recommendation:* Try running the command, if it gives you a value, use that for this field.
+
+### 2.2.1.3 TSAM_BACKUP
+
+- USERNAME={USERNAME}
+
+The username used for connecting to TSAM
+
+*Recommendation:* Check with the customer to see if they would like to use a default user.
+
+***
+
+- PASSWORD={PASSWORD}
+
+The password for the user above.
+
+*Recommendation:* Change this to the user above's password.
+
+***
+
+- DATABASE={TB_SID}
+
+The SID of the database used by TSAM. This information can be found with the following command, in most cases.
+
+```bash
+echo $TB_SID
+```
+
+*Recommendation:* Try running the command, if it gives you a value, use that for this field.
+
+***
+
+- RETRY_COUNT=10
+
+The number of times to try reconnecting to the backup address, if the connection to TSAM fails
+
+*Recommendation:* Leave it as default (10)
+
+***
+
+- RETRY_INTERVAL=10
+
+The interval between attempts to reconnect to the backup server
+
+*Recommendation:* Leave it as default (10)
+
+### 2.2.1.4 VTAM
+
+- SHMKEY=85222
+
+Configures the key value of the shared memory which TN3270 (VTAM) uses. 
+
+*Recommendation:* Leave it as default (85222).
+
+***
+
+- SHMSIZE=64
+
+Configures the size of the shared memory which TN3270 Gateway (VTAM) uses.
+
+*Recommendation:* Leave it as default (64).
+
+***
+
+- USERMSG_PATH=/tmp/osivtam
+
+Displays a blank screen by default for the terminal which accesses TN3270 Gateway (VTAM), but can display an itnitial screen using data from a text file. 
+
+*Recommendation:* Leave it as default (/tmp/osivtam).
+
+***
+
+- SYSMSG=ON
+
+  #TODO
+
+- DSNAME=OSI.IMSA.VTAMLIST
+
+To use the IP-LU mapping function, specify the dataset name where the data is stored. 
+
+*Recommendation:* Change this value to the name of the dataset that holds the IP-LU mapping function.
+
+***
+
+- MAXAPPL=1024
+
+Specifies the maximum number of APPLID which TN3270 Gateway can accommodate. 
+
+It is compared with the SHMSIZE value according to the value specified here (The value where MAXAPL is multipled to the memory space required for a single APPLILD), and if it is larger, ten a suitable error message is output. 
+
+*Recommendation:* Leave it as default (1024)
+
+***
+
+- USE_VDS=OFF
+
+Determines whether to use the IP-LU Function
+
+```
+ON  : Uses the IP-LU Function
+OFF : Deosn't use the IP-LU Function
+```
+
+*Recommendation:* Leave it as default (OFF).
+
+### 2.2.1.5 OSIGW001
+
+This section shows the configuration with the same name as the server name that is registered in the Tmax Environemnt. To decrease the load on the TN3270 Gateway, it starts a number of servers. Each server operates in the same shared memory.
+
+- PORT=8487
+
+Port number which individual TN3270 Gateway Uses.
+
+*Recommendation:* Increment this number by some amount for each additional gateway.
+
+***
+
+- CHANNEL=1024
+
+Configures the maximum number of terminals which individual TN3270 gateway can use
+
+*Recommendation:* Leave it as default (1024)
+
+***
+
+- CHECKIP=NO
+
+  #TODO
+
+### 2.2.1.6 CRC
+
+This section describes mapping the control region (in which the command will be run) with the Command Recognition Character (CRC) when an OSI command is run.
+
+- /=IMSA
+
+In the example above, the forward slash (/) denotes the CRC character for identifying the region which will perform the command. An example of a command would be: 
+
+```
+osicmd /CHE FREEZE
+```
+
+The slash denotes that the IMSA region should perform the CHECKPOINT FREEZE command and it will shutdown the region.
+
+*Recommendation:* Use a different character for each region.
+
+## 2.2.2 OSI REGION Configuration (osi.region.conf)
+
+### 2.2.2.1 GENERAL
+
+- LOG_LEVEL=I
+
+Determines the log level output in the system
+
+```
+D  : Debug Mode
+I  : Information Mode (DEFAULT)
+E  : Error Mode
+```
+
+*Recommendation:* Leave it as default (I). If there is an error in the region, this log can be turned to Debug Mode (D) for troubleshooting purposes.
+
+- SCHEDULE_THRESHOLD=2
+  
+  #TODO
+
+- SCHEDULE_RECOVER_MAXCNT=
+
+  #TODO
+
+### 2.2.2.2 SYSTEM_MEMORY
+
+Configures the system memory region that manages important information needed for the operation of the OSI system. The system memory region is part of the shared memeory and configures information for using the shared memory in UNIX
+
+- SHMKEY=86222
+
+Configures the shared memory's key.
+
+*Recommendation:* Leave it as default (86222). For additional regions, decrement this number by 10000.
+
+***
+
+- SHMSIZE=128
+
+Determines the size of the system memory (in MB)
+
+*Recommendation:* Leave it as default (128)
+
+***
+
+- PROTECT=WRONLY
+
+Configures the system memory's protection method. As an item which exists for compatibility with the previous version, WRONLY must be configured.
+
+*Recommendation:* Leave it as default (WRONLY)
+
+### 2.2.2.3 LIBRARY
+
+Sets the locations of the staging libraries where various information needed for operating the OSI system is stored. The staging library is the dataset where the administrator adds or modifies operational data. When operating the system, read and use the active library where this content is copied.
+
+- MODBLKS=OSI.IMSA.DEFLIB
+
+Configures the Dataset Name (DSN) of the staging library where the configuration of various resources supported in OSI are stored.
+
+*Recommendation:* If the customer already has a dataset name for MODBLKS on the mainframe, use that dataset name. Otherwise, OSI.{REGION}.DEFLIB works well too.
+
+***
+
+- IMSACB=IMS.ACBLIB
+
+Configures the DSN of the staging library dataset where ACB is stored
+
+*Recommendation:* If the customer already has a dataset name for the ACBLIB in the mainframe, use that dataset name. Otherwise, OSI.{REGION}.ACBLIB works well too.
+
+
+***
+
+- MATRIX=OSI.IMSA.SECLIB
+
+Configures the DSN of the staging library dataset where the security information, supported in OSI is stored.
+
+*Recommendation:* If the customer already has a dataset name for the SECLIB in the mainfrmae, use that dataset name. Otherwise, OSI.{REGION}.SECLIB works well too.
+
+***
+
+- FORMAT=OSI.IMSA.MFSLIB
+
+Configures the DSN of the staging library dataset where MFS is stored
+
+*Recommendation:* If the customer already has a dataset name for the MFSLIB in the mainframe, use that dataset name. Otherwise, OSI.{REGION}.MFSLIB works well too.
+
+### 2.2.2.4 STORAGE
+
+  #TODO
+
+### 2.2.2.5 CPM
+
+Configures the CPM data file to be used when code conversion between the EBCDIC code and the ASCII code is required in the OSI system. 
+
+- EBCDIC_TO_ASCII=EBCASCUS.cpm
+
+Configures the CPM data file used when converting the EBCDIC code to ASCII code.
+
+*Recommendation:* Unless the cpm files are modified and have been changed to something else, it is recommended to use the default (EBCASCUS.cpm)
+
+***
+
+- ASCII_TO_EBCDIC=ASCEBCUS.cpm
+
+Configures the CPM data file used when converting ASCII code to EBCDIC code.
+
+*Recommendation:* Unless the cpm files are modified and have been changed to something else, it is recommended to use the default (ASCEBCUS.cpm)
+
+***
+
+- CONVERT_TO_SPACE=X'00'
+
+  #TODO
+
+### 2.2.2.6 SECURITY
+
+Sets options for applying Security in the OSI system and whether to use LTERM Security and Transaction Command Security, which are managed through the Security Maintenance Utility (SMU) of IMS/DC provided by OSI.
+
+- SMU_TERMINAL=YES
+
+Configures whether to use LTERM Security
+
+```
+YES : It is used
+NO  : It is not used
+```
+
+*Recommendation:* Change this value to (YES)
+
+***
+
+- SMU_TRANSACTION=YES
+
+Configures whether to use Transaction Command Security
+
+```
+YES : It is used
+NO  : It is not used
+```
+
+*Recommendation:* Change this value to (YES)
+
+***
+
+- TYPE
+
+  #TODO
+
+### 2.2.2.7 USER
+
+Configures the information which users can specify in the OSI system.
+
+- LOGON_MOD=OSILOGOO
+
+When logged on to the OSI system, configures the MOD name which is displayed in the initial screen. (Basically configures the logon screen)
+
+*Recommendation:* Ask if the customer has a logon page they already use, if so, use that MOD name, otherwise, leave it as default (OSILOGOO)
+
+***
+
+- LOGON_UC=YES
+
+  #TODO
+
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
 
