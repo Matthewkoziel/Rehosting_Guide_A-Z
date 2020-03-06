@@ -3495,6 +3495,37 @@ The default username and password for tacf.
 
 This option allows the user to use an encrypted password.
 
+## 2.2.5 IMS Configuration (ims.conf)
+
+Contains configurations for default libraries. The following libraries should be defined:
+
+```
+ACBLIB_NAME=
+DBDLIB_NAME=
+PSBLIB_NAME=
+RESLIB_NAME=
+```
+
+## 2.2.6 SSM Region Configuration (ssm.region.conf)
+
+This is the Resource Manager for Subsystems Manager configuration file. Specifically, this configuration file will be used for configuring XA with DB2 databases.
+
+### 2.2.6.1 GENERAL
+
+- DLI_CONN_ID=DLI
+
+  #TODO
+
+***
+
+- PRELOAD=${TB_HOME}/client/lib/libtbxa.so:${DB2_HOME}/lib/libdb2.so
+
+### 2.2.6.2 SSM
+
+- SST=DB2,SSN=DB2T,LIT=,ESMT=,RTT=,REO=,CRC=
+
+  #TODO
+
 **Reference Documents:**
 <details><summary>Click Here for Reference Documents</summary>
 
