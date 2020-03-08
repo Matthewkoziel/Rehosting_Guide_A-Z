@@ -12,6 +12,7 @@ Below, you will find all of the most common TACF related commands.
 - [ALTER USER](#altuser)
 - [ADD System Definition](#addsd)
 - [ALTER System Definition](#altdsd)
+- [SEARCH](#search)
 
 ***
 
@@ -130,3 +131,22 @@ ALD ('$NAME') AUDIT($AUTHORITY) DATA('$COMMENT') OWNER('$NAME') UACC(READ) UNIT(
 ```
 
 </details>
+
+***
+
+### SEARCH
+
+TACF Command: **SR**
+
+Functionality: Obtains a list of RACF profiles, users and groups.
+
+<details>
+	<summary>Example: Get the list of datasets used in a specified group </summary>
+
+- User ID  : $USERID can be user name or group name
+```
+SR USER($USERID)
+```
+
+</details>
+
