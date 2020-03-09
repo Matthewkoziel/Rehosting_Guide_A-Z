@@ -8,10 +8,10 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 
 - [Batch Related](#1-batch-related "Configuration Files related to BATCH")
   - [ds.conf](#11-dataset-configuration-dsconf "Dataset Configuration")
-    - [DATASET_DIRECTORY](#111-dataset-directory "Location settings for Dataset Schema files")
-    - [DATASET_RESOURCE](#112-dataset-resource "Memory Resources for Datasets")
-    - [DATASET_DEFAULT](#113-dataset-default "Default Values for Datasets")
-    - [DATASET_LOCK](#114-dataset-lock)
+    - [DATASET_DIRECTORY](#111-dataset_directory "Location settings for Dataset Schema files")
+    - [DATASET_RESOURCE](#112-dataset_resource "Memory Resources for Datasets")
+    - [DATASET_DEFAULT](#113-dataset_default "Default Values for Datasets")
+    - [DATASET_LOCK](#114-dataset_lock)
   - [dstool.conf](#12-dataset-tool-configuration-dstoolconf "Dataset Tool Configuration")
     - [COMMON](#121-common "Common settings for tools in dstool.conf")
     - [COBGENSCH](#122-cobgensch "cobgensch settings")
@@ -24,7 +24,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [OFRDSEDT](#129-ofrdsedt "ofrdsedt settings")
     - [SPFEDIT](#1210-spfedit "spfedit settings")
   - [cpm.conf](#13-cpm-configuration-cpmconf "EBCDIC to ASCII conversion settings")
-    - [DEFAULT_CODEPAGE](#131-default-codepage "Default conversion file settings for CPM")
+    - [DEFAULT_CODEPAGE](#131-default_codepage "Default conversion file settings for CPM")
   - [ezaci.conf](#14-ezaci-configuration-ezaciconf "EBCDIC to ASCII in COBOL configuration")
     - [E2A](#141-e2a "EBCDIC to ASCII")
     - [A2E](#142-a2e "ASCII to EBCDIC")
@@ -33,17 +33,17 @@ Below are the configuration files which OpenFrame uses to operate and match the 
   - [ftp.conf](#16-ftp-configuration-ftpconf "FTP Configuration")
     - [DIRECTORY](#161-directory "Directory Configuration")
     - [UNIT](#162-unit "Unit Configuration")
-    - [DATASET_DEFAULT](#163-dataset-default "Dataset FTP Default Configuration")
+    - [DATASET_DEFAULT](#163-dataset_default "Dataset FTP Default Configuration")
     - [ERROR](#164-error "FTP Error Configuration")
-    - [COMMAND_OPERATION](#165-command-operation "Command Operation FTP Configuration")
+    - [COMMAND_OPERATION](#165-command_operation "Command Operation FTP Configuration")
     - [OPTION](#166-option "FTP Option Confiugration")
   - [idcams.conf](#17-idcams-configuration-idcamsconf "IDCAMS Configuration")
-    - [DEFAULT_USER](#171-default-user "Default Configuration for IDCAMS")
+    - [DEFAULT_USER](#171-default_user "Default Configuration for IDCAMS")
     - [TACF](#172-tacf "Security Configuration for IDCAMS")
     - [AMS](#173-ams "AMS Configuration")
   - [ikjeft01.conf](#18-ikjeft01-configuration-ikjeft01conf "IKJEFT01 Utility Configuration")
-    - [SHARED_OBJECT](#181-shared-object "Shared Object Configuration")
-    - [REPORT_DBCONN](#182-report-dbconn "Database Configuration for IKJEFT01")
+    - [SHARED_OBJECT](#181-shared_object "Shared Object Configuration")
+    - [REPORT_DBCONN](#182-report_dbconn "Database Configuration for IKJEFT01")
     - [TACF](#183-tacf "IKJEFT01 TACF Rules")
   - [isrsupc.conf](#19-isrsupc-configuration-isrsupcconf "Configuration for ISRSUPC Utility")
     - [LINECMP](#191-linecmp)
@@ -63,8 +63,8 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [PATH](#1133-path "Sort Path Configuration")
     - [SEQUENCE](#1134-sequence "Sort Sequence Configuration")
   - [textrun.conf](#114-textrun-configuration-textrunconf "Textrun Configuration")
-    - [DEFAULT_USER](#1141-default-user "Textrun Default User Configuration")
-    - [EXIT_CODE](#1142-exit-code "Textrun Exit Code Configuration")
+    - [DEFAULT_USER](#1141-default_user "Textrun Default User Configuration")
+    - [EXIT_CODE](#1142-exit_code "Textrun Exit Code Configuration")
     - [MONITORING](#1143-monitoring "Textrun Monitoring Configuration")
     - [AUTOEDIT](#1144-autoedit "Control-M Autoedit Configuration")
     - [OPTION](#1145-option "Textrun Options Configuration")
@@ -76,7 +76,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [SYSLIB](#1155-syslib "Tjclrun SYSLIB Configuration")
     - [PRELOAD](#1156-preload "Tjclrun PRELOAD Configuration")
     - [PGM](#1157-pgm "Tjclrun PGM Configuration")
-    - [DBCONN_INFO](#1158-dbconn-info "Tjclrun DBCONN Configuration")
+    - [DBCONN_INFO](#1158-dbconn_info "Tjclrun DBCONN Configuration")
     - [ACCOUNT](#1159-account "Tjclrun ACCOUNT Configuration")
     - [TACF](#11510-tacf "Tjclrun TACF Configuration")
     - [AMS](#11511-ams "Tjclrun AMS Configuration")
@@ -91,7 +91,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [SCHEDULING](#1165-scheduling "TJES Scheduling Configuration")
     - [RESOURCE](#1166-resource "TJES Resource Configuration")
     - [PROCLIB](#1167-proclib "TJES PROCLIB Configuration")
-    - [DYNAMIC_LIBRARY](#1168-dynamic-library "TJES Dynamic Library Configuration")
+    - [DYNAMIC_LIBRARY](#1168-dynamic_library "TJES Dynamic Library Configuration")
     - [LOG](#1169-log "TJES Log Configuration")
     - [SPOOL](#11610-spool "TJES Spool Configuration")
     - [INTRDR](#11611-intrdr "TJES Internal Reader Configuration")
@@ -101,14 +101,14 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [TACF](#11615-tacf "TJES TACF Configuration")
     - [OPRMSG](#11616-oprmsg "OPRMSG Configuration")
   - [tjesmgr.conf](#117-tjesmgr-configuration-tjesmgrconf "TJESMGR Configuration")
-    - [DEFAULT_OPTION](#1171-default-option "Default Options for TJESMGR")
-    - [DEFAULT_USER](#1172-default-user "Default User for TJESMGR")
+    - [DEFAULT_OPTION](#1171-default_option "Default Options for TJESMGR")
+    - [DEFAULT_USER](#1172-default_user "Default User for TJESMGR")
     - [TACF](#1173-tacf "TACF Configuration for TJESMGR")
   - [tso.conf](#118-time-sharing-option-configuration-tsoconf "TSO Configuration")
     - [COMMON](#1181-common "COMMON TSO Configurations")
     - [MAP](#1182-map "TSO MAP Configurations")
     - [TSOMGR](#1183-tsomgr "TSOMGR Configurations")
-    - [LOGIN_PROC](#1184-login-proc "TSO Login Configurations")
+    - [LOGIN_PROC](#1184-login_proc "TSO Login Configurations")
     - [SMTP](#1185-smtp "TSO SMTP Configurations")
   - [unit.conf](#119-unit-configuration-unitconf "Unit Configurations for OpenFrame")
     - [HEADER](#1191-header "Define Max Number of Devices")
@@ -120,6 +120,22 @@ Below are the configuration files which OpenFrame uses to operate and match the 
     - [TABLESPACE](#1203-tablespace "Tablespace Configuration")
 - [Online Related](#2-online-related "Configuration Files related to ONLINE Systems")
   - [OpenFrame Subsystem for CICS](#21-osc "OSC Configurations")
+    - [osc.conf](#211-osc-general-configuration-oscconf "OSC Configuration")
+      - [GENERAL](#2111-general "General OSC Configuration")
+      - [TSAM_CLIENT](#2112-tsam_client "TSAM Client Configuration")
+      - [TSAM_BACKUP](#2113-tsam_backup "TSAM Backup Configuration")
+      - [OSCSCSVR](#2114-oscscsvr "OSCSCSVR Server Configuration")
+      - [OSCMCSVR](#2115-oscmcsvr "OSCMCSVR Server Configuration")
+      - [OSCOLSVR](#2116-oscolsvr "OSCOLSVR Server Configuration")
+      - [OSCOSSVR](#2117-oscossvr "OSCOSSVR Server Configuration")
+    - [osc.lu.conf](#213-osc-lu-configuration-oscluconf "OSC LU Configuration")
+      - [TIMEOUT](#2131-timeout "TIMEOUT Configuration")
+    - [osc.regionname.conf](#214-osc-region-name-configuration-oscregionnameconf "OSC Region Configuration")
+      - [GENERAL](#2141-general "General Region Configurations")
+      - [SAF](#2142-saf "OSC Region Security Configurations")
+      - [SD](#2143-sd "OSC Region System Definition Configurations")
+      - [TDQ](#2144-tdq "OSC Transient Data Queue Configurations")
+      - [TSQ](#2145-tsq "OSC Temporary Storage Queue Configurations")
 
 # 1. Batch Related
 
@@ -2258,11 +2274,7 @@ This server is responsible for recording OSC application transaction logs. It co
 
 This server runs OpenFrame Manager. It must be set up if OpenFrame Manager will be used.
 
-- DEPLOY_SOURCE_PATH=${OPENFRAME_HOME}/temp
-
-  #TODO
-
-## 2.1.2 OSC Sequence Configuration (ofc.ofsys.seq)
+## 2.1.2 OSC Sequence Configuration (osc.ofsys.seq)
 
 This sequence file dictates what server processes are started when the ```oscboot``` command is issued. The sequence file will have a list of server processes which can can be sectioned using a comment (#).
 
@@ -2284,7 +2296,7 @@ oscjcsvr
 
 LU stands for Logical Unit. Logical units are access points through which a user or application program accessess the SNA network to communicate with another user or application program. In OpenFrame, online transactions can be accessed through Terminal LU's which users connect to through OSC, webterminal, and OpenFrame Gateway (OFGW)
 
-### 2.1.3.1 TIMEOUT
+### 2.1.3.1 TIME
 
 - TIMEOUT_DEFAULT=3600
 
@@ -2703,7 +2715,838 @@ If set to IDENTIFY, the user is assumed to be already verified when making DPL r
 
 *Recommendation:* Leave it as default (\<BLANK\>)
 
-**Reference Documents:**
+#### 2.1.4.3 SD
+
+This section contains environment variables related to the system definition dataset used by the OSC application server.
+
+- DSNAME=OSC.SDLIB.OSCOIVP1
+
+Specifies the name of the dataset that manages the OSC system definition (OSC SD)
+
+*Recommendation:* Change this to whatever dataset the customer is using on the mainframe. If they have no suggestion, you can use the default, and change the last node to the region name.
+
+***
+
+- GRPLIST=BASELIST,OIVPLIST
+
+Specifies the name of the resource definition group used when starting up the system. If two or more names are specified, they must be separated with commas. Names must be less than 8 bytes.
+
+*Recommendation:* Change this value to the GRPLISTs defined in the mainframe.
+
+#### 2.1.4.4 TDQ
+
+TDQ stands for Transient Data Queue. This section contains environment variables related to the TDQ.
+
+- TDQ_INTRA_DSNAME=OSC.TDQLIB.INTRA
+
+Specifies the name of the dataset that manages the intra-partition TDQ.
+
+*Recommendation:* Change this to the dataset used by the customer.
+
+***
+
+- TDQ_LOG_ADDRESS={IP_ADDRESS}:{PORT}
+
+Specifies the address of the TDQ log server to connect to. In most cases, this will be the IP address of the server you are connected to.
+
+The default port is 8654. If there are no conficts, you may use it, otherwise you may have to find an open port.
+
+*Recommendation:* If you are using a single node, the IP Address can be found by executing ```hostname -i```. The default port is recommended, but can be changed if necessary.
+
+#### 2.1.4.5 TSQ
+
+This section contains environment variables related to the Temporary Storage Queue (TSQ).
+
+- DFLTDEST=AUX
+
+Specifies whether or not a TSQ without TSMODEL will be managed on the disk or in memory. If set to AUX, the TSQ will be managed on the disk. (Default value: AUX). The alternative is MAIN which will manage TSQ on memory.
+
+*Recommendation:* Leave it as default (AUX)
+
+***
+
+- MAINDEST=SHM
+
+Specifies where to store TSQ when DFLTDEST=MAIN
+
+```
+DB  : Stores TSQ in the Database
+SHM : Stores TSQ in the shared memory (default)
+```
+
+*Recommendation:* Use AUX in the DFLTDEST section. However, if you choose to use DFLTDEST=MAIN, it is recommended to store TSQ in the shared memory.
+
+***
+
+- QDATA_DSNAME=OSC.TSQLIB.DATA
+
+Designates a dataset where disk-managed TSQ data will be stored.
+
+*Recommendation:* Check if the customer has a preference on a dataset name. 
+
+# 2.2 OSI
+
+## 2.2.1 OSI Configuration (osi.conf)
+
+### 2.2.1.1 GENERAL
+
+- LOG_LEVEL=D
+
+Configures the log level output of the TN3270 Gateway.
+
+```
+D  : Debug Mode
+I  : Information Mode (DEFAULT)
+E  : Error Mode
+```
+
+*Recommendation:* Leave it as default (I) If there is an issue, it's recommended to change to Debug Mode (D) to find the source of the issue.
+
+### 2.2.1.2 TSAM_CLIENT
+
+- USERNAME={USERNAME}
+
+The username used when accessing Tibero/TSAM.
+
+*Recommendation:* Check with the customer to see if they want to set up a default user.
+
+***
+
+- PASSWORD={PASSWORD}
+
+The password for the username above.
+
+*Recommendation:* Change this to the user above's password.
+
+***
+
+- DATABASE={TB_SID}
+
+The SID of the database used as the Tibero/TSAM server. This information can be found with the following command, in most cases.
+
+```bash
+echo $TB_SID
+```
+
+*Recommendation:* Try running the command, if it gives you a value, use that for this field.
+
+### 2.2.1.3 TSAM_BACKUP
+
+- USERNAME={USERNAME}
+
+The username used for connecting to TSAM
+
+*Recommendation:* Check with the customer to see if they would like to use a default user.
+
+***
+
+- PASSWORD={PASSWORD}
+
+The password for the user above.
+
+*Recommendation:* Change this to the user above's password.
+
+***
+
+- DATABASE={TB_SID}
+
+The SID of the database used by TSAM. This information can be found with the following command, in most cases.
+
+```bash
+echo $TB_SID
+```
+
+*Recommendation:* Try running the command, if it gives you a value, use that for this field.
+
+***
+
+- RETRY_COUNT=10
+
+The number of times to try reconnecting to the backup address, if the connection to TSAM fails
+
+*Recommendation:* Leave it as default (10)
+
+***
+
+- RETRY_INTERVAL=10
+
+The interval between attempts to reconnect to the backup server
+
+*Recommendation:* Leave it as default (10)
+
+### 2.2.1.4 VTAM
+
+- SHMKEY=85222
+
+Configures the key value of the shared memory which TN3270 (VTAM) uses. 
+
+*Recommendation:* Leave it as default (85222).
+
+***
+
+- SHMSIZE=64
+
+Configures the size of the shared memory which TN3270 Gateway (VTAM) uses.
+
+*Recommendation:* Leave it as default (64).
+
+***
+
+- USERMSG_PATH=/tmp/osivtam
+
+Displays a blank screen by default for the terminal which accesses TN3270 Gateway (VTAM), but can display an itnitial screen using data from a text file. 
+
+*Recommendation:* Leave it as default (/tmp/osivtam).
+
+***
+
+- SYSMSG=ON
+
+  #TODO
+
+- DSNAME=OSI.IMSA.VTAMLIST
+
+To use the IP-LU mapping function, specify the dataset name where the data is stored. 
+
+*Recommendation:* Change this value to the name of the dataset that holds the IP-LU mapping function.
+
+***
+
+- MAXAPPL=1024
+
+Specifies the maximum number of APPLID which TN3270 Gateway can accommodate. 
+
+It is compared with the SHMSIZE value according to the value specified here (The value where MAXAPL is multipled to the memory space required for a single APPLILD), and if it is larger, ten a suitable error message is output. 
+
+*Recommendation:* Leave it as default (1024)
+
+***
+
+- USE_VDS=OFF
+
+Determines whether to use the IP-LU Function
+
+```
+ON  : Uses the IP-LU Function
+OFF : Deosn't use the IP-LU Function
+```
+
+*Recommendation:* Leave it as default (OFF).
+
+### 2.2.1.5 OSIGW001
+
+This section shows the configuration with the same name as the server name that is registered in the Tmax Environemnt. To decrease the load on the TN3270 Gateway, it starts a number of servers. Each server operates in the same shared memory.
+
+- PORT=8487
+
+Port number which individual TN3270 Gateway Uses.
+
+*Recommendation:* Increment this number by some amount for each additional gateway.
+
+***
+
+- CHANNEL=1024
+
+Configures the maximum number of terminals which individual TN3270 gateway can use
+
+*Recommendation:* Leave it as default (1024)
+
+***
+
+- CHECKIP=NO
+
+  #TODO
+
+### 2.2.1.6 CRC
+
+This section describes mapping the control region (in which the command will be run) with the Command Recognition Character (CRC) when an OSI command is run.
+
+- /=IMSA
+
+In the example above, the forward slash (/) denotes the CRC character for identifying the region which will perform the command. An example of a command would be: 
+
+```
+osicmd /CHE FREEZE
+```
+
+The slash denotes that the IMSA region should perform the CHECKPOINT FREEZE command and it will shutdown the region.
+
+*Recommendation:* Use a different character for each region.
+
+## 2.2.2 OSI Sequence Configuration (osi.ofsys.seq)
+
+This sequence file dictates what server processes are started when the ```osiboot``` command is issued. The sequence file will have a list of server processes which can can be sectioned using a comment (#).
+
+Example:
+
+```bash
+#OSI
+OSIGW001
+```
+
+The OSC sequences can be added from section [2.1.2 osc.ofsys.seq](#212-osc-sequence-configuration-oscofsysseq) as well if your environment has both OSI and OSC.
+
+## 2.2.3 OSI REGION Configuration (osi.region.conf)
+
+### 2.2.3.1 GENERAL
+
+- LOG_LEVEL=I
+
+Determines the log level output in the system
+
+```
+D  : Debug Mode
+I  : Information Mode (DEFAULT)
+E  : Error Mode
+```
+
+*Recommendation:* Leave it as default (I). If there is an error in the region, this log can be turned to Debug Mode (D) for troubleshooting purposes.
+
+- SCHEDULE_THRESHOLD=2
+  
+  #TODO
+
+- SCHEDULE_RECOVER_MAXCNT=
+
+  #TODO
+
+### 2.2.3.2 SYSTEM_MEMORY
+
+Configures the system memory region that manages important information needed for the operation of the OSI system. The system memory region is part of the shared memeory and configures information for using the shared memory in UNIX
+
+- SHMKEY=86222
+
+Configures the shared memory's key.
+
+*Recommendation:* Leave it as default (86222). For additional regions, decrement this number by 10000.
+
+***
+
+- SHMSIZE=128
+
+Determines the size of the system memory (in MB)
+
+*Recommendation:* Leave it as default (128)
+
+***
+
+- PROTECT=WRONLY
+
+Configures the system memory's protection method. As an item which exists for compatibility with the previous version, WRONLY must be configured.
+
+*Recommendation:* Leave it as default (WRONLY)
+
+### 2.2.3.3 LIBRARY
+
+Sets the locations of the staging libraries where various information needed for operating the OSI system is stored. The staging library is the dataset where the administrator adds or modifies operational data. When operating the system, read and use the active library where this content is copied.
+
+- MODBLKS=OSI.IMSA.DEFLIB
+
+Configures the Dataset Name (DSN) of the staging library where the configuration of various resources supported in OSI are stored.
+
+*Recommendation:* If the customer already has a dataset name for MODBLKS on the mainframe, use that dataset name. Otherwise, OSI.{REGION}.DEFLIB works well too.
+
+***
+
+- IMSACB=IMS.ACBLIB
+
+Configures the DSN of the staging library dataset where ACB is stored
+
+*Recommendation:* If the customer already has a dataset name for the ACBLIB in the mainframe, use that dataset name. Otherwise, OSI.{REGION}.ACBLIB works well too.
+
+
+***
+
+- MATRIX=OSI.IMSA.SECLIB
+
+Configures the DSN of the staging library dataset where the security information, supported in OSI is stored.
+
+*Recommendation:* If the customer already has a dataset name for the SECLIB in the mainfrmae, use that dataset name. Otherwise, OSI.{REGION}.SECLIB works well too.
+
+***
+
+- FORMAT=OSI.IMSA.MFSLIB
+
+Configures the DSN of the staging library dataset where MFS is stored
+
+*Recommendation:* If the customer already has a dataset name for the MFSLIB in the mainframe, use that dataset name. Otherwise, OSI.{REGION}.MFSLIB works well too.
+
+### 2.2.3.4 STORAGE
+
+  #TODO
+
+### 2.2.3.5 CPM
+
+Configures the CPM data file to be used when code conversion between the EBCDIC code and the ASCII code is required in the OSI system. 
+
+- EBCDIC_TO_ASCII=EBCASCUS.cpm
+
+Configures the CPM data file used when converting the EBCDIC code to ASCII code.
+
+*Recommendation:* Unless the cpm files are modified and have been changed to something else, it is recommended to use the default (EBCASCUS.cpm)
+
+***
+
+- ASCII_TO_EBCDIC=ASCEBCUS.cpm
+
+Configures the CPM data file used when converting ASCII code to EBCDIC code.
+
+*Recommendation:* Unless the cpm files are modified and have been changed to something else, it is recommended to use the default (ASCEBCUS.cpm)
+
+***
+
+- CONVERT_TO_SPACE=X'00'
+
+  #TODO
+
+### 2.2.3.6 SECURITY
+
+Sets options for applying Security in the OSI system and whether to use LTERM Security and Transaction Command Security, which are managed through the Security Maintenance Utility (SMU) of IMS/DC provided by OSI.
+
+- SMU_TERMINAL=YES
+
+Configures whether to use LTERM Security
+
+```
+YES : It is used
+NO  : It is not used
+```
+
+*Recommendation:* Change this value to (YES)
+
+***
+
+- SMU_TRANSACTION=YES
+
+Configures whether to use Transaction Command Security
+
+```
+YES : It is used
+NO  : It is not used
+```
+
+*Recommendation:* Change this value to (YES)
+
+***
+
+- TYPE
+
+  #TODO
+
+### 2.2.3.7 USER
+
+Configures the information which users can specify in the OSI system.
+
+- LOGON_MOD=OSILOGOO
+
+When logged on to the OSI system, configures the MOD name which is displayed in the initial screen. (Basically configures the logon screen)
+
+*Recommendation:* Ask if the customer has a logon page they already use, if so, use that MOD name, otherwise, leave it as default (OSILOGOO)
+
+***
+
+- LOGON_UC=YES
+
+  #TODO
+
+## 2.2.4 HIDB Configuration (hidb.conf)
+
+The following configuration file is for OpenFrame HiDB which stands for High Performance, Heirarchical database. The database is used for IMS systems and is built into Tibero. HiDB is, as the name implies, a hierarchical database, but it is built into a Relational Database, Tibero. HiDB meta tables usually start with OFM_HIDB. These meta tables allow the hierarchy to be built into the relational database through a series of columns that tell Tibero which segment is another segment's parent, child, or sibling.
+
+### 2.2.4.1 HIDB_DEFAULT
+
+- COPYBOOK_DIR=${OPENFRAME_HOME}/hidb/hidb_cpy
+
+Directory of copybooks that OpenFrame/HiDB and ofschema refer to. This sets the preferred path used by HiDB. 
+
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/hidb/hidb_cpy).
+
+***
+
+- TABLESPACE=DEFVOL
+
+Tablespace in which HiDB creates segment tables, indexes, and views. 
+
+*Recommendation:* Check with the customer to see which volume they would like to store HiDB data on, and change this variable accordingly.
+
+***
+
+- HIDB_OBJECT_DIR=${OPENFRAME_HOME}/hidb/hidb_sch
+
+Directory under which the hidbmgr tool generates DL/I function code.
+
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/hidb/hidb_sch)
+
+***
+
+- FIX_DATA_ERRORS=NO
+
+```
+YES : Indicates that when an invalid data is encountered while the hidbmgr tool generates a DL/I statement, the data is set as the default value (for example, binary:0) and no error is thrown.
+
+NO : Indicates that when an invalid data is encountered while the hidbmgr generates a DL/I statement, an error is processed and the program is terminated
+```
+
+*Recommendation:* Leave it as default (NO). This one is important, If you change this to yes, there could be invalid data in the database which could cause a slew of problems down the road. 
+
+***
+
+- USE_DBD_COPYBOOK=NO
+
+  #TODO
+
+***
+
+- NO_INDEX_TABLE=NO
+
+```
+YES : Indicates that secondary indexes are stored in the same table as the target segment table. The target and source segments must be indentical, and you cannot change the index segment directly on the segment table.
+
+NO  : Indicates that secondary indexes are stored in a separate index segment table (DEFAULT)
+```
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- IGNORE_FILLER=NO
+
+```
+YES : Indicates that the dbdgen tool does not create a FILLER column, and that FILLER is not processed by the DL/I function created by the psbgen tool.
+
+NO  : indicates that the dbdgen tool creates a FILLER column and the FILLER column is processed by the DL/I function. (DEFAULT)
+```
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- COMMIT_INTERVAL=0
+
+Maximum count that HiDB performs a DL/I function before commit. Set to a number from 0. If set to 0, commit is performed once the database session ends.
+
+*Recommendation:* Leave it as default (0)
+
+***
+
+- RESOLVE_HINT_DIR=
+
+Directory where the index hint mapping information is to be used when the user-defined index hint in the select API of the DL/I library created by the dligen commannd of the hidbmgr tool.
+
+  #TODO
+
+***
+
+- FIRST_FETCH_COUNT=10
+
+FIRST_ROWS hint value in the select API of the DL/I library created by the dligen command of the hidbmgr tool. Set to a number from 0. If set to 0, the FIRST_ROWS hint is not used (Default: 10)
+
+*Recommendation:* Leave it as default (10)
+
+***
+
+- GU_PREDICT_FAILURE_THRESHOLD=0
+
+Number of consecutive failed GET UNIQUE requests. Set to a number from 0. If GET UNIQUE fails consecutively the amount of times set in this configuration, an appropriate select query is requested.
+
+*Recommendation:* Leave it as default (0)
+
+***
+
+- GU_PREDICT_FAILURE_RESET=0
+
+Number of consecutive success GET UNIQUE. Set to a number from 0. If GET UNIQUE is successful consecutively the amount of times set in this configuration, due to GU_PREDICT_FAILURE_THRESHOLD is met, the prediction count is reset and resumes operating normally.
+
+*Recommendation:* Leave it as default (0)
+
+***
+
+- HIDB_ALTER_KEYSEQ=NO
+
+```
+YES : Allows to use a user-defined sorting order when defininig virtual columns and indexes in the database or when using a where condition for a select query. This setting is not recommended
+
+NO  : Performs the binary order sort (DEFAULT)
+```
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- DATABASE_CHARSET=
+
+Character set name that corresponds to the setting in the original database when using ALTER_KEYSEQ
+
+*Recommendation:* Do not use HIDB_ALTER_KEYSEQ, leave it as default (\<BLANK\>)
+
+***
+
+- EBCDIC_CHARSET=
+
+Character set name that corresponds to the user-desired sort order when using ALTER_KEYSEQ.
+
+*Recommendation:* Do not use HIDB_ALTER_KEYSEQ, leave it as default (\<BLANK\>)
+
+***
+
+- OF_CHARSET=
+
+System local value for multi-byte character processing
+
+*Recommendation:* Leave it as default (\<BLANK\>)
+
+***
+
+- HIDB_USE_TIBERO_OF_UTL_PACKAGE=NO
+
+Whether to convert EBCDIC by using the UTL_OF package, instead of CONVERT, when using HIDB_ALTER_KEYSEQ in OpenFrame, EBCDIC conversion needs OpenFrame cpm file. In Tibero the conversion needs the cpm file set in the \_CPM\_FILE item of the tip file.
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- IGNORE_AUTH_CHECK=YES
+
+```
+YES : Integrates with TACF to use its user authentication
+
+NO  : Does not use TACF user authentication
+```
+
+*Recommendation:* Change this value to (YES) #TODO
+
+***
+
+- FETCH_COL_DEFAULT_VALUE=0x00
+
+Hex value of the character to be set when the data fetched from the select API of the DL/I library created by the dligen command of the hidbmgr tool is null.
+
+*Recommendation:* Leave it as default (0x00)
+
+***
+
+- RESET_APPBUF_IF_GET_FAILS=YES
+
+```
+YES : Sets the buffer data passed from the application to null when the DLI GET command fails (DEFUAULT)
+
+NO  : Does not change the buffer data when the DLI GET command fails
+```
+
+*Recommendation:* Leave it as default (YES)
+
+***
+
+- SKIP_POSITIONING_IF_GET_FAIL=NO
+
+```
+YES : Does not specify the location of the last segment accessed when the DLI GET command fails. This setting is not recommended.
+
+NO  : Does not change the buffer data when the DLI GET command fails (DEFUALT)
+```
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- HIDB_IMPORT_DIR=${OPENFRAME_HOME}/hidb/hidb_import
+
+Directory path to store data when using high-speed loading of hdload and hidbptmgr tools
+
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/hidb/hidb_import)
+
+***
+
+- USE_LEAD_FOR_GN=YES
+
+```
+YES : Requests a select query along with LEAD for a DLI GET NEXT request that does not specify a search condition (DEFAULT)
+
+NO  : Does not use LEAD
+```
+
+*Recommendation:* Leave it as default (YES)
+
+***
+
+- USE_LEAD_FOR_GNP=YES
+
+```
+YES : Requests a select query along with LEAD for a DLI GET NEXT IN PARENT request that does not specify a search condition (DEFAULT)
+
+NO: Does not use LEAD
+```
+
+*Recommendation:* Leave it as default (YES)
+
+***
+
+- USE_LEAD_FOR_UNQUAL_COND=
+
+```
+YES : Requests a select query along with LEAD for a DLI GET NEXT (IN PARENT) request that specifies only a segment name as a search condition when USE_LEAD_FOR_GN/GNP is YES (DEFAULT)
+
+NO: Does not use Lead
+```
+
+*Recommendation:* Change this value from \<BLANK\> to (YES)
+
+***
+
+- USE_INDICATOR=
+
+```
+YES : Improves performance by using indicator variables when DLI library requests select on GET commands
+
+NO  : Does not use indicator variables (DEFAULT)
+```
+
+*Recommendation:* Leave it as default (\<BLANK\>)
+
+***
+
+- ARRAY_BUFFER_MAX_SIZE=
+
+Number from 0 to 5000. If the number is equal to or greater than 1, the performance of some GET NEXT commands increases by using array buffering (default: 0).
+
+*Recommendation:* Leave it as default (\<BLANK\>)
+
+***
+
+- USE_KEYFLD_SEQ_FOR_HDAM=
+
+```
+YES : sorts HDAM/PHDAM root segments defined in DB in key field order (Recommended)
+
+NO  : Sorts HDAM/PHDAM root segments defined in DB in OCC_ID order
+```
+
+*Recommendation:* Change this value to (YES)
+
+***
+
+- USE_DBD_DBMS_LOCK=
+
+  #TODO
+
+***
+
+- HOLD_SELECT_FOR_UPDATE=
+
+  #TODO
+
+### 2.2.4.2 DEBUG
+
+This section describes the options available for HiDB Debugging and logs.
+
+- GENERAL=NO
+
+Option to enable the default debugging flags when OpenFrame HiDB is running. (Default: NO)
+
+*Recommendation:* Leave it as default (NO). This option can be extremely helpful in finding errors in online transactions with OSI and HiDB. It's highly recommended to change this to YES when trying to troubleshoot those issues.
+
+***
+
+- SHOW_BUFFER=NO
+
+Enabled when GENERAL is set to YES. If this option is set to YES, processing a DL/I statement returns the buffer value from each column (Default: NO)
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- DISABLE_COMMIT=NO
+
+```
+YES : indicates that a DL/I operation does not save changes to the datbase
+
+NO  : Indicates that a DL/I operation saves changes to the database (DEFAULT)
+```
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- PRINT_STATISTICS=NO
+
+  #TODO
+
+### 2.2.4.3 DB_LOGIN
+
+Specify connection information to the database that HiDB uses. Since HiDB resides in Tibero, you should pass the Tibero information here.
+
+- DATABASE={TB_SID}
+
+The Tibero database connection address used by OSI/HiDB. If you are unsure, in most cases you can run the following command to get this information:
+
+```bash
+echo $TB_SID
+```
+
+- USERNAME={USERNAME}
+
+The default username to create a connection to Tibero/HiDB.
+
+- PASSWORD={PASSWORD}
+
+The password of the user above.
+
+### 2.2.4.4 DEFAULT_USER
+
+The default username and password for tacf.
+
+- USERNAME={USERNAME}
+
+- PASSWORD={PASSWORD}
+
+- ENPASSWD=
+
+This option allows the user to use an encrypted password.
+
+## 2.2.5 IMS Configuration (ims.conf)
+
+Contains configurations for default libraries. The following libraries should be defined:
+
+```
+ACBLIB_NAME=
+DBDLIB_NAME=
+PSBLIB_NAME=
+RESLIB_NAME=
+```
+
+## 2.2.6 SSM Region Configuration (ssm.region.conf)
+
+This is the Resource Manager for Subsystems Manager configuration file. Specifically, this configuration file will be used for configuring XA with DB2 databases.
+
+### 2.2.6.1 GENERAL
+
+- DLI_CONN_ID=DLI
+
+  #TODO
+
+***
+
+- PRELOAD=${TB_HOME}/client/lib/libtbxa.so:${DB2_HOME}/lib/libdb2.so
+
+### 2.2.6.2 SSM
+
+- SST=DB2,SSN=DB2T,LIT=,ESMT=,RTT=,REO=,CRC=
+
+  #TODO
+=======
+
+- TIMEOUT_DEFAULT=3600
+
+  #TODO
+
+- OIVPTRM1=1200
+
+  #TODO
+
+- OIVPTRM2=7200
+
+  #TODO
+
 <details><summary>Click Here for Reference Documents</summary>
 
   * **Base:** OpenFrame_Base_7_Fix#3_Base_Guide_v2.14_en.pdf
