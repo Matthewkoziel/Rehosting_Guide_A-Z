@@ -3533,19 +3533,95 @@ This is the Resource Manager for Subsystems Manager configuration file. Specific
 - SST=DB2,SSN=DB2T,LIT=,ESMT=,RTT=,REO=,CRC=
 
   #TODO
-=======
 
-- TIMEOUT_DEFAULT=3600
+# 3. Other Configurations
+
+## 3.1 OFSTUDIO Configuration (ofstudio.conf)
+
+This short configuration file describes the compile commands and deploy commands when using OFStudio.
+
+### 3.1.1 OFSTUDIO
+
+- COMPILE_COMMAND=
+
+Describes the compile command when using compile through ofstudio.
 
   #TODO
 
-- OIVPTRM1=1200
+- DEPLOY_COMMAND=
+
+Describes the deploy command for OFStudio. When the program compiles successfully, it is deployed as a binary file to be executable by OpenFrame.
 
   #TODO
 
-- OIVPTRM2=7200
+## 3.2 OFSYS Configuration (ofsys.seq)
 
-  #TODO
+This sequence file describes the OpenFrame core processes to be started when using the tmboot command. Conversely, the tmdown command will shutdown these processes.
+
+This sequence file is ignored when OSI and/or OSC is installed and the ```osiboot``` or ```oscboot``` commands are used instead. However, in the event that the customer has no online transactions, it's more likely that this sequence file will be used. Each server process can be sectioned by different portions of OpenFrame such as Base, Batch, TACF, OFManager, and OFStudio.
+
+For organization purposes, a comment is used with the \# symbol. 
+
+Example: 
+
+```
+#BASE
+ofrsasvr
+ofrlhsvr
+ofrdmsvr
+ofrdsedt
+ofrcmsvr
+ofruisvr
+ofrsmlog
+vtammgr
+TPFMAGENT
+```
+
+Unused server processes may also be commented out to increase boot speed.
+
+## 3.3 SAF Configuration (saf.conf)
+
+Specifies the Tmax Access Control Facility (TACF) settings.
+
+### 3.3.1 SAF_DEFAULT
+
+- LOG_DIRECTORY=${OPENFRAME_HOME}/log
+
+Unix directory where SAF logs are to be written.
+
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/log)
+
+***
+
+- AUDIT_ALL_ACCESS=YES
+
+Option to leave logs on all resource accesses
+
+*Recommendation:* Leave it as default (YES)
+
+### 3.3.2 AUTH_METHOD
+
+- OS_AUTH=NO
+
+Option to check OS-level authorization. Only OS_AUTH _*OR*_ TACF_AUTH may be selected.
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- TACF_AUTH=YES
+
+By setting this option to YES _*AND*_ having OS_AUTH to NO, TACF will control the access to the resources in OpenFrame. 
+
+*Recommendation:* Leave it as default (YES)
+
+***
+
+- PAM_AUTH=NO
+
+Pluggable Authentication Modules (PAM) provide a dynamic authentication support for applications and services in a Linux System. More information can be found here: ![alt-text](https://en.wikipedia.org/wiki/Linux_PAM).
+
+*Recommendation:* Leave it as default (NO)
 
 <details><summary>Click Here for Reference Documents</summary>
 
