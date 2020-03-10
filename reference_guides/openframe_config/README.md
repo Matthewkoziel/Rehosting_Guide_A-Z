@@ -3815,7 +3815,7 @@ Example:
 
 - SCLAS001=DEFVOL
 
-*Recommendation:* Check with the customer to see if there are existing SMS configurations on the mainframe and adjust these settings accordingly.
+*Recommendation:* Check with the customer to see if there are existing SMS configurations on the mainframe and adjust these settings accordingly. 
 
 <details><summary>Click Here for Reference Documents</summary>
 
