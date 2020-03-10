@@ -136,6 +136,8 @@ Below are the configuration files which OpenFrame uses to operate and match the 
       - [SD](#2143-sd "OSC Region System Definition Configurations")
       - [TDQ](#2144-tdq "OSC Transient Data Queue Configurations")
       - [TSQ](#2145-tsq "OSC Temporary Storage Queue Configurations")
+    - [smf.conf](#34-smf-configuration-smfconf "SMF Configuration")
+      -[DATASET](#341-dataset "Dataset Information for SMF Logs")
 
 # 1. Batch Related
 
@@ -3533,19 +3535,237 @@ This is the Resource Manager for Subsystems Manager configuration file. Specific
 - SST=DB2,SSN=DB2T,LIT=,ESMT=,RTT=,REO=,CRC=
 
   #TODO
-=======
 
-- TIMEOUT_DEFAULT=3600
+# 3. Other Configurations
+
+## 3.1 OFSTUDIO Configuration (ofstudio.conf)
+
+This short configuration file describes the compile commands and deploy commands when using OFStudio.
+
+### 3.1.1 OFSTUDIO
+
+- COMPILE_COMMAND=
+
+Describes the compile command when using compile through ofstudio.
 
   #TODO
 
-- OIVPTRM1=1200
+- DEPLOY_COMMAND=
+
+Describes the deploy command for OFStudio. When the program compiles successfully, it is deployed as a binary file to be executable by OpenFrame.
 
   #TODO
 
-- OIVPTRM2=7200
+## 3.2 OFSYS Configuration (ofsys.seq)
 
-  #TODO
+This sequence file describes the OpenFrame core processes to be started when using the tmboot command. Conversely, the tmdown command will shutdown these processes.
+
+This sequence file is ignored when OSI and/or OSC is installed and the ```osiboot``` or ```oscboot``` commands are used instead. However, in the event that the customer has no online transactions, it's more likely that this sequence file will be used. Each server process can be sectioned by different portions of OpenFrame such as Base, Batch, TACF, OFManager, and OFStudio.
+
+For organization purposes, a comment is used with the \# symbol. 
+
+Example: 
+
+```
+#BASE
+ofrsasvr
+ofrlhsvr
+ofrdmsvr
+ofrdsedt
+ofrcmsvr
+ofruisvr
+ofrsmlog
+vtammgr
+TPFMAGENT
+```
+
+Unused server processes may also be commented out to increase boot speed.
+
+## 3.3 SAF Configuration (saf.conf)
+
+Specifies the Tmax Access Control Facility (TACF) settings.
+
+### 3.3.1 SAF_DEFAULT
+
+- LOG_DIRECTORY=${OPENFRAME_HOME}/log
+
+Unix directory where SAF logs are to be written.
+
+*Recommendation:* Leave it as default (${OPENFRAME_HOME}/log)
+
+***
+
+- AUDIT_ALL_ACCESS=YES
+
+Option to leave logs on all resource accesses
+
+*Recommendation:* Leave it as default (YES)
+
+### 3.3.2 AUTH_METHOD
+
+- OS_AUTH=NO
+
+Option to check OS-level authorization. Only OS_AUTH _*OR*_ TACF_AUTH may be selected.
+
+*Recommendation:* Leave it as default (NO)
+
+***
+
+- TACF_AUTH=YES
+
+By setting this option to YES _*AND*_ having OS_AUTH to NO, TACF will control the access to the resources in OpenFrame. 
+
+*Recommendation:* Leave it as default (YES)
+
+***
+
+- PAM_AUTH=NO
+
+Pluggable Authentication Modules (PAM) provide a dynamic authentication support for applications and services in a Linux System. More information can be found here: ![alt-text](https://en.wikipedia.org/wiki/Linux_PAM).
+
+*Recommendation:* Leave it as default (NO)
+
+### 3.3.3 OFRSASVR
+
+- TOKEN_INTERVAL=3
+
+Specifies date intervals for deleting SASVR tokens that remain in memory
+
+*Recommendation:* Leave it as default (3)
+
+### 3.3.4 ERRCODE
+
+There are currently no configurations in this section.
+
+### 3.3.5 TACF_DUMMY
+
+There are currently no configurations in t his section.
+
+### 3.4 SMF Configuration (smf.conf)
+
+The SMF log in OpenFrame is limited support at it's current stage.
+
+In order to use smfmgr, the System Management Facilities (SMF) properties must be configured in smf.conf and SMF must be initialized. Set the smf.conf configuration file as shown below. This configuration can be used to store related information about CICS transactions:
+
+```
+Transaction Name
+Task ID
+Term ID
+Storage Used
+Base Program
+CICS SYSID
+CPU Time
+Response Time
+Node Name
+MRO Information
+Resource Usage
+Filename
+File I/O
+Read
+Update
+Delete
+Browse
+TDQ Names and Counts
+Task Wait Time (amount of time waiting to run on the CPU)
+Task Dispatch Time (amount of time spent running on the CPU)
+Breakdown of Time for each CICS command
+```
+
+  #TODO - MUST BE VALIDATED
+
+### 3.4.1 DATASET
+
+Specifies the name of an SMF Dataset. Only ALL is supported, meaning, the dataset can be used in all nodes.
+
+```
+SMLOG1.NODE1=ALL
+SMLOG2.NODE1=ALL
+SMLOG3.NODE1=ALL
+SMLOG4.NODE1=ALL
+```
+
+*Recommendation:* Leave it as default (shown above)
+
+## 3.5 SMS Configuration (sms.conf)
+
+Stores Definitions of the SMS classes used by OpenFrame Storage Management System. SMS classes can be used as a JCL parameter or in the acs.conf file.
+
+### 3.5.1 DATACLAS
+
+Data classes can be defined like the following:
+
+- {DCLASS_NAME}=({PARAMETER1},{PARAMETER2})
+
+Notice that each parameter is separated by a comma (,) and all parameters are encapsulated in parentheses ().
+
+Available Parameters are below:
+
+```
+RECFM      : Record Format
+LRECL      : Logical Record Size
+AVGREC     : Space Scaling Factor
+AVGVAL     : Average Record Size
+PRIMARY    : Primary Allocation Quantity
+SECONRDARY : Secondary Allocation Quantity
+DIRECTORY  : Number of Directory Blocks in PDS
+EXPTDT     : Dataset Expiration Date (YYYYMMDD)
+RETPD      : Dataset Retention Period (From creation date)
+VOLCNT     : Volume Count
+DSNTYPE    : Dataset Name Type (EXT/HFS/LIB/PDS)
+COMPACT    : Option to compress data (Y/N/T/G)
+SPANNED    : Option to allow Data to span accross control intervals (S/N)
+RECORG     : VSAM Dataset Type (KS/ES/RR/LS)
+KEYLEN     : Key Length (in Bytes)
+KEYOFF     : Key Offset (for KSDS)
+CISIZE     : CISIZE of data component
+FRSPAC[0]  : CI %Free Space for CI
+FRSPAC[1]  : CA %Free Space for CA
+SHOPTS[0]  : Region Share Option
+SHOPTS[1]  : System Share Option
+```
+
+Example:
+
+- DCLASS001=(RECFM=FB,LRECL=80)
+
+*Recommendation:* Check with the customer to see if there are existing SMS configurations on the mainframe and adjust these settings accordingly.
+
+### 3.5.2 MGMTCLAS
+
+Management Class Definition
+
+- {MCLASS_NAME}=({EXPDT},{REPTD})
+
+Notice that each parameter is separated by a comma (,) and all parameters are encapsulated in parentheses ().
+
+Available Parameters are below:
+
+```
+EXPTDT      : Dataset Expiration Date (YYYYMMDD)
+RETPD       : Dataset Retention Period (from creation date)
+RETPD_NOUSE : Dataset Retention Period (from last referenced date)
+RETPD_LIMIT : Maximum dataset retention period
+```
+
+Example:
+
+- MCLAS001=(EXPDT=99991231,RETPD=NOLIMIT)
+
+*Recommendation:* Check with the customer to see if there are existing SMS configurations on the mainframe and adjust these settings accordingly.
+
+### 3.5.3 STORCLAS
+
+Defining a Storage Class
+
+- {STORCLAS}={VOL_SER},{VOL_SER},{VOLSER}
+
+For each storage class, you can define one or many different volume serials separated by comma
+
+Example:
+
+- SCLAS001=DEFVOL
+
+*Recommendation:* Check with the customer to see if there are existing SMS configurations on the mainframe and adjust these settings accordingly.
 
 <details><summary>Click Here for Reference Documents</summary>
 
