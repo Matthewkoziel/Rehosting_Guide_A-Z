@@ -86,15 +86,38 @@ Once you've created the CUSTOMER.COBLIB, move all the "Missing COBOL" to the COB
 - To get the JOB NAME, PROC NAME, STEP NAME, PROGRAM NAME, DATASET NAME, and DATASET DISPOSITION, run the following SQL command in TBAdmin. If you're unsure about connecting to Tibero via TBAdmin, please see the TBAdmin reference document. 
 
 ```sql
--- JCLs with PROCEDURES
-SELECT a.JCL_NAME, b.PROC_NAME, c.STEP_NAME, c.PROGRAM_NAME, d.DATASET_NAME, d.DISP
-FROM MVS_JCL a, MVS_JCL_PROCEDURE b, MVS_JCL_STEP c, MVS_JCL_DD d
-WHERE c.JOB_ID=a.ID and c.PROC_ID=b.ID and c.ID=d.STEP_ID and d.DATASET_NAME is not null;
-
--- JCLs WITHOUT PROCEDURES
-SELECT a.JCL_NAME, 'NOPROC' as PROC_NAME, c.STEP_NAME, c.PROGRAM_NAME, d.DATASET_NAME, d.DISP
-FROM MVS_JCL a, MVS_JCL_STEP c, MVS_JCL_DD d
-WHERE c.JOB_ID=a.ID and c.PROC_ID=-1 and c.ID=d.STEP_ID and d.DATASET_NAME is not null;
+SELECT JCL.JCL_NAME, 
+       JCL.PDE_NAME, 
+       JOB.JOB_NAME,
+       JOB.CLASS,
+       JOB.MSGCLASS,
+       PROC.PROC_NAME,
+       PROC.PROC_TYPE,
+       PROC.PDE_NAME,
+       STEP.STEP_NAME,
+       STEP.PROGRAM_NAME,
+       STEP.PROC_TYPE,
+       STEP.PARENT_PROC_ID,
+       DD.DD_NAME,
+       DD.DATASET_NAME,
+       DD.DCB,
+       DD.DISP,
+       DD.SYSOUT,
+       DD.UNIT,
+       DD.DSORG
+--SELECT COUNT(*)      
+  FROM MVS_JCL JCL
+   INNER JOIN MVS_JCL_JOB JOB
+     ON JOB.JCL_ID = JCL.ID
+   LEFT OUTER JOIN MVS_JCL_PROCEDURE PROC
+     ON PROC.JOB_ID = JOB.ID
+   INNER JOIN MVS_JCL_STEP STEP
+     ON STEP.JOB_ID = JOB.ID
+    AND STEP.JCL_ID = JCL.ID
+   INNER JOIN MVS_JCL_DD DD
+     ON DD.JOB_ID = JOB.ID
+    AND DD.STEP_ID = STEP.ID
+  WHERE DD.DATASET_NAME IS NOT NULL;
 ```
 
 - To get the Call Tree, you will need to run the following SQL query:

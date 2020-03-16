@@ -13,41 +13,40 @@
       - [1.2.1.3 Binary Request](#1213-binary-request)
       - [1.2.1.4 Licensing](#1214-licensing)
       - [1.2.1.5 Getting Familiar with Linux](#1215-getting-familiar-with-linux)
-- [Installation](#2-installation)
-- [Discovery](#3-discovery)
-    * [OFMiner](#31-ofminer)
-- [Migration](#4-migration)
-    * [Source Code](#41-source-code-jcl-procedures-cobols-copybooks)
-    * [Datasets](#42-datasets)
-- [OpenFrame Configuration](#5-openframe-configuration)
-- [Operation And Administration](#6-operation-and-administration)
-- [Applying Patches](#7-applying-patches)
+- [2. Installation](#2-installation)
+  - [2.1 Verifying Successful Installation](#21-verifying-successful-installation)
+- [3. OpenFrame Configuration](#3-openframe-configuration)
+- [4. Discovery](#4-discovery)
+  - [4.1 OFMiner](#41-ofminer)
+- [5. Migration](#5-migration)
+  - [5.1 Source Code (JCL, Procedures, COBOLs, COPYBOOKs)](#51-source-code-jcl-procedures-cobols-copybooks)
+  - [5.2 Datasets](#52-datasets)
+    - [5.2.1 NVSM (NON VSAM) Datasets](#521-nvsm-non-vsam-datasets)
+    - [5.2.2 VSAM Datasets](#522-vsam-datasets)
+- [6. Source Compilation](#6-source-compilation)
+- [7. Operations and Maintenence](#7-operations-and-maintenence)
+  - [7.1 Running Batch JOBs](#71-running-batch-jobs)
+  - [7.2 Running Online Transactions](#72-running-online-transactions)
+  - [7.3 JOB Stream and Scheduler](#73-job-stream-and-scheduler)
+  - [7.4 TACF](#74-tacf)
+  - [7.5 Useful Scripts and Tools](#75-useful-scripts-and-tools)
+  - [7.6 Applying Patches](#76-applying-patches)
 
 # 1. Pre-Migration
 
 ## 1.1 Mainframe Environment
 
-**Description**: Understanding the mainframe environment is crucial to rehosting it to OpenFrame. Once a customer is interested in rehosting, the technical details are discussed between TmaxSoft and the Customer. TmaxSoft can gather most of the critical information through a questionnaire. This initial questionnaire is vital to determining the feasability of rehosting the mainframe to OpenFrame. Every customer has changed some configurations to suit their needs - There is no mainframe that is exactly like another. One of the most important tasks to rehosting a mainframe is configuring OpenFrame the same way the mainframe was configured. To accomplish this, we need to have the customer run some commands on the mainframe so we can see the results and adjust OpenFrame accordingly. A few examples are below, but this will be looked into more detail in the Configuration section.
-
-*   COBOL Compilation Options
-
-*   JOB Class Configuration
-
-*   System Definitions
-
-*   IMS And/Or CICS Region Configuration
-
-*   [Initiator Configuration](./reference_guides/openframe_config/initiator_config/README.md)
+**Description**: Understanding the mainframe environment is crucial to rehosting it to OpenFrame. Once a customer is interested in rehosting, the technical details are discussed between TmaxSoft and the Customer. TmaxSoft can gather most of the critical information through a questionnaire. This initial questionnaire is vital to determining the feasability of rehosting the mainframe to OpenFrame. Every customer has changed some configurations to suit their needs - There is no mainframe that is exactly like another. One of the most important tasks to rehosting a mainframe is configuring OpenFrame the same way the mainframe was configured. To accomplish this, we need to have the customer run some commands on the mainframe so we can see the results and adjust OpenFrame accordingly. Below you will find the guide for configuring OpenFrame to Mainframe specifications (in the OpenFrame Environment section) as well as the questionnaire if you are interested in rehosting your mainframe with TmaxSoft.
 
 [**Reference Documents: Post Introduction Questionnaire**](https://forms.tmaxsoft.com/tmaxsoftglobal/form/OpenFrame/formperma/dcfCXyB1IY7ohnkCgnTe7-oGBi6i7rLDSXecQr7_QG8)
 
 ## 1.2 OpenFrame Environment
 
+Here is the guide to configuring OpenFrame to Mainframe specifications:
+
+[Configuration Guides](./reference_guides/openframe_config/README.md "OpenFrame Configurations")
+
 ### 1.2.1 Accessing the Linux Server
-
-**Prerequisities:**
-
--   Pre-Migration (Mainframe) - Complete
 
 **Description:** This step includes how to access the Linux server. Depending on who built the Linux Server, the steps for completing this will vary.
 
@@ -61,29 +60,17 @@
 
 #### 1.2.1.3 Binary Request
 
-**Prerequisites:** 
-
-  - Pre-Migration (Mainframe) - Complete
-
-  - Accessing the Linux Server - Complete
-
 **Description:** Customer binaries must be requested through IMS. In order to request the binaries, you will need to know some information about the operating system (OS) being used on the linux server. For example, we need to know if we should provide 32 bit or 64 bit binaries.
 
 [**Reference Documents: How to Request Binaries**](./reference_guides/binary_request/README.md "Binary Request")
 
 #### 1.2.1.4 Licensing
 
-**Prerequisites:** 
-
-  - Pre-Migration (Mainframe) - Complete
-
-  - Accessing the Linux Server - Complete
-
 **Description:** Licenses will have to be issued for the products to fully operate. Production licenses must be requested through the Global Planning Team. For the licenses, we will need to know the hostname of the server, and in some cases we will also need to know how many cpu's are being used on the server. If you want to know what information you will need for each license, you can go to www.technet.tmaxsoft.com, then click on Demo License Request. This will ask you to fill out a form for each license. The required fields will describe what information you need to know to request the binary.
 
 #### 1.2.1.5 Getting Familiar with Linux
 
-**Description:** As most of the mainframe engineers may not be fully comfortable with Linux already, it is *_HIGHLY_* recommended that you use the below guides to start getting familiar with how to be proficient in Linux. 
+**Description:** As most of the mainframe engineers may not be fully comfortable with Linux already, it is *_HIGHLY_* recommended that you use the below guides to start getting familiar with how to be proficient in Linux. It's also suggested that the mainframe team begin to complete 
 
 **Reference Documents:**
 
@@ -102,22 +89,11 @@
 
 # 2. Installation
 
-**Prerequisites:** 
-
--   Binary Request - (Complete)
--   Licensing - (In Progress or Complete)
--   NDA (Non-Disclosure Agreement) - Complete
--   Server Access - (Complete)
-
 **Description:** To install OpenFrame, TmaxSoft has created a guide describing the steps required to install OpenFrame. In some cases, you may need to run different commands based on OS or versions of the software which are all described in the Installation Guide (see Reference Document TmaxSoft\_OpenFrame7\_fix2\_Installation\_V6.22)
 
 [**Reference Documents: OpenFrame Installation Documentation**](./reference_guides/installation/README.md "Installation Guide")
 
 ## 2.1 Verifying Successful Installation
-
-**Prerequisites:** 
-
-  - Installation (Complete)
 
 **Description:** OpenFrame comes equipped with some very basic sample JOBs and transactions that can be run and to test the most basic functionality of OpenFrame. After you install OpenFrame, these tests should be run and marked as completed before going any further to ensure the installation was successful.
 
@@ -142,17 +118,21 @@
 
 ***
 
-# 3. Discovery
+# 3. OpenFrame Configuration
 
-**Prerequisites:**
+**Description:** In order for batch JOBs and Online Transactions to run correctly, configuration changes must be made to the environment to match the Mainframe specifications. Below is a link to the configuration guides. Each configuration file should be inspected and modified to match the customer's environment. If you are unsure about a configuration, ask the customer to pull data from the mainframe and be sure to document how the information was gathered for future projects.
 
--   Installation -- Complete
+**Note:** You can read more about each of these configuration files based on the reference documents and manuals.
+
+[OpenFrame Configuration](./reference_guides/openframe_config "OpenFrame Configuration")
+
+# 4. Discovery
 
 **Description:** To avoid risk, we need to make sure there are no third party applications that we cannot support in OpenFrame. The majority of the Discovery should happen before the project even begins. OFMiner is a tool that can be utilized during a PoC stage to help identify some of these potential risks. In order to analyze using OFMiner, you will have to complete installation as well as Migrate the source code. The customer may not always give you full access to the source code at this stage, so it's important to understand the rules before copying anything off the mainframe. 
 
 ***
 
-## 3.1 OFMiner
+## 4.1 OFMiner
 
 **Prerequisites:**
 
@@ -168,10 +148,9 @@ analysis document.
 
 [**Reference Documents: How to Create an OFMiner Report**](./reference_guides/ofminer/How_to_Create_an_OFMiner_Report.md)
 
-
 ***
 
-# 4. Migration
+# 5. Migration
 
 **Description**: This step includes migrating source code and datasets.
 There are multiple options for downloading the data from the mainframe.
@@ -192,7 +171,7 @@ Below is the ordered list of the assets you will need to migrate from the mainfr
 
 ***
 
-## 4.1 Source Code (JCL, Procedures, COBOLs, COPYBOOKs)
+## 5.1 Source Code (JCL, Procedures, COBOLs, COPYBOOKs)
 
 **Description:** Source Code Transfer should begin with JCL as it is the starting point for the JOBs. In many cases, a JCL will EXEC a PROC so the PROCs should also be prioritized. The second priority should be the COBOL programs that are EXEC'd in the JCL and the PROCs. Identifying and transferring COBOL programs may be a recursive task because a COBOL program can call another COBOL program referred to as a submodule. These submodules can also call other submodules, hence the recursiveness of this task. Additionally, COBOL programs can call COPYBOOKS to define the datasets, and these COPYBOOKS can reference other COPYBOOKS. Transferring these, are tertiary priority. You will need all of these elements to complete the Analysis step using OFMiner. Once the Source Code is migrated to OpenFrame, JOBs and Online Transactions can be submitted just as they were on the mainframe. In the mainframe, an edittor is used to modify the source code. In OpenFrame, we have many options. One option is through OFStudio which is TmaxSoft's version of eclipse. This allows you to modify source code and push to a git repository to maintain your source code. Another option would be to use the command line directly and modify the source code through an edittor such as Vi, Vim, or Nano. When migrating Source code, it's important to use the -L option to create the linux new line delimiter. The third option would be to use the spfedit tool which allows you to use mainframe commands to be able to edit a dataset or member of a pds. 
 
@@ -219,13 +198,11 @@ The below information can be found by running the ```dsmigin``` command with no 
 
 ***
 
-## 4.2 Datasets
-
-**Prerequisites:**
+## 5.2 Datasets
 
 **Description:** This task can be completed in parallel to the Installation and Discovery stages. This task requires a lot of effort and should be handled by no less than two engineers. We are currently in the process for standardizing how we are downloading datasets from the Mainframe to OpenFrame. Every mainframe is different, but a process should be created to standardize the process for each environment.
 
-### 4.2.1 Standard Process (NON-VSAM):
+### 5.2.1 NVSM (NON VSAM) Datasets
 
   1. Customer needs to provide the copybooks. Each dataset has a corresponding copybook. There is no way for OpenFrame engineers to know which copybooks map to which datasets. The customer should provide a spreadsheet with the mapping. If the customer does not provide the copybooks, we can use OFMiner to generate the copybooks, but we cannot guarantee the integrity of the data using this method. 
 
@@ -237,7 +214,7 @@ The below information can be found by running the ```dsmigin``` command with no 
 
   Again, see the dataset migration guide noted in section 4.1 [dataset migration](./reference_guides/dataset_migration/README.md)
 
-### 4.2.2 VSAM Process
+### 5.2.2 VSAM Datasets
 
   1. Unload VSAM files on Mainframe to Flat (PS) files.
 
@@ -261,188 +238,29 @@ The below information can be found by running the ```dsmigin``` command with no 
 
 ***
 
-# 5. OpenFrame Configuration
-
-**Prerequisites:**
-
--   Migration (Source Code) -- Complete
--   Installation -- (Complete)
-
-**Description:** In order for batch JOBs and Online Transactions to run correctly, configuration changes must be made to the environment to match the Mainframe specifications. Below is a list of the items you may or may not have to modify based on the customer's mainframe configuration:
-
-**Note:** You can read more about each of these configuration files based on the reference documents and manuals mentioned below.
-
-## 5.1 TACF
-
-**Prerequisites:** 
-
--   Installation -- (Complete)
-
-**Description:** TACF (Tmax Access Control Facility) is responsible for handling user authentication, resource access control, and logging resource access statistics. TACF protects the system from unauthorized users by managing a list of registered users and system authorities within Tibero. TACF alsorecords user and resource access histories as logs, which are used as source data for statistical information. 
-
-**What you need to know:** 
-
--   How to change the password rules for TACF
-
-    Create a C program using the saf_exit.h header file located in $OPENFRAME_HOME/include. An example function is provided below:
-
-<details><summary> Click here for the C code </summary>
-
-```
-int customer_saf_exit_password(char *userid, char password, int count, char *history[])
-{
-  
-  <Add Logic Here using the above pointers>
-
-}
-```
-
-</details>
-
-## 5.2 BATCH
-  **Prerequisites:** 
-
-  - Installation -- (Complete)
-
-**Description:** 
-
-## 5.3 ONLINE
-
-### 5.3.1 OSC Configuration (OpenFrame System for CICS)
-
-**Description:** Online Resources on the mainframe are defined in System Definitions Macro Files. For OpenFrame to access the resources, they must be defined in OpenFrame's System Definitions (OSD). Before loading the System Definitions, we need a VSAM dataset to load them into. However, loading all of System Definitions into the run time memory would be unnecessary, so only the System Definitions in the GRPLIST are added. 
-
-Step 1.) Create the VSAM Dataset
-
-```
-idcams define -t CL -n OSC.SDMAKE.TEST -o KS -k 18,0 -b 32768 -l 128,32760 -s 1024,128,128 -v DEFVOL
-```
-
-Step 2.) Load the VSAM Dataset with the System Definitions File from the Mainframe
-
-```
-oscsdgen -c -d OSC.SDMAKE.TEST [MACRO_FILE]
-```
-
-#### 5.3.1.1 oscsddump
-
-It should be noted that OpenFrame comes with a utility ```oscsddump``` which can be used to dump the OpenFrame System Definitions (OSD) to a regular file. This regular file can then be used to add or modify the existing OSD's. Each region has it's own dataset, and you can dump the OSD by specifying the region name or the vsam dataset.
-
-```
-oscsddump -d <dataset> <output_file_name>
-oscsddump -r <region> <output_file_name>
-  -d <dataset> : The name of the OSC SD dataset to be exported
-
-  -r <region>  : OSC region name from where datasets will be exported.
-
-  -  <file>    : Specifies the name of the macro file to be created. 
-                 If a file with this name already exists, it 
-                 will be overwritten.
-```
-#### 5.3.1.2 oscrtsddump
-
-Similar to oscsddump, OpenFrame has an oscrtsddump utility which can dump the System Definitions from the GRPLIST stored in the runtime. 
-
-```
-oscrtsddump -r <region> <file>
-  -r <region>  : Specifies an OSC region name
-
-  - <file>     : Specifies the name of the macro file to be created.
-                 If a file with this name already exists, it 
-                 will be overwritten.
-```
-
-#### 5.3.1.3 osctdlupdate
-
-Dynamic Modules, such as Cobol programs can modified during OSC uptime, but the integrity of a transaction in progress must be preserved. Therefore, when an online COBOL program is modified and recompiled, it is not updated in OSC until the osctdlupdate command is run. This tool registers and updates dynamic modules within OSC regions.
-
-Dynamic Modules include:
-
-* BMS (Basic Map Support)
-
-* COBOL 
-
-```
-osctdlupdate <region> <module>
-  - <region>   : Specifies an OSC region name
-
-  - <module>   : Specifies an application module name
-``` 
-
-<h5>5.3.1.3.1 Understanding Basic Map Support (BMS) Files</h5>
-
-* DFHMSD - Declares a mapset
-
-<details><summary>Click here to see what Keywords can be specified for the DFHMSD macro command</summary>
-
-  <details><summary>COLOR</summary>
-
-  - specifies the basic color for the mapset. Users can choose one of the following: DEFAULT, BLUE, RED, PINK, GREEN, TURGOISE, YELLOW, or NEUTRAL
-
-  - COLOR for DFHMDF or DFHMDI is already set; the color set for DFHMSD has the lowest priority.
-  
-  </details>
-
-  <details><summary>CTRL</summary>
-
-  - Sets characterstics of all maps included in mapsets.
-
-  - One of the following options can be entered
-
-    - PRINT: Prints transferred map data
-    
-    - LENGTH: Sets the maximum number of characters for a row transferred to a printer.
-
-    - FREEKB: Releases the keyboard lock when transferring maps.
-
-    - ALARM: Sends an alarm if an alarm is sent to the TN3270 terminal.
-
-    - FRSET: Resets the MDT bits of all fiends including in maps when transferring maps.
-  </details>
-
-  <details><summary>HLIGHT</summary>
-
-  </details>
-
-</details>
-
-* DFHMDI - Declares a map
-
-* DFHMDF - Declares a field
-
-
-
-### 5.3.2 OSI Configuration (OpenFrame System for IMS)
-
-
 # 6. Source Compilation
-
-**Prerequisites:** 
-
--   Installation -- Complete
--   OpenFrame Configuration -- In Progress or Complete
 
 **Description:** In order to compile source code such as COBOL, Assembler (ASM), PL/I, BMS, MFS, DBDs, PSBs, you will need to first complete some configuration. There are many compiler options available to mainframe, and we need to configure OpenFrame to compile source code the same way it is done on the mainframe. 
 
 <h3>COBOL</h3>
 
-#TODO
+  #TODO
 
 <h3>Assembler</h3>
 
-#TODO
+  #TODO
 
 <h3>PL/I</h3>
 
-#TODO
+  #TODO
 
 <h3>BMS</h3>
 
-#TODO
+  #TODO
 
 <h3>MFS</h3>
 
-#TODO
+  #TODO
 
 <h3>DBD</h3>
 
@@ -450,77 +268,53 @@ osctdlupdate <region> <module>
 
 <h3>PSB</h3>
 
-#TODO
+  #TODO
 
-## 6.1 Running Batch JOBs
+# 7. Operations & Maintenance
 
-**Prerequisites:**
+**Description:** Now that your configuration is completed, it's time to start running Batch JOBs and Online Transactions and comparing results. There are many different ways a BATCH JOB can be submitted, please see the sections below for whichever method suits you best. In most cases, the customer will prefer to use OFManager, so getting familiar with submitting JOBs through OFManager is recommended.
 
--   Installation -- Complete
--   OpenFrame Configuration -- Complete
--   Source Compilation -- Complete
+## 7.1 Running Batch JOBs
 
-**Description:** Now that your configuration is completed, it's time to start running Batch JOBs. There are many different ways a BATCH JOB can be submitted, please see the sections below for whichever method suits you best. In most cases, the customer will prefer to use OFManager, so getting familiar with submitting JOBs through OFManager is recommended.
+Batch JOBs can be submitted on OpenFrame through many different mediums. Below are the options:
 
-<h3>Tjesmgr</h3>
+- [How to Use Tjesmgr](./reference_guides/batch/How_to_use_tjesmgr/README.md "How to use Tjesmgr")
+- [How to submit JCL through OFManager](#TODO)
+- [How to submit JCL through Textrun](#TODO)
+- [How to submit JCL through OFStudio](#TODO)
+- [Schedule JCL through Scheduler](#73-job-stream-and-scheduler)
 
-[How to Use Tjesmgr](./reference_guides/batch/How_to_use_tjesmgr/README.md "How to use Tjesmgr")
-
-<h3>Textrun</h3>
-
-#TODO
-
-<h3>OFManager</h3>
-
-#TODO
-
-<h3>OFStudio</h3>
-
-#TODO
-
-## 6.2 Running Online Transactions
-
-**Prerequisites:** 
-
--   Installation -- Complete
--   OpenFrame Configuration -- Complete
--   Source Compilation -- Complete
+## 7.2 Running Online Transactions
 
 **Description:** Online Transactions can be run through a series of interconnected components: WebTerminal and 3270 Gateway (OFGW). In general, a transaction will be running in an online region in OpenFrame. OFGW will interact and translate the messages flowing through from the webtermanal to the region and visa-versa. The end result is an online screen where users can interact and view, modify, or delete information on the underlying database. 
 
 <h3>OSC</h3>
 
-#TODO
+  #TODO
 
 <h3>OSI</h3>
 
-#TODO
+  #TODO
 
-## 6.3 JOB Stream and Scheduler
+## 7.3 JOB Stream and Scheduler
 
-**Prerequisities:**
-
--   Installation -- Complete
--   OpenFrame Configuration -- Complete
--   Running Batch JOBs -- In Progress or Complete
-
-**Description:** A mainframe scheduler's purpose is to define which and when JOBs will run. Additionally, logic can be added to the scheduler to determine what subsequent JOBs are to be run based on return codes from previous JOBs. Similar to the mainframe, OpenFrame can also work with most schedulers, so JOBs can be run the same way they run on the mainframe.
+**Description:** A mainframe scheduler's purpose is to define when and which JOBs will run. Additionally, logic can be added to the scheduler to determine what subsequent JOBs are to be run based on return codes from previous JOBs. Similar to the mainframe, OpenFrame can also work with most schedulers, so JOBs can be run the same way they run on the mainframe.
 
 <h3>Control-M</h3>
 
-#TODO
+  #TODO
 
 <h3>Autosys</h3>
 
-#TODO
+  #TODO
 
-## 6.4 Operations & Maintenance
+## 7.4 TACF
 
-**Prerequisites:**
+**Description:** Below are the most commonly used TACF commands. All of the commands can be run from the command line or through OFManager.
 
--   Installation -- Complete
--   OpenFrame Configuration -- Complete
--   Running Batch JOBs -- In Progress or Complete
+[TACF Commands](./reference_guides/tacf/TACF_Commands.md "Most Common TACF Commands")
+
+## 7.5 Useful Scripts and Tools
 
 **Description:** Now that the mainframe has been rehosted to an Open System, you now have the freedom to develop and customize OpenFrame to meet your demands. OpenFrame comes well equipped with many self-managing tools to help organize your environment, while maintaining smooth and reliable operation. In this section, we will go through some useful utilities that OpenFrame comes with by default, and some useful shell scripts to increase efficiency in daily operations.
 
@@ -542,20 +336,8 @@ osctdlupdate <region> <module>
 
   - scan\_fix.sh (TODO: Add supporting scripts and Documentation)
 
-# Operation and Administration
-
-## 6.5 TACF
-
-**Description:** Below are the most commonly used TACF commands. All of the commands can be run from the command line or through OFManager.
-
-[TACF Commands](./reference_guides/tacf/TACF_Commands.md "Most Common TACF Commands")
-
-## 6.6 BATCH
-
-## 6.7 ONLINE
-
 ***
 
-# 7. Applying Patches
+# 7.6 Applying Patches
 
 [**Reference Guide: How to Apply Patches**](./reference_guides/patch/README.md "Learn how to apply patches")

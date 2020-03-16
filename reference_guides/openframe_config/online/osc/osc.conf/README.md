@@ -1,6 +1,6 @@
 # osc.conf (OSC Configuration)
 
-This configuration file is used to configure the TSAM and OSC system settings that are common to all OpenFrame OSC regions. 
+This configuration file is used to configure the TSAM and OSC system settings that are common to all OpenFrame OSC regions. For setting up system definitions, please refer to the osc_system_definition guide located here: [OSC System Definition Guide](../../../../osc/osc_system_definitions/README.md)
 
 # Table of Contents
 
