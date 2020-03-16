@@ -54,6 +54,7 @@ Below are the configuration files which OpenFrame uses to operate and match the 
 
 # 2. Online Related
 
+
 **General Information:** These configurations have to do with OSC and OSI. OSC and OSI stand for Openframe Subsystems for CICS and IMS respectively. Here, you will find configurations which will have to be highly customized to match the mainframe components. Some assembly is required, as creating the regions are first needed to configure the config files for them.
 
 *If your environment does not consist of CICS regions, you may skip the OSC section.*
